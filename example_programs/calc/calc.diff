@@ -1,0 +1,169 @@
+diff --git a/rdp.c b/calc.c
+index bcba2319..2677e3f3 100644
+--- a/rdp.c
++++ b/calc.c
+@@ -1,16 +1,20 @@
+-/* A simple recursive descent parser */
+-#include <ctype.h>
++
+ #include <stdio.h>
+ #include <stdlib.h>
+-#include <assert.h>
++#include <string.h>
++#include <ctype.h>
++#include <fcntl.h>
++#include <unistd.h>
+ 
+-#include "parser.h"
++#include <setjmp.h>
+ 
+-#define ARRAY_SIZE(x)	(sizeof(x)/sizeof(x[0]))
++jmp_buf env;
+ 
+-static int parse_expr(const char **pexp, char expect, int *result);
++// 
+ 
+-static int parse_primary(const char **pexp, int *value)
++int parse_expr(const char **pexp, char expect, int *result);
++
++int parse_primary(const char **pexp, int *value)
+ {
+ 	const char *exp = *pexp;
+ 	int rv = 0;
+@@ -21,29 +25,40 @@ static int parse_primary(const char **pexp, int *value)
+ 	switch (exp[0]) {
+ 	case '0': case '1': case '2': case '3': case '4':
+ 	case '5': case '6': case '7': case '8': case '9':
++	{
+ 		*value = strtol(exp, (char **)&exp, 10);
+ 		break;
++	}
++
+ 	case '(':
++	{
+ 		exp++;
+ 		rv = parse_expr(&exp, ')', value);
+ 		exp++;
+ 		break;
++	}
++
+ 	case '\0':
+-		rv = ERR_EOL;
+-		goto out;
++	{
++		*pexp = exp;
++		longjmp(env,0);
++	}
++
+ 	default:
+-		rv = ERR_TOK;
+-		goto out;
++	{
++		*pexp = exp;
++		longjmp(env,0);
++	}
++
+ 	}
+ 
+ 	while (isspace(exp[0]))
+ 		exp++;
+-out:
+ 	*pexp = exp;
+ 	return rv;
+ }
+ 
+-static int parse_mult(const char **pexp, char expect, int *value)
++int parse_mult(const char **pexp, char expect, int *value)
+ {
+ 	int rh, ret;
+ 
+@@ -65,14 +80,15 @@ static int parse_mult(const char **pexp, char expect, int *value)
+ 				*value *= rh;
+ 				break;
+ 			case '/':
+-				*value /= rh;
++                if (rh != 0) //Avoid divide by zero :)
++				    *value /= rh;
+ 				break;
+ 			}
+ 		}
+ 	return ret;
+ }
+ 
+-static int parse_sum(const char **pexp, char expect, int *value)
++int parse_sum(const char **pexp, char expect, int *value)
+ {
+ 	int rh, ret;
+ 
+@@ -81,7 +97,7 @@ static int parse_sum(const char **pexp, char expect, int *value)
+ 		while (**pexp != expect) {
+ 			char op = **pexp;
+ 
+-			ret = ERR_TOK;
++			ret = -1;
+ 			if (op != '+' && op != '-')
+ 				break;
+ 
+@@ -102,18 +118,10 @@ static int parse_sum(const char **pexp, char expect, int *value)
+ 	return ret;
+ }
+ 
+-static int parse_expr(const char **pexp, char expect, int *result)
++int parse_expr(const char **pexp, char expect, int *result)
+ {
+ 	int err = parse_sum(pexp, expect, result);
+ 
+-	/*
+-	 * Adjust error code to make it a little bit more usefull.
+-	 */
+-	if (err == ERR_TOK && **pexp == '\0') {
+-		err = ERR_EOL;
+-		if (expect == ')')
+-			err = ERR_BRACE;
+-	}
+ 	return err;
+ }
+ 
+@@ -121,3 +129,42 @@ int rdp_parse_expression(const char *exp, int *result)
+ {
+ 	return parse_expr(&exp, '\0', result);
+ }
++
++void strip_input(char* my_string) {
++    int read = strlen(my_string);
++    if (my_string[read-1] ==  '\n'){
++        my_string[read-1] = '\0';
++    }
++}
++char my_string[10240];
++int main(int argc, char *argv[]) {
++
++    int ret;
++    if (argc == 1) {
++        char *v = fgets(my_string, 10240, stdin);
++        if (!v) {
++          exit(1);
++        }
++        strip_input(my_string);
++    } else {
++        int fd = open(argv[1], O_RDONLY);
++        int chars = read(fd, my_string, 10240);
++        if (!chars) {
++            exit(3);
++        }
++        my_string[chars] = 0;
++        strip_input(my_string);
++        close(fd);
++    }
++    
++    int res = 0;
++	if (!setjmp(env)) {
++    	ret = rdp_parse_expression(my_string, &res);
++		if (ret) {
++			exit(1);
++		}
++		printf("val: %s = %d\n", my_string, res);
++	} else {
++		exit(1);
++	}
++}

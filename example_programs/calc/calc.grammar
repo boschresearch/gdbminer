@@ -1,0 +1,92 @@
+{
+    "[start]": "<START>",
+    "[grammar]": {
+        "<START>": [
+            [
+                "<sum-exp>"
+            ]
+        ],
+        "<sum-exp>": [
+            [
+                "<mult-exp>"
+            ],
+            [   
+                "<sum-exp>",
+                "+",
+                "<mult-exp>"
+            ],
+            [   
+                "<sum-exp>",
+                "-",
+                "<mult-exp>"
+            ]
+        ],
+        "<mult-exp>": [
+            [
+                "<primary-exp>"
+            ],
+            [
+                "<mult-exp>",
+                "*",
+                "<primary-exp>"
+            ],
+            [
+                "<mult-exp>",
+                "/",
+                "<primary-exp>"
+            ]
+        ],
+        "<primary-exp>": [
+            [
+                "(",
+                "<sum-exp>",
+                ")"
+            ],
+            [
+                "<integer>"
+            ]
+        ],
+        "<integer>": [
+            [
+                "<digit>"
+            ],
+            [
+                "<digit>",
+                "<integer>"
+            ]
+        ],
+        "<digit>": [
+            [
+                "0"
+            ],
+            [
+                "1"
+            ],
+            [
+                "2"
+            ],
+            [
+                "3"
+            ],
+            [
+                "4"
+            ],
+            [
+                "5"
+            ],
+            [
+                "6"
+            ],
+            [
+                "7"
+            ],
+            [
+                "8"
+            ],
+            [
+                "9"
+            ]
+        ]
+    },
+    "[command]": "./example_programs/calc/calc_parse"
+}
