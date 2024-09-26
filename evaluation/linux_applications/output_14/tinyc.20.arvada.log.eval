@@ -1,0 +1,2173 @@
+
+
+Initial grammar loaded:
+start: t0
+t0: t119161 t127406
+    | ";"
+    | t126240 t19607
+    | t124966
+    | t119161 t117407
+    | t110250 t117775
+    | "while" t127175
+    | t0 t131
+t119161: t110250 t126711 t119161
+    | t119161 t125753
+    | t79430 t131
+    | t79430
+    | t119161 t104677 t126711
+t110250: t110250 t131
+    | "if"
+t131: " "
+    | "  "
+t126711: t130385 t1364
+    | t126477 t1364
+t13105: t13105 t9150
+    | "("
+t9150: t38823 t130384
+    | t9150 t9150
+t38823: t131 t38823
+    | "n"
+    | "t"
+    | "q"
+    | "j"
+    | "u"
+    | "l"
+    | "p"
+    | "c"
+    | "r"
+    | "i"
+    | "k"
+    | "y"
+    | "z"
+    | "d"
+    | "w"
+    | "b"
+    | "e"
+    | "s"
+    | "m"
+    | "x"
+    | "o"
+    | "g"
+    | "h"
+    | "f"
+    | "a"
+    | "v"
+t125496: t97655 t1364
+    | t131 t125496
+    | t38823 t131
+    | t119486 t125496
+    | t125234 t1364
+    | t119486 t38823
+    | t126711
+    | tdigits
+t97655: t70513 t38823
+    | t70513 t125496
+    | t119486 t97655
+t70513: t119486 t70513
+    | t70513 t9150
+    | "("
+t119486: t125496 t99675
+t99675: "+"
+    | "-"
+    | t99675 t119486
+t1364: t131 t1364
+    | ")"
+t79430: "{"
+    | t79430 t19607
+    | t79430 t124966
+    | t119161 t0
+t125753: t125753 t124966
+    | t104677 t127175
+    | t126240 t19607
+    | t125753 t0
+    | t0
+    | t125753 t19607
+    | t104677 t115446
+    | t124966 t0
+t104677: "if"
+    | "while"
+    | t0 t104677
+t127175: t131 t127175
+    | t126477 t109170
+    | t126711 t0
+t126477: t130385 t125999
+    | t13105 t38823
+    | t131 t126477
+    | t131 t130385
+t125999: t94870 t38823
+    | t94870 t125496
+t94870: "<"
+    | t125999 t99675
+    | t99675 t125496 t94870
+    | t99675
+t109170: t1364 t0
+    | t109170 t131
+t124966: t123600 t19607
+    | t131 t0
+    | t79430 t117407
+    | t125496 t19607
+t123600: t9150 t125496
+    | t125496
+    | t123877 t1364
+    | t125496 t125999
+t19607: ";"
+    | t19607 t131
+    | t124966
+t127406: t117407
+    | t125753 t117407
+    | t124966 t117407
+t117407: t0 t117407
+    | "}"
+    | t127406
+t126240: t124153 t126711
+    | t104677 t115446
+    | t120418 t1364
+    | t123600
+    | t110250 t127175 t121629
+t124153: t124153 t131
+    | t121333 "while"
+t121333: "do" t124966
+    | "do" t19607
+t115446: t126711 t126240
+    | t126711 t125753
+t120418: "do" t131 t110250 t122486 t126477
+    | t9150 t123877
+t122486: t117775 "while"
+    | t127175 "while"
+t117775: t127175 t118830
+    | t131 t117775
+    | t127175
+t118830: t121629 t19607
+    | "else" t124966
+t121629: "else" t125496
+    | "else"
+    | "else" t123600
+t125234: t97655 t125999
+    | t70513 t123600
+t123877: t119486 t123877
+    | t125496 t126943
+t126943: t94870 t97655
+    | t94870 t125234
+t130384: t131 t130384
+    | t130384 t9150
+    | "="
+t130385: t13105 t125496
+    | t130385 t99675 t125496
+    | t97655
+tdigits: tdigit
+    | tdigit tdigits
+tdigit: "0"
+    | "1"
+    | "2"
+    | "3"
+    | "4"
+    | "5"
+    | "6"
+    | "7"
+    | "8"
+    | "9"
+Precision set (size 1000):
+    if    (m);else;
+    if  (m);
+    while (t){ if  (  4+e);}
+    if(g  +(x  - m +((y=y=77))<e)<g){   ;;;;while(f+d    );}
+    if  (t )-(i)+  (t)+o-m +(11);    else(m)if(s  )if((s)<v  -5+((x<j)-(s  )-k-((14<b)<a)+t<(v )+(g<l))-c){  while  (e- (s));}  <----- FAILURE
+    if      (r)+(t<9);     else ;  <----- FAILURE
+    do x ;while (c ); 
+    {  ;;;while   ((p)); ;if    (j  -3);else  ; ;;h=98;}
+    if (c );  
+    {t=c ;;} 
+    n ;
+    if   c  +m-x  -(c)+(u<f)while   419-(t )+22+(a)+(18717+ j +z+   (   0-r+   (q<z)+  h +(g  )+4+(q)+(p  )-x+5)+(q<l  -h)+(  (i)));else915<5;  <----- FAILURE
+    {while(  0+1)1;if(l)}  <----- FAILURE
+    (i);  
+    if (    (f)+(z )-(k<220)+(k))if(h)if(l)if(b){while(i)+ r +f+h  +b-((z  )<g)-(((z)-m-e)+p )-(e)while(z+  (o)-s-f-   (a)+l-((z  <(627+(p)))+ p +87-s+g<u)){}}   <----- FAILURE
+    {  {}}
+    x +(t)+v-(q<t)-(d<j)+(h<x);   
+    if  (g);  else((z=g )<r  ){;}  <----- FAILURE
+    (c)<( ((i ))+( ( (i< (v)+v)+(h+w )-( (u<s)<m)-k  )+4))+r+  ((h  +f))-((8-( 3+e  )+b ));   
+     (b=i=1+67-k){}    <----- FAILURE
+    while ( ((z)+w <(y<u))+u  ); 
+    { while(  93-  (e )-v-h +q  +(((r=r=c=a=n=l=o=q=i=i=a=l=c=m=(  (q)<(b  <y)))<(6297<p)))+ (    a -p)+  ((e))-8-  z +(z)-t+s)g +i  <(g);t=a  ;}  
+    while   (((t)<(u +  y <(        (z  +     (y<y)+s  -t+   (c)+(t)-(y)<a)-j-p<((v))))+(m))<w);
+    if  (1-v-(l  )+  w -2+(g< 1-(w)) )if (d){do ;while (  (j<f)+h-l -((q  <v)+10- q  <x));;}
+    while    (t  );
+    do  if (q);else;while(b); 
+    if           (a<p ); 
+    if    (o);else;
+    (( (2<  (f))-((9)-  ((   b  <m  )-9+(((z  <(  ((4-g)))+(522-n  +p<i)-d-w-f-g  +(k<a)-(y<v)))+4017)<k)+6+i-x)-((  a  +i<  d ))<(y))) ; 
+    7-(f<a  +(y<(c <d))+ (v)+033+(p)-(v <55))(d  <(    ( 21-a  -(j <(0+a-e-y-l<p))-n+o+t)+g  -  (7090+(g)+w)))<m;  <----- FAILURE
+    while  (1-  ( 4-    (d)+(((    (w <a)+w-(n)+(s<    (   ((w<(i<(j)))<x))+(i))+r-((c)-(  v  -y)-r<j)-(a)<(s -k<w))))+ (s)+((585489-(n<c)-2-  o +o-(s)+(i)<(  (52))))+((m  <(v)-b)-(22575295-6+u  -f )-(h +x  -  g )-u<(a=j=a=i=t=t=s=(k))-(66<(m))-(d))+  (l)-(786+p)-(c))-(n<4+o));   
+    if (f){;{}while(c );4;;}
+    if    (g){;;   b  -1-(  (n  ))+y+(u<x)+d-h  +((d<(3))+c )+(x);if(j )}  <----- FAILURE
+    if    555-a+(i  )-(i<c){;  }  <----- FAILURE
+    while(36194-((r))-v); 
+    if(i)while(  (q)<n);
+    if (s)if    56-v+(x +(e)-b  -(d<3)+v  +8<(  (b)<a)-(5)+((c=x=y=g=b=r=b=c=j=p=c=x=s=x=l=a=(((s< (i)-c)+c)+(z)))<b)-(e ))+y+(x)-w+(c-  t  -(d<n)){ while (x); ((   854-z)-t<o)+b-(f<( 0))-(u)-(n< n  +o-(e))+(9+u +x-z)<(i=( (v)-a )+(b<r));}  <----- FAILURE
+    k=i=f=w=(z); 
+    if     ( b  +((97-j- 5+x+x+c-(m))+x-(w <(c)))-(x )<1-a); else{}
+    if(m +(w  )){while  54+(d+  (l)+e);;;;;  if((76+76)-((   8+o-85)+g-((r)<q)+ (   ((u <a))-j  +(j)+(  (c)<(814)))<b));;  ;(n)+(y);;;;}  <----- FAILURE
+    {0+(((c<2))-l  )- (4-(4-(s<04)+(h))+  c -(p+(  5+c<  (s))+c)+427-(c- (  ( ((x<z)-t<  r )))<i))<(((y<(q+((w))-e  -(2836<56-d  +(r))-(0)-(r)+t-(g +k )))<p)); j  -s-r;  (9)-(u -(y)<(35<o)); ;}
+    do if  (o +f-t  -  b );while(e)x {}  <----- FAILURE
+    while(u )if   (2<h);  
+    if    (((g))+(d  <l)-p  - 32403+u +  (n  +g)-x+w  );  
+    do{}while (85);  
+    if     ((90-v<(1-0-0<(c)))<(   ( (  s  +((l -d))+s<(t))-b+o+(i< 8+(t)-4-(g))<z)+(a)+t<(h)))if(08);else(z -((((405)))-1- k )+h-( (l))-((w  -( (v-8+a)))))+p<(x);
+    if    (1+886<((0)<(e)-(z)));
+    9;
+    if( (  ( (72<k)+ (s+((x<i)<m))<l)+j  -w  - (y ))-q  ){;  if   (v)if    (0<e  -x);  else;}
+    if  (r  )if(0<((z  ))+4+b-(5+(f  -d-w<a)<(t))+(w))if(g){if(u<f)f    82-i+w +a+(j<s)+y;; }  <----- FAILURE
+    z ;   
+    if      (j  );
+    while9-(((a<  9)<   (x=q=r=b=t=o=l=s=   b  )))-(l  )if  (k)- (((d-c -   m  -d+(n-       (542)+q))+   (i)-9-t+  (((k)- (g)-(  (e)<t)+8-(r)-((( 50-v<(93+(p=m  )+  5<v -((s))))<g)<(f  ))-q-(p)))+799-w+z<m  ))+   ((z))-s-(l);    <----- FAILURE
+    do;while (26<z)((60-(h)+(g<((  ( (y  +  ((((3+n-k)-s))-j<e)<  v  +i))<j)+(6<b))-g  +z)+4))+2862-((y<b))<(g );   <----- FAILURE
+    if  (e){;}
+    p ;
+    if     i +(i);     <----- FAILURE
+    if  (w);else  (   ((      (((i -w  +s -(u)-(j  )-(q)<(o)))+r-(k<( (h=a=y=h=c=n=n=x=r=l=m=l=o=k=j=n=e=p=a=c=y  )<((76))-u-(i<(  92-7+q))))))-8-b+ l  )+k-h+q<((p<s)))-4+(  o )+(y  )-(g)+((r< (s<(q-(  y  +c+c  )))))+j  -(z  );
+    {{}  620+(k)+( (078)+e-n+k)-b +36<(l);j <y ;}
+    while(v){while (s);;}
+    if((((3+((u )+(i<06-q+u+((q)<k)+(5))<e)-(s)+c<l)+e-k)<911)-(j)  ){  while(z )r=b=r=  y  -2<(i<j)+  (b<4)+(h=77)-(z)+((1));;while (   (  ((d  <r)-r)-g -      (m -p+g-  ((44<(g)))-n-z <k))+(u)+l  +i-701- (e));(s)-(t<(j)-m);}
+    if   4+( e  -  08-b+j +7+k  ){while     ((t)+2+i- ((h)-(  (l<p))+d-i));if(d)5+o;}  <----- FAILURE
+    if(d){  }
+    if         (((((144)-s-v)-d  ))-r  <(v  +j  ))+(f);  <----- FAILURE
+    if   (  s  -(    z <(n))+r+q   ){  (65);}
+    do ;while(      ( (f))-x+z -x+ 78+(s<m)+p+ (p<t)-(q)+(g)+e<h){}   <----- FAILURE
+    while     (r);    
+    if    ( ((x)-c<w)-6);   else( (p)+91+(c)-n+  (a<u)-( (w)));  
+    if     (s-r -d);
+    if       (6);else(   (g+(h<1-5964-651+  (o=p=c=f=j=t=  a -e  -k)-m-8-m))<f)<(z<j  - (g  )-l)-    (v)+(  (t)<f );
+    while      (f )-(2144+0637)+(x)if     (f);  <----- FAILURE
+     while(w);  
+    if    (y);     
+     {}  
+         ((b<j  + z  -a -(9-  (n  <(  i +d)+d+( (h)+(p)+  (  (0)-f  +(h)+(o)<q)+r-e)+c)-i<z)))+3-((n<b))-n-876+(c)+q{{}}  <----- FAILURE
+    {  if (t)-w+(n)+(q)+((i)-u +(g)<l)-p+( (p+(k)+(((  2-d+(f))+(8294)-j-s -l))+417-x  )-((q<(e))+ ((r))+(m<(w))-i-(r<v))-y+(q));  ;}  <----- FAILURE
+    {while(00<i)if (   2-(2< 15-t));else}  <----- FAILURE
+    while   ((c< (0))+9);  
+    ( ((   (r +e -w+(6))+s)<p));
+    if    (n);else; 
+    if  (n);      
+    do ;while(514)  (v+6);  <----- FAILURE
+    while   (    (p));
+    if   (k)if(h-7-(o )+(  ((j<l)<a )-9)-9){  if((p ));{};{}}
+    {  ;;}  
+    if  (g);   
+    { ; ((n));;} 
+    while( c  -o  +n+ (v<k)+(e<5+(6<t))){while(l);}
+    { 0-o+645+p;{}}
+    if    99+(c)if(c);{;{}}  <----- FAILURE
+    while    ( 3+a<j);
+    while(d);      
+    if       (w  );else( ((1-q)+z  +(56-(((g)<f)+c)<(363)+(m<z))<(e))<(p))  ;
+    { ;;( 4<w)<l;;;;;;;}
+      ((t))-y-d-(6<(  (t)<(86))-u)<c;
+    do;while  ((   h -(( t +(844+i <( (u  ))-((u)))+x-(g)-d)))-88);   
+    {while(02);  while(h  )}  <----- FAILURE
+    if         ((a)); 
+      (y<i)+m-y<n  +t{;}  <----- FAILURE
+    do  if  (l);while(f) while(962+3-((((l  -(p)-(c  )-y<p)+(h=q=z=3+( (o)+(v ))-(n=((t))-(8<f))+(((((44)))<u)))))));  <----- FAILURE
+    {;;   ((t));  }
+    while(e=z);  
+    while ((e=(x)+z)+6260<( (g<2-9-y)+8<z))-(q-8);    <----- FAILURE
+    (l  +(y  )+7+  y -a-m);  
+    if           (  ((f)<s)- (r<b)<(  (p)+(  k +h+ (  (d +(j -p<o)<s)+(u < d  )<p)+((f +    a -   (c )+(f=q=a=(s<x))<(i)+ (4)-57+(o ))+(i<(i ))))<  (v)+(g  <   (j)+a+(    ((d)+a )-14<(o)+m))));else;
+    while    ((p=b=s=g=a=p=k=l= (p<z)-0+9631+(v=r  )+    ((z  -e)<(w<z)+  3+(  (   u  +51-(v)<  387-  ((f<t))-(q)+((7-(t)<d)+g )-(s))+( ( o  <(r))+28-l +(j)+((g  -h-p  <m))-  p )<6218-8-f)-x-(q<  (l)))+((j)+(z)-f-((l<n )))+(s<q)+((w))-(e-e ))+2+l-((e)<t)-t <815);  
+    if   (l)if  (  v -(e=(h= c  )-v -(6)))ifd +(i-97){  }  <----- FAILURE
+    if996321+(a+(i  +88-((((b -l<( (a)-g<t)))+ (l+(o  -r  -((c<17+q  +332-r)-5)-12+x-(m )-b))-m)<m)))-(a+(3537-(p<48)))n=(g)+l <(g -8-z){;;}  <----- FAILURE
+    ((t)+v  );
+    { (u)<j;}
+    while ((n));   
+    y <(w<u)+l+(c);   
+    if        (i+(n<w)<v);
+    if  (w<047);        else ;
+    726;
+    if  ((f));
+    {h=  f +p; if  ((f<((m)))+  j  );if(x +4){ ;;{}while((g)+((c)));while  (f  + k  +e-(q  <4)+(o)+(u ));(r);if(o)-(m) ;;  ;}}  <----- FAILURE
+    while( (b<v  )-16)if(x)a=g  -x-( s  )+(o<p)-( e +d)+q;;   f + q +2524+l-(g)-t  ;    <----- FAILURE
+    if  ( (a)+  (d)<y);elsek=u=v=n=g=t=x=d=r=f=l=s=a=y=h=z=h=c=s=v=j=s=r=k=m=s=f=m=l=s=s=k=j=x=k=g=a=u=r=s=b=h=c=j=c=y=y=z=z=s=o=z=(r  +(x  <d))-49-65-z-  (o)+(p);      <----- FAILURE
+    v=q=a=v=p=t=p=((j<l)-(    (f)))+l{}  <----- FAILURE
+    if(0+(w<y)<(z))do  if    (  99<(l=e=f=m=u=y=b= 3+6));else;while  53+f+(4<t +((l<s)));  <----- FAILURE
+    do644-(9);while(h)j=n  ;     <----- FAILURE
+    if (x);  else((a)+d-q-f  )-x <z +(v){}  <----- FAILURE
+    {if((   4))do  if (m<(((v<(b <(f<w)))+((i)+(m)-d)<q)+66)-(p));else;while(y);;while  (j )h ;}
+      v  ;
+    {4+440;;if     (((i -(( (c<x)-h-u+(7-  h  +m-709)+(y<(5))+(l  <e  )-(r)+(u <o)+(6<i )+  (u-(o))+z-((r)+(c))-727-z  -(j)-((  (l  -11<j)+g-3-(n)<v)+r)-915+x  -9+  (m)-(a< (b)+974+(v))+((g<(c)+( (542<k)<r)-y )-g-s+k+t+(m<k)-z<f))<h)+e-(q)-c<t ))+  27- (q)+   (r));else{}(5)-  (o)+de=(p  -(c)<d);}  <----- FAILURE
+    while (j)a=e=x=o=b=q=i=((n<8- 62)-(h)<(z<y )+(i)){;;}  <----- FAILURE
+    if ( (n));
+    if (l  );
+    if( 3443+(35));else;;if(r)do;while  ((g<b)<0-(s)-5+y);      <----- FAILURE
+    if       l  -  1+(v+k -y -n<  (i  <z))+b +  w +(z <r );       else;  <----- FAILURE
+    if((0))if(w  )if    (k -k)+(k){while((l))while  (   (t)-(x)+  (v)+z - (x -(v))-8-  507-k-((  (d)-n  +b+17-(   (o)-(x<w)-u<h)-6))-(n<p)+(6)+j-21)if  (   (((  z  +x  <v)-(n)+  (m)-h<n)-r+x)-(d=e )+(t<a)+a< (( (h))-(119-5+2+w<y)-f +34557<x)+r  );else;;if(7+ 5);}     <----- FAILURE
+    while    (a  +n<  (c<    1+a-e+((78-v+(89)+(b)+  (n)-(((c)+o))<489-(((e)))))+  i  + g +(x)));
+    while(91-d-  (c )-y  )do;while  ( j +(o)- ((d)));
+    if(w   )if(((p)<x)-  ( (i -f< ((m)-k)+(86)+((r)))<o)+8){ while(j<j)}  <----- FAILURE
+    do ;while((5<w)-h) (t)-i;  <----- FAILURE
+    if   ((1<(((e))-5488+h- m +(q)+(((9)))<b))-(n));else(n<((t)))-(83)+t;
+    if    ((r  +(n)+e  -((8<m)+  (o)<7)<(s))+(e)); 
+    if    ((n<(k= (( 20)+((a<  f  +k)))+u))+(g=(k=569715))<1+w+f-(k<f)-v);else;  
+    if      (    ((w)<e)<08);
+    if    (l + (c)+  (f)+r-6);else;
+    {  while (f);if((z<p));}
+    if  (l   ){  {;}(r -( 702)+o  -n+  5+(p)+o<(  (o)+(((i))+((a<   (g))+ (f +v-(  9<g)<r)+i-(e)<(  g  ))+1)+   86+((  ((m)<r))-8)<(j=0)))+9-k-g  -j;}
+    if   (t);
+     { ;}  
+    do  ;while(q  ) if(k<(w))-z +(     h  +(((99)))+((x<s)-(l<g))-q-((60)- ((0)-  5+(w))))if(i+(e<w)+u){if((j)-x  + ((  (f<   t  -k -r)-  n - ((2<x)-((( (l)<y )<(  (r)))+z  -7-  q + k -  (v  )))+(h)-g+  3)))if((f)+0+q  +l +  (p)-z+h)}  <----- FAILURE
+      ;while(d)if    ( a -(p)-w +(v<g)+q + (r=i=y=p=z=w=d=y=l=p=u=w=j=h=i=c=p=m=i=a=a=a=(h=p=m=s  ))<z);else;      <----- FAILURE
+    g=b=(v<b);
+    ;while(o);;   <----- FAILURE
+    if   (a+ (   ((4+ ((((r=(n))<j)+c))<k)))<o )if  (80){ ;; ;;  (o=3346);while (f  )if(s)if     (p -(v- ((  a +(15+(z)+h)-(a)))+83-a+  ((l=z +a))-e+(s)-(h)+36-( (y))+(a<(18326))-b -h -((z=(k)))+c+(b+u  -(  (( 3430)+(481-t))-v)+n -   7810)+( 0)-(280685+ (b)<c  )-j));      {}}
+    if         (  ( 54<((t)+ 1-p+  27+(b)-52+z +(b)<(t)))<9561);
+       1- (     (c))+r+(p<x)-(w)+((3)){}  <----- FAILURE
+      (l);
+    {  ;;if( (0))}  <----- FAILURE
+    while(o  );
+    {;if(s  )}  <----- FAILURE
+    while  (u  )(( (n)+f<f)<(w  +e-9+(n)-w))+l;
+    while  (s+(61+  58+(o<(e))-l+i-k)-o  -t -(o)-9+c-   d -((o=w=57))-c+3- 7);  
+    if   (19173)+(t){ifc  +(t  )if(    (((c)<  (y -o-x-    0+(g)<s))+k -  36+h+t-  (  i +s-( k  +8869-06-   f  -g+e)+(y)-((x)-z<(c))+(r)-((y)+e<w)<(p))+o+n -(h  )-3-(z  )< 3)-s )(w<(n))<((o  )+s  +d);;{}}  <----- FAILURE
+    if        (g-62);
+    {  (c);{}(4)+z;;  }
+    {  ;( (x +n+q<i));if(((w-3+9))-686096+(t)<  o -3)if   (5);;;;;if ( (s<( 1-p<(e))+(t)));if (c);else ;}
+    {  if(f-(s -u -727+(b<46785)));;if     (z);{;{}};{}}
+     {  }  
+    if     ((y=e=w=d=m=z=p=i=r=x=d=g=i=s=f=p=e=i=85+p)<j  -(x-(q))-w-j -x  -(g));  
+    if     ((l)+z  )if(g<k){ while9-l+2+h+((y)+l)(q);}  <----- FAILURE
+    if(n)if(((w)- 476+p- (j<p )-y +(z)+(8-p))+ ((c)-o-l+((x <t)))){if(o  )while(c)while   (      (6<q)-t+i  +(l)+(w))while(y) ;;if  (v +78  )w  <    25;}
+    while(z)if   (((  47-  9+w  ))-e);else;
+    {{};{}}
+    t=( p )+y  +y  <(l );
+    if(v){  ;d=   765-m +(m<i);{}}
+    while (c  )do{}while    (d  );  
+    { while(f); ;;;  ;}
+    if  ( 66+g  ){  if(w +z  -8)while(j<( (f)+d))while(q)while(a+9-74+d<  a  );}
+    if    (y);
+      (g)-a+l-g-i+  877-(y)+656+z +(y)-r +735173<((u <v)+p+ 04  )(r);  <----- FAILURE
+    if       ((y)-6+(o))+(c )if((v)+p -(68<((m  )-76+l<k)+s+0)-(j)){while(s);}  <----- FAILURE
+    if  (e  -j- 3+a-x-(f  ));else; 
+    while   (j )if(q); else;
+    while(21-c +e  +1<q)q=f ;
+     ( ((d)+8-   (p <d)+(f))+((y))<( (v<(634453264+ t -(r)+ (v )-(m<g)- r +d-n  +(f<(v<((n <d))))+((q=k=z=i=(s)))-r- (r +(r)<(  (((g)))))-j+ (  f  +7<(u))- 84+(552)+f+o+(368431)+v<b))))<(r);
+      3<z  ; 
+    {(k<t);; { }}
+    if  (q <f)+((w)+(  ((b  -0-( 97<x)-  414)+(  1)-r<e)-(b))){while(q)if(  (4<x)+2-(l<r)-c-c+r)while((3));;}  <----- FAILURE
+    while  (w); 
+    if(c  <(((k  ))-   (d<h)+6182+((759< (x)))-((q=p=( ((a  +a )-5)<g))+  ((  (a))+o<e))- c  +(n=j  )-(p <f)+(s  +3-y)));  
+    if(g+((h))  ){  if   (p)(   17)+(w <j  )-6< p  +z-l;}
+    while(u);         
+    do;while   6-(   ((z )< l  )-n<(  (  232+t+u+(f -(1-y -9+v- (    68+o+6+l-(k))+(u +i<h )<m)-i)< ( (j  -(( (  i  )+(m<w))-(m<c  )-(w)+(y)+(m))-  (a  <  (v)+(v)-(h  -p<  3-(g )+w))<(d)+  (((a<u)-(b<p))-d- ((303))+t)))-(6138-(y)<j))))+p+((r<810)+q)- q  -r  +(r)-m-(j  );  <----- FAILURE
+    if ((n=5+(s<(d<9+p)-u+(96<(1)-3-(t)+y+(  (t)))+   ((  47+m)-78)+r +x+( 1<5)+r-4386-  b  -(u)+p -b +z-l-  q  +z+q- 4-x+p+(g  -p<g  +4545-b)-  (i )-d-(w<q)+(q)))<(25-i)-b){while (t);;if         ( (e)+y);  }  
+    if(w){ ;; }
+    while   (e);  
+    (e)<(g )a=z=(  (((z<u)-(b)+i-a  +t<15)+d -((z)<((d<2523)<  (s)-  0-f +y-(s<((7))))-(c<u))));    <----- FAILURE
+    (e); 
+    while  (i);  
+    {  ;  }
+    while      f  -v+    v  -s-(w)+(m-((k<(e))+q<f)+(7<50));    <----- FAILURE
+    if(o){j=(397738<(  (94-    c  )-b))+(  e );;7;;while(c);((a)<x)-a;{if ((v)<l); {};};}
+    {;  }  
+    if    (d-(188)- (o)+((d<r)<(l))+(r));else; 
+    02+e-w;   
+    while ((   4-(u  -o)+(p )-k)-k );   
+    while   (0-f -( (g)+    j +(c)+( f  <4))-n);  
+    {  {}while(4+0+u-(u<c));}
+    if((c)+t<(e))+(  806-60){  while(((37<(w)))+ g +z+  (g=v=x=y=t=(r=(a<(6780)-x))-c-g+(  q  )+(v <g))-8+( 5))do;while(z);if((k  <  w +   (x +  4)+v +(6+(x)+u  <(c  +  896<(e))+9+  y  +(h))+s  +y-4+d-c)< (q)+ (  (s))-y);  q ;}  <----- FAILURE
+    while(o);   
+    while(k){}
+    {;  (b  <c );}
+    { if(b)ifl  -(t -  (1));{}while(( ((p)+b+(n-q  -p<g)<b  +h-(477))+(c))+  8+z);{}}  <----- FAILURE
+    if (s);else;
+    0n=s=u=z=p=o=v=b=s=h=t=j=d=u=v=t=m=n=o=y=v=a  ;    <----- FAILURE
+    {; ;}
+    ;
+    if(   9<b);else(  ((d)-(  7461))-a+x-(  l  -k+n  -831-q-1-(4)+   (  (b)<(b<z )+v+((p)))-   (x))-(t ));  
+    {7-v<(456-x<(s  <(c<t)));v  ;}
+    while  ((k +c-x  -n+v<(23))+669+e-(r +(o)<(y))-(m<h)+(a)<b);       
+    p=q=v=p=s=d=v=f=o=v=s=g=f=c=w=c=i=h=m=i=l=f=a=b=w=e=58{}   <----- FAILURE
+    if (g +9-(h +i-(  56+o  ))-   v +  (   9<f)-(((t))<e  )){while(0-o )while(m+6+(80)<r);if(q){}}
+    ((u)+(u)-g-m  +c -w+((y<h)<f)-((q=(y))+(g)-b -(( (q)<(u))-(3672)+  o  +(x< (c)-x+58)-  (q))-  (  (    (   (c)<b)+( (18)-v)-((8659<g)<l)+b -(  z +(l-(q=  44585+(  2388-s-(m )-      (m  <o )+(i))))+j+k<(y  ))+(e)+l))+8-(7))) q  +(o );  <----- FAILURE
+    while (91-((t<8))+(d=m=q=l=o=a=(59<a)-  (e)+b+((1<u)<i)+((  (n  + (u))+ x )-g+f<  (s  )-2423+z)+(y<y))-o-(8));
+    while(v)if(l)-(q<h);         elsel  ;    <----- FAILURE
+    while        (j  -((t))+k);
+    if     m -w  -(j+   u  )while  (d);     else;    <----- FAILURE
+    ;if(c+((q<i))-3<k)while(((951993461048659010+(v )<u)<p))(j)-(t=p )-c;;; ;;;      <----- FAILURE
+    while(6 )if(z +    (f<n)+ ((  (g)-(q<q )-  (y<l)+(q)-((    (x  )))-(p<(a  )))-i +y)-d-95+(o)+c-5-d -v+7-e+(m  <f  )-m )if((g)){  if (a+ 3904-(    1))if(2)o  ;}
+    if  (6+t-w<x)if(u){  }   
+    while  (i)while((7+3+4-i  -(d<((c)<p)))+m-2);
+    {h ;;  if  5-i+(5)-(q)-(a );while    (v)+(  8751+z<((04-28)))-(e);while      (d-u  )+(q-(6<4)+( 5+z<  f  +(    ((o  -h<v ))-p)+3-(u+r  ))+u);}  <----- FAILURE
+    if (k);  else  (  (((425)<h)+6-(b)-(c<h)))-w  + (m<q )+9-((f<955)< (f<(5))+(i))  s  +m+m;  <----- FAILURE
+    {{  if(j  ){};;} while( (5-((q<( (r )<a)-m  -h)+(7556-(a)+t  +s -z)<(x  )))+ x  +(v)+  (  4)-(l<6)-   (x)+f-(72+x)-3+(   (n)-t-(m)))if(6)if(y);else{}if((  ((a +y)))-4- l  -k)k=u=f=i=d=v=b=r=d=s=c=f=n=u=y=k=p=a=h=x=a=o=t=v=m=r=d=q=x=s=v=e=  (i<81)-615-((u))-(e)+r  +d <(m)+((( (k )+c  +w +(x))<p));;}
+    while    (  i  +p<(y<(v<    4)+r  ));
+    y <j ; 
+    if     (v  <b);else(b) if(55-((((w)))<y)+r-2682){ while( o  +t-v+c<(72+((x))-j+v))2;}  <----- FAILURE
+    {; while( d  );}  
+    {  while  (  m +(l<f)<p )1187}      <----- FAILURE
+    if  (  (w)<f);else{}
+    while (( (m)+k < 23))if(0+i  -72){ }
+    if  ((x)-84)while (d);  
+    if   3+(  (4-r<z)+(b )-  (x)-  j -j+j-(z)); else{}  <----- FAILURE
+    { if(78-q  <(q <k)+(d)+4+ (  f +v+512)+(e<(f)));  e  -(x  <((o)<w))<(t);c  ;}
+    {;  while (t)}  <----- FAILURE
+    { if   ( ((q< r +s-o-(e<(s)+g))-258-j  -   j +u));else;if(  86731< (g));if  (v)if(82366+49+4 )(z)<o; 539+s+l -(3)+((y))-((b)+5940-8663-(m)-(4))<(5+(((52)))-f-(8+(a<  ((((e)-(((p=06)< (x))+g-1-b-  016-w+(48+64))+p  )-i  )-r<(l))))+37);}
+    b=l=f=(u);
+    {5-k;;}  
+    {if(( (5)-u-6551+a  +(j)-c +v+(h)+( (v=z=h=l=r=y=f=q=o= ( (m=f=p +(   (t  + 1+i<  (l)-(e))))+v))-r-4+j-(g)-  e  -m-f+a+632+8+(e)+f-(e)+76+(i)+1-(l)+243+( ((  (d)<(  (t)))-y))+49-(l)-(g<r))+(k))+(x  +((728+n  +i+(h-o  )+(s)+v  <(54-( 24<p)<((j)))))+(l<z)+(i))-d);  ;  ;}
+    { ;if(m  )if   (c  -g  +((((29+y)<c)+86<p)<d))-((c<o )<p)-g-(((  (f  )-i))-c+(b)-(e)-f  ){ ;;}}  <----- FAILURE
+    if(d<82-u){  if  (c  +l  +(f<u));  (n)((l)+( 4-i)+f+7-(t )<a)-((f<(z=( (07244)+(  n  +58+f+e<(q  <(1534)))+u)))-  ( (v  )-  67)-83099+j);;}  <----- FAILURE
+     while(h)-(m)-193-(b-3506<(((o)+o-(i)-g-(o<h))-(  (c<1)<h)-(s)+z ));  <----- FAILURE
+    {if          (8);else;;}
+    {;    }
+    while     (((a)+(a<6)+b  <a)-(e))+(31)-(  (((m<o ))+4-(m)+        (a=(n))-  (    8)+(d)-x-78-(y=d=p=(   ( (f))< f  +p  -((t )<  (u))-(u)))-(1)-(e)-k  -(27<w)+(t)));  <----- FAILURE
+     if          w -5-k- i -j+    r  -(l)-t+(m)+s-9+g+n -((j)-o  -9);  <----- FAILURE
+     {  while((   (g)+h))((r  -(m)+l))<(2<a);}
+    if  (k+((r)+n  +416-d+c-(e)+ 5-  o < g ));else  ; 
+    a  ;
+    while (y  -((d)<k))    ((  3559- 1)-m)+ (y -(5)-( (r )<s)+(f))-o;
+    if     (a );
+    while  ((v) ){if    ((f< 525-j+p+t)+u+5231+(y)<  ((  e +v-(l)+w)<m)); else;;;}
+    (((  (9<( ((n))+j+j -(c +i)-z))+(k )))<p)r  ;    <----- FAILURE
+    (((y)+p+(h)<t  -e));    
+    if    (d-(n)+0+y  + o <b);
+    3;if5+(  (( (l )+((n)))<  (  ((s)-    1-a-(y <k))+w +c)))while    (  (w<j)+(t)-(b)<(z= ((1))));(o);;;  <----- FAILURE
+     v    ;
+    while(  (s< d  -0-(9))+ ((l<u))-s-5+u<(i)  ){while  (d -(o )+i  +8)}  <----- FAILURE
+    if(l);else ;
+    j=x=0  if(o  ){  (57)<t;;{}7049+j+q;}  <----- FAILURE
+    while (z  +((x)+f )) ;
+    if  ((l))while(u +t+i  +(t<o)-  (( 00-b +(2+u +o  -l)+u-18+h-(f))<a)-b);
+    if(b  ){if p -(55+(((p<z)+(w<235)<24945460-p)<(d))+d-(p));{};}  <----- FAILURE
+    while  (e);
+    if((h<o)+    (w+719+ (p)-k-k+  14-(y))-  (638)+n-61+h){ ; while((q  <y)-(d+m  ))if(g); else;;}
+    {{ while(l)o=(t)-k};if(s  )if    (196<(  (g<(p)+((r<r)+(i +n-4+a  )))));else02;}  <----- FAILURE
+    j=((g  )-h)-(243)+(((r +e)-(d  )-s ))<((h<(27<i  +  5+(z=(((j< ((c)))-h<e))+(m)-z  )))+b -  c +c  -x  -  77320-4+(q)+e-   (6));
+    if    ((z=6)-k+t+(s  +5)+(x=(k))-(n<z)+(r< ((v)-5)-8+(j +b -((5))+  ((  (r  +s <0)+k<h))+0+(637)<j)+(84))-d  <e)while   (i+g  );   else((86693)-b+(k<(888<3)-e)+   (k<l)+94-((m))<(x));
+    {  ;;{}c  ;}
+    while(b=p=z=p=m=r=n=l=j=n=d=d=y=g=k=k=r=l=k=k=c=g=j=v=r=h=v=q=b=i=d=k=e=t); 
+    (6+   47<h)<e  (h<j);  <----- FAILURE
+    if    (f + (j+  (m)<v)+(z<q)-r  -(    (e))+(o  )-1);   
+    (k=r=a=c=n=z=k=t=u=o=g=e=x=x=h=j=a=i=i=x=p=q=m=n=y=s=p=n=h=k=t=d=i=h=j=l=c=t=t=n=x=k=n=g=g=l=p=l=j=s=w=u=a=z=b=v=a=f=0- (r )+  (( 49))+s)- d  +v(  (3049+o -(o<((u<  y ))+((j)+(o)+q+(f=90)-p-(  a  )-y< 55+(t)+( ((m))-((t))+v-o)))+c));  <----- FAILURE
+    {while  ((t)-(79)-(h)+z-2-( (  48+(d)+w<e)<(u)))if(p  -59); ;if(e  -l-r  +(  (n<t)<(  ((x<z))-q)+v  )+(a)+(e<p)+(p)-(k +c)+x  <(y)-(492));else;;}
+    if     (5);      else ;
+    if(92 ){65-d;  }
+    if   (s);    else(m){}  <----- FAILURE
+    if   (h);else;
+    f ;
+    {  ;  {}}
+    { ;  if   x +x +(e+( (4<(( (5<h))))+x<i  )-((r)+g));  2785;}  <----- FAILURE
+    if        (s -( (e)-u)+i-f);
+    if  (o+(  y +263-w+(((      ((((9<n)))))+(670+25203)-p)<z )<g)); else(t);
+    if((u +b)-i <57){  ;if   (e)while((w<((7+( 29-(s)+t-(x))+c)))+j<w -(70)+( (7+( 7-a)<e  +  (e)-9+  (c)-(h=z=t  -(7321+((z=(c))+((2-(h)+w+(  22+m<300))<b))+(7)-( 6-q -w-i+(e)<(h<z  ))-(  (v))+ (((  l  <x ))<(v)+g-(e <8+w-(d))- s  +(c)+m)-v-3< f )+ o -(b)+(41<o)-y)+(k))+((c)-s-(46))<h));}  
+    while (f)while   (q);
+    if     (2);
+    6<(i);    
+    { do  if(p<m);while(l);i -u;;;   ;;if(((n  ))<f  ){ {}}}
+    while(n+w  )while (959+56-q)if(k+  (1449+  p  +(g)<o)+v<y  -h); ;    <----- FAILURE
+    n=d=o=o=z=z=v=a=t=t=g=w=w=e=c=w= 5<(((c))<7)-(m)p ;  <----- FAILURE
+    (3< (l)+( (1))-(r<c))+u  +958603+b+5<( i  <     (((u)<r))+(i)+y  -u  ){;}  <----- FAILURE
+    r=r <8-(e   );
+    if((u  )+t<(((((((u)<  (z)+k -m+g))+r<q))+ (z<h)< (  505-k)))-v)if  (927<p)if(u){  ;;;if(0-  7-l-( w )-(p=e=c=( (3428<p)))+ ((1))-i-s-((v)<h)- z +(l=12)-n-x+(t)<w)while (x  )}  <----- FAILURE
+      {}
+    while (k)+    (d-21-m +  (z)+c+9+h +r)+(e<  5-(a)- (  (f)-810)-(t)+y)+a-  d  +m+(b -13);   <----- FAILURE
+    { 3;;(71-(k+40));}
+    09671<f;   
+    if(   (f)+n  ){ while   (g)(v )+c-l<(o)-f -(3<x);;if( ((6+z-0+(v))<r)-i +q<i);else{}{}}
+    if (o -f ){; {  }  ;}
+    {;  {  if(z);}if(w)-x+(n-  h  -(        ( (x=n=n=p=z=r=j=z=b=y=k=r=h=d=((w=  462)-h  )))+   (g<i)-((  x )+o+18)-y+((( (s+  29))-a+y-  ( (x  <o  )-((k))+88-(  (u=c=p=q=b  -( 0+h)+h)< (t))-51107+(s)-((v)<g)+(z ))+((k)<a)+d  +x<   b  +v))-s-g+z<x)-(i)-(v  +h<g)  ){}}  <----- FAILURE
+    if    (n +(x)+e-(y));       
+    do;while (l=4)-   n -e+2-t+  50+(b<(u))-u+(( ((k ))<d -166-((u)+ (r -d-g+(m)+s)))-g+059)+  (  f  )-w-p  -(465<  v )-(z)+(v)+( (d)+(x))+k+(h);  <----- FAILURE
+    do;while(n+  6);  
+    if (6-    (j  <y)-m-g +w);
+    if(  ((k))-(s)+(56)-k )if(d);    elseg=x=i  (k)-u  +(n)+(j<v)+(   (00+2+((i  <(m  ))<y)))<((x<b)<((d)<k));  <----- FAILURE
+    while(c=h);  
+    if (d +r+m   )if    (  ((((p))-(l)<1+(f))+(o))+x+p)-  (g  )-f-k  -(n )+x +(e+ (h)-z+  k  -w+(b<u)){  if(   (q))if    (77);else ;{};if((q)); }  <----- FAILURE
+    if  (k);else(j)<(( d -(  ((  (l)<b)))-9894685)<x); 
+    if    (q);elseg=7970  ;   <----- FAILURE
+    {;;  }
+    {  if(s  )}  <----- FAILURE
+    if     (  e  <(((g<3))))while     ( (f  <5825)+(h=1+(i)-(( (b)-v<l +(w)+a -d +e+((4)))+  x ))-(2721<(p=n  -(e))-(028)))-( y  )+(03597<0+e+o -(j))-((5-o<i)<r)-(6<t)+(h  );else(   (b)-55-z -  (h)-(j-0+r  )-(e )+j-m+(((  (j)-79<4+b+(j)))<2087)-796-j-(i)-  (w)+(i  +(n<p))<b);  <----- FAILURE
+    if   ((  ((  (d=l=(j<v))-l<x)+1+((  x -  8+q-p)-i- (  r  -d)+(o=k=u=a )-(t)-  4-(a)-5-s)-(b<(g=1))- (a)<o)<t)+c  <l);else2135{}  <----- FAILURE
+    {c  <((c)+(b));{}a=u=z=y=t=q=k=n=o=l=    (   ( 7622<(q<t)));}
+     {;;;}
+    o  +(i);
+    if(e){ if(f){}}else((463<p  ));  
+    {{  };while(((c <(     (h  <p  +n)+s+l<e -m+p+34-(u<x)+c))))}  <----- FAILURE
+      if(( r  + i +q +q-109-((    (m  <v)-9405)+l  +((z)<(o=  (3-(k)+(  4)+k  )))+(l))-7)-  (d ))-(l+   (i -(((g)))-l-(q<1-95+32+s-(f)-( ((h)+(  (6<v)<g  -(x<d)))+  (j<o)<x)+89+((h)+(m)-((e))+( 9)))+ n -c  +p ));else;    <----- FAILURE
+    while      (((u)-q -j +a)+ q  +((u +(n<y)+41-  11-a+   36+  (l=(7+(i <t)+r  +(n=u=9)-21-w-(w +(    (((w)<(85857-b +19002+t<4)))+(8+(33-(x)))-z+((e)-((r)-(p))<y  -7)+(r))<n)-  0)+m)+((o<9821264)+l)))-(( 22)<a +p+    f  )-(t  <c)){}
+    while 2-( o  -g-  67746+x+ 79-(1-e)<    2+   ((m <b)))+((o)<(d<(722-g)+224)+6+w);  <----- FAILURE
+    if (j-x  +7)if    ( (((08973+( r  -b<(u))-j  <(f  -c  ))-(e)))+t- v  )if(8-(0<i)){ if  (a<j);else;if   (z)while(q  <p)-d  +((x  <m)+l  +( c -(z))-r-(n  -(w<m)+h<m)+21)y=q=n=j=x=s  ;;}  <----- FAILURE
+    {(h)+14873- (f<    9)+n-c-e  < i + 42+(  (h)-r);;;}
+    if   (w  +0+62-(o))if    (  (y)+m-o)if(k){ while8-(286<8+(6))do{}while(x)}  <----- FAILURE
+    do;while   (n);
+    { while(s)while(u){  };}
+    if  ((m) ){}
+    if(p  ){ ;w=  (h=c=z=((   (q)-m+o)-7-i-  d -v+  r  -y+43<(u  )))+j; {}}
+    f=((   (f)+(  (r  <(w ))-a)))  (v)-(e<z)-v-u-(o);      <----- FAILURE
+    if  ( (g)+  (p )-(v)-s-v)if(m  +6755<u)if  (q){} 
+    (i  <w)<o  ;
+    while  ((t)<k);
+    if  (4-(t +  (k<c))+49+a)+(n+g - (e )-(k)-(f)+(7)<(c  -(  (274-i ))-((3+7+(c))<  (   (j<(1+v+q<f))))+ (656)-z  -j +    ((q)+q +((v))+h-c  -e  -r  +(v )-b  )+n-(o< (((((w=(((z)<((c))))))+j  +(((z  )<(x-  1-s))-(p))+b+l<  a  +05+(e<k)-y)<h)+    (l<n))-(m<4))+(a)<(u)));            else ;  <----- FAILURE
+    while    (6<v)if (81958+k  +8+j+y-k -(((h)+(t)+(t  <54)))+j  + (h)-(g<(m))+p+  ((  1<y)-z  +g)-(m +s<x)-(62-(v<q))+(39)-(w));else;
+    {r=  15;}
+    (n=u=l=k=y=e=g=m=l=c=c=c=j=    0)-y -t+(y)+   43+x-(r )<s ;
+    while  (z  +((b<  t +((g  ))-d))<g){}
+    if(((  (k)+54-r)<z)); else  ;
+    while      (f);
+    (((p<d -m))-(g)-(l)  ) 1<u ;  <----- FAILURE
+    while (c);
+    { { f  ;;}{}}
+    j=c=u=d  -( (q +(d  )+t-    (  o )+  (   (m))+(7)-8)+a+(r  <   a ))-o -p +f+x<  v  -x+w -03411+m +(z  );    
+    if   (i)+m-  f  -z+(y);else;  <----- FAILURE
+    while  (((x)+b<w))if(h<d);else  8<f;
+    p=(82609)-(j )-   (6)-(t+(a))-y -(q  )+7+(  (j <(m))+(x<g)+m  - (q)-(66-602-(  (  1002))-g -x<(  (((  ((f  )+ (p)-y -(x))<b))+g  +(l)+r-o  +( 2+((  ((  x  ))-(b +(29752+(13)-d  <(a)))+i+l+(t))<r)<k))))- ((z=  (6-m+33)))+o +l+c+    (( 1-j)-80758-1)+r-b +v  <w)-(p)<(  (p)<(v)  );
+    while( ( 4-(j<3)-x +(c<4)-   a -a+(c=x=4-(k  )+(a  +(e)-(s -90065-(m  )+i +  (x)- v  +v+(a)+248-  (b<u)+85213-(a)-(l)<((m))-(j))+(m)<e)+i)-m)-14-a +((n )<u)-(e)-c<(t ))r ;
+    if(y<((b)<u)  ){while(g-  1-b+(t  -r )+(g  )+(l<((  962<h))-t  )+q-(495703+(s  -s )<(978-p)))}  <----- FAILURE
+    {if(y);;{350;{};;}; ;}
+    if    (x);
+    while     ((p)<(g));
+    {  ( 3-g+i<(o<y));if    (0805475<i  -y);     }
+    while    (x+((i)<o)-17<t  -o-k  )(054);
+    u=z=k=c=v=x=d=(e<w);
+    if(e);elsev  -(((  ((90+s<v))+66-( (f<l)))-d-(l  +a +( u +r)+w<((    (f-3+(m)+(f ))<(5-t))))-f  )<         (v)){}  <----- FAILURE
+    {  ;(((x)+  ((  60- (   z +9<g  ))-k+q)-(e <q)+n+(6-(  ((t)<i)-(d  -6-((l- (c+e  +i  )))<(m))+l-  (t)<z ))+h  )<(v));}
+    if5- 79+g  +      ((r<c)<j)-v-(  (  7-(b+ (  (z)-e  +d-m  +g)-h-(n)< k -(n )-l- j  -3))){ ;}  <----- FAILURE
+    if     (b);  
+    if    (((i))  )if((w)-(o)<i){  ;if (t< (j ))if(b);else}  <----- FAILURE
+    {{}(r);v  <x{};;}  <----- FAILURE
+    if    (t)if(((    59-(   9+  (x)+7+(v<x)-6+(n)+s+(p))+o+c+ (i - (g  <((80-(  (b+(b)))+(v)-(n)+(u)+(  t )-   ( (r)-  35<c)+q-i-m)<t))-9))-(9)-6)-(96<  w +  9-((m)))-((l  <((n)-u  )))- 2-(u)){while    (31<((( 0<q))<a))+(09)}  <----- FAILURE
+    if   ( (y=(  (7<65-r)-w))+7-(o )-(z) ){;;if3-(j<( j  -(u)<l));;if  g +(l  )+b+c +9-(i)+435-  k  +(y)-((a -h-g+2<k))-(      35+o)+b  -((y  )+((348)-w));else;  if(c)v= 79<(e  +  8+s+n)}  <----- FAILURE
+    if  ( (w)+   (z)+  77+(a)-l-(m)+t);elseo  +b  +(883<(v  -s)-f);  <----- FAILURE
+     ;
+    if  (  (  ( (  ((j<8+(b  ))))+    ((x<x)<v)+r+  q +5))-m)if (y-(c-48)+( ((w<n  ))+665098637-b))ifo  -  (  (a))+(v){ ifk -(l)+(u<487+f)}  <----- FAILURE
+    while(g ){}
+     (b= (b))< (y);  
+    if( (f<n)-(8-j  +(c))<o){ ;g  + ((i=y=x )<o)+ ((u<(f)))+(  301-((h  -943))-(o )-(p)+d-(n)+(6+(    872+y -  593+654-4320-y-((18+t<(i))<l)-(x)+i  +w-(x<41-z)+i- 2+(h  <h)<o))+z  -(e))+(e <53)+(t  )+   a -((  (b)+u  -(y)<(z=m  ))<h)<(p  );}
+    while(7-(d))while  ((i)); 
+    {; if  (x+  (p+(s  ))-b -(m)){};}
+    if (u  ){  6<(z);;if    (h -c +56+(v )- 72310+(j)<(l)+t);else;031;}
+    {;  while   (b)+3-390-n+( (5178520)-(s  +b)+y)+6+829+0-r+o+(g)-(z<(z=j=s=t=m=m=m  -l));if15+(i<q )do;while  (v-(t<d)); (  (s)-(u  <   ((r)-h-9605))-(81451<c))+(z<f)+d+(k  +(m<r)+x<u);(y);;}  <----- FAILURE
+      ((o))+(s- b +63) ( ( 13)-(  ((a)<i  ))-  (t  )-(q+  b )-n);  <----- FAILURE
+    while      (d-(x<(l))+h); 
+    {  if   (j )}  <----- FAILURE
+    while5+(i +f-(90-q<k  )<(  1));        <----- FAILURE
+    if   (r){  a <(f<f)-r+(s)+((l<(r))<0-(19090)+g)+ d  -(t  <e)-l  - s -(f)+x-o +e+183;;  x=i=m=s=x=v=y=r=o=6+j7+(y);(6+e )+((   (d)));}  <----- FAILURE
+    if(1814)if(h<x)-(e)+(x+v -4){  if(b){}while(   (04+(g))+ (u<t)+72<6);}    <----- FAILURE
+    if   (j); else{}
+    do u -((n )<f  )-u-(((x -3<(c  +(l)))))+ ((    ((7<p))+(4-7+7+  (78807<c )+b<y))-4)+  (w)+d-m  +z+g+(   (   l  +j)+240+y);while(x );  
+    9499; 
+    { 310;;e +z;;}  
+    while(  457<r)if(p);else 4981+m  ;
+    while  (l<k);  
+    23+267+i  -(e)-( 3);
+    (w  -(471703)-w-(u));
+    if(3-(89-m)-83){ if      ((p)){if(s)if   (g);;;;if((   n +(b)+l  -(k  )+(u)-(   (g)+z+(y)+e<e)-((  z <w))+(  (b=0))-( c <h)-e  - 71-(n)))while(t+(n ));}{};{while  (((3<(o  ))<j))if((t  -((8)+595481))+(q)+088830-3127-n-(g+c <g)<j );;while (g);(e  +w -c-(e<s)+  (j)+q-(t));}}
+    {while(f  -p+r +(q)+      ((26))+(  76)+( (q)-(p))+ 9+c)e=((j<a)+f-(v)-w<5)<2-(   (u));}
+    if((a<u))26-b;;  <----- FAILURE
+    do{}while(r  );  
+    { while (4-(d)-p  +v<m)-((w=    54)+(j))do  if       (81);    while  (f){  };while(z) ;}  <----- FAILURE
+    while  (254); 
+    while(x  )  ;
+    while   ((c )+v-(  (h<x)-(r))+  (( (v<n))<(  36+(  440-(w-(  (d)+c)))))+(72<5+(0))-p-(n<f)+(g)+k-(    (f)+(5)<  (((q +(1<(u)-x+r)-v))+t)-y)-(6));
+    while (g  +(t)+(e)+ q  +8023483);     
+    {  ;}
+    { ((((j )+m-p  <5+(((d)<b)))))+(u  )-u+(d<  (e )+l);  ;do if    (d);while(a)z ;}  <----- FAILURE
+    while(d){ a  -j +( ((  (b  )<g  +n)))<((   z  -((k<q)<w)<1));}
+      ((d  <(   e )))+(h)-s-(i)-(t<6)+(9044)+b-h<0-  776-((k)<z)-(h-(r))+b-(4-(c)-00)+v;  
+    if          (1);else  (x-f  )<(e<g);
+    while   (s);  
+    while1+(09)while ((v)-x );    <----- FAILURE
+    {;do  if   (p )+  (t)-(e);      while     (c);}  <----- FAILURE
+      {if( 5);a <t;;}
+    if (n);else{}
+    while(u)do{}while   (( 8575+((u)<c)+  ( (9-q-(n)-(f<u)-(  (((86-m)-(g=b= (08958))+c+v-  f +b  +i  +((p)<u)+655- (((a)<r)<v))<v)<(c)+g ))-v))+(u)-(007<t)+l);;     <----- FAILURE
+    if  (x){ if((e)<(x))while(r)+  (j)-l+((   (t)<j)+309+f+(g+s  -v<  (w -(j)+96-4-e  -(528<a  )))<  i +z)+  4+2-e+  y  -100-d-q+4+(t  +h  +((l))-92976+  (7+z-p ))-(l<i)-f+(y)+(h)-( 8242301)while(z <w);        ;;}   <----- FAILURE
+    if  (2+h-(166+(d)- ((m)-(a)+k+(p<l))-j)+(w)-(u)+y+68979){while((h)-94+g)if(m)}else (t<y);   <----- FAILURE
+    while (c  )n=(f<((v  ))+(n))<((((o  )<n)+(r<((9-n-  9<(8))-36+ ((  (  y )+(p )-4+t)+3- (o)-m -q-(((q)-(g)<((r )-d-(z)-e+e  <(o=r=3235)))))-((h+(a)<z)<00)-(3173)+(p)<(g))+9232)+a  )<z);
+    while (d+  ((v))<(k<y)+(u<5));   
+    ((o));
+    while ((v<(n)));  
+    while  79+(c)if(c){  while(4);}  <----- FAILURE
+    while   ((a)+838148+5<x);  
+    {(   8)+(e  );{}{;;}l=s ;}
+    {;if(  ((((3))-n<k  +   3+o-d)-i)-l  +  (b=k=b=y=r=k=a=s=z=(l))+9+(m)-t-(o <(    3851+u+e+ 9993-(a<f)))){if(a)};if(l-(r  -p<o)-(t)+(b -    z  -9-(w)-v+(513-(c))-(y<k))-((a))+y  +   (d)  )}  <----- FAILURE
+    if      ((i)+4-( (t))<u);else{} 
+    while(g  )do (f)+y;while (126+(9-(  r  <b)<z  )+b  -  478-((r )<  n -e ));
+    if      ((  (s)));else  ;
+     if (u);else;
+    if  ((d<m))if((0+2-q-((9-6)+z<o))+n-(s)){  ;}  
+    if (s )if   (x-(((472+h  )<z))+a +500+o<(w)){if(((k)))(  (n))<k;  6;;;;do;while (j <c);while    (b -p+h-(m)+(    p  +i)-j);}
+    if               (5651);else ;
+    {55-d;;if (b +(f)+c)  ;}
+    while    (8-  (k)+( (w)+(94)-f  +058+(c)));
+    {do;while(e)-(z  );if (w){};}    <----- FAILURE
+    {;}  
+    while(j  )if     (u-8+(k)<(  (28450)-(f +(e)-    (  (p+z +(  (((p +(n)-((o)<u)-(y)))-280583))))-(m)))+(3)+(o));
+    o=x=g=n=m=g=l=n=(i)<(u){}    <----- FAILURE
+    if      (g);else;
+    {;  ;}
+    if     (f)+  28+t-((q)-6){  ; whilem +(k< (a));;}  <----- FAILURE
+    { {};while ((k<o));  }  
+    w=(y=(((x))+(v)-5-p+j+a ))-(x)<  k +k+((((t )-s  +4)<j));   
+    while  (37+(r<87-g) )if(o){;;(  (b)<f)-358;}
+    i <k -r  ;  
+    if  (f);elseu=c=5-n((v)-(r<(q  +(g)))-(((p <c)))<  (q=g=j=42));  <----- FAILURE
+    while ((((  ((m+w  -p)))+f-(o<h))<i) )((d))-(( j )-(v)- 03+m)-(b=4);
+    do;while  (z);
+    if(  (( (y=b=s=  (   ((z)-56514+e+(5+4<( c  -c-((w  + (n)-j+f<(41-(v)-(h)+(003699434))+h)<(f))))-t  +n-((r<b))-  (q)< (n)+p+v))-55-(y))-r)+(o<g)+(v)+5-7-r))     (a<n)-(v)-i-9+t-m<h;;;;;       <----- FAILURE
+    if    ((682));    
+    {if  (6<( (t)-1505438-9+o-a +((  (((d=m=s=v=(y))+j))+(58+o-d+g  +r<( (b)-v))+    (f  )+(u)+(d)-w +f+  ( (l)))< 0-i-z+(3))));while(m  )5<((80)+(l<b));;  ;p ;;{};} 
+    {(e)-  (16);;;}
+    if         5705+   (k<(  (n)+((((s  ))<j))))+y+(r);    <----- FAILURE
+    {if(q){};  a -       (j)-  ((   (v=u=4462-t +u)));;  ( ((a<d))-s+g -(z  ))+h;}  
+    while  ((d)-l +a-(( 96)-f  -(7)+(h)<t)+2-(  8)+ ((   (r  +b  )-c))+a){s ;}
+    { {{}}  {}if  (v);;  ;}
+    if((l  +(l)+(o))<  p  -(4+(w)<v));elsen ;       <----- FAILURE
+    {if(f);       (  ((t +q-f))+( (h  -(j  -b+ (((a  )))-((t<(9))-o  - q  -r+q  <(v))-(( z )<(664<2)))+o+b)+ a -v)+e  -g+l)+(l)-l+(c);;;  if    ((j <73)< (       (8344688-q-  (r<((((f=p=q=z=i=p=c= (t=(p)))+f)-y-x)+(74)))<m)+ ( (d -x-p)+y<  02+u  )+m+  (m<i)-(  (f))<d));    else;}
+    if(s)if(i)if(u  ){;549+((t=(p)))- (p<(q))+313<(r  <((d))+e+h  +(c +r));  while  (j);;}
+    while(q<j);  
+    if  (((o)-v-(w)+  (v=(  5+33)+(j)-(     (q)<g)+3)-(7)-(((((g  <  79-n)-9<m))+x <(x))+(k))+(s <t)-r +  q  -(2)))if(v){  ;if  (b);while( (x));;if(  (28)+3-((w)+y)<x);}
+    if   w  -o  -(   g  - 4-79+6+f ){;  m -q;while(   (a=u=t=f=w=(2)))ifb  +33-v-  (q<2+(h  )+j)-a-t+((o=s=z=791895-f)+m+2+  (o)+(((v)<y))+z-b-9+(2)+ t  -(w)-(v)+l  -q +e+(b)+(h<k)-3+  75+(w))7-(y)  ;}  <----- FAILURE
+    { }   
+    {;  }
+    if(258-(c)+ (i)-2)if ( ((4<r)-(p)+((    s  )-s)+7810- (g)+(3-j)<((  (12+6444-(46-(h)+e+2-(g=((664<(r+z  )-((p)))))+6-s)-12)-j-d +q)<07+  357-p-(u)+(  ((a)+a-(n<z)))-  2+(((z -  x )+m))-o  +n-b))+(k <(3))+( ((f))-89-f-((x)+  9+(  (r-3+5)-m-(b<r)))+(n)+  (605)+(  (g)))){ }
+     23-(s)+(      (y)-z+m-(n)<f)-((  l - (8)))<l;  
+    while  (n)+(n+(y<i  -(s)))do;while(  (y));  <----- FAILURE
+    {  if(f< p  +(h));while(8 )}  <----- FAILURE
+     (3-(1)+b  )<c +82+u+m+(((l)+i+7+h )<3){}   <----- FAILURE
+    while(c-(( (s)))<d );
+    ifp -z+((f )){{}  ;}  <----- FAILURE
+    if((z=x=d=l=c=1+((241)<r))-(l)-c + m  <l);else;   
+    {while   (a);00056393+x;while(y);}
+    if(o){  ; }
+     { }  
+    { ;  while   (((  93< (q <o))+((r))+(p<u)+  n <(( ( c  ))<((s)+t)+(l)-v-z-(m<(h<m)+d -(8-w)+k-s-a+23+007-(c )-(n<j))-p -(h)+50+ (e <(( (b))-(b)< r +r+l-(u  ))))-(x))<  (o)-(( (3)<(  p  ))+0-(5)-(1)<z)-(i<r)-(a));;} 
+    {{} }
+    if   3+(o-23-26-(p )<(x+ (  88<s)<( 1+(f)-(6)-(0)-a-(e)<(m<p))));      <----- FAILURE
+    if(f){4+(a  +w<v)<(p);;}else 53+((b))+ (0<m)-(m=p=b=h=v=l=o=m=t=y=h=j=c=y=q=  21+  ( ((j=n=(r))- ((b<s)))+ 25558)-(  (w=t=z=((66-r<3)<(  (y))+p)+b))+((q )+q-l)-9+b  -(u))-   42-( 68+(h <j)<(f +s  ))-(w );
+    {;  if(b)if (l){  ;;};while    ((z)+k- ((x)+(u)<z)-v <  7+p-h )}  <----- FAILURE
+    while (((o=x=56)<(n))<i); 
+        4;
+    while(e+(p= 74+h +(x<g )+i-i  -e)+h+45+ ( i  -1-m-(    653-(j)-c<      (e))-((l  ))-(x)+(  (g+ (j+ (z))<z))-m+1+  6-x-w-x<(o  -e+( (c<d  )<  (r<g)-s)-o-c))<1-x);     
+    if(u); elseh ;  <----- FAILURE
+    if  ((k )+u  )ifp -(q){ }   <----- FAILURE
+    if   (h-0);
+    n=w=s=c=v=k=i=m=g=620+(h)-(j)<p  -( h <l)+f+  (7)-(e)-    (m  )+(y)v=2;  <----- FAILURE
+    if         ((n));
+    6-c  +  438<(((m)));  
+    {; if   (e);else;}  
+    if   (k){   (b<v -t)-d-n-(x< (c))+(t){}}  <----- FAILURE
+    ;  if(89-(x)+b<(  ((b)+(y)))) ((((s)-y)+z)-(q +2+(o)<t)+4)+o<k;;  <----- FAILURE
+    while  (u -q  + q  + 9+u);   
+    {;; }
+    {while((  9825<l)+(e));do  if(u);while(s);{}}
+      {;}
+    while   (g  );        
+    if    (w );else ;
+    {while(r);       (m);  ;}
+    while   (  (r  -( j  )-0- p +( (p=296))<s)+o  )while 8-(s);  <----- FAILURE
+    7; 
+    (i)+t+ (((u  +(b)<y))-(c=((52)<h)+l-   (v<94-v)-(a=u=a=0+p))-((( ((t<w))-((g  )-(n<k)<g)-(c  <w))<u))+(o<j)-2)<(o );
+      {while(a -(h))while(a +  (n  +(y<o))+  (h)-5+j  )}   <----- FAILURE
+    {; 292<(m  );  ;   ;}
+    {;a ;  7-s-  x -b -((53+z))- (7<q)-(c<f)+h-g<(  (r)-((l<(b))));}
+    n=(x)+( (4426-(r -(m)+(y=u=z=e=a -m  )-g-f  -((  y  - ((u)))-((e<y ))<f  )+  (40)-(634-n+a))-d+(f<e)+(0675)+(i)+k  )-66);  
+    if (l);        else(g)-((((v -   (i)<(9241+((47<o)-  (k  <q)+r +e-u  -(n )-(t)+ (o)+3<(b=i=v=z=((c -((3)<d)+(x))+v +s  -l +s)+w)))-(b)))+r<(( (d)-v  )+( ((q)))-(i<h)- 50620+i+(g  )-    2-(x)-3+(j -c+z<t)- (m )-(99)-x))< (((   (k))-j )));  
+    while   (t  +p-(     ((( l ))+a)-i<2)+   62411-f+(   (j))+  (k)+((x))+t<(k<7-2)+2); 
+     (   (r)+(6)+  (s)-s<((y )+z-v))-k+d11;    <----- FAILURE
+    ifx  -b  -(( (h)-k)-(a <e)-0597+k<w )if (38-(z)<a ); else;      <----- FAILURE
+    while (y)+(368){}  <----- FAILURE
+    if(h  ){  do if   ((0-g)+(   e  )- 430+a);else  ;while(h+y +0<(f<f)+(w +c+5-( e  +1+(e= (t<h)+v)+((o )-a)+ (s<r)+(z<q)+k<((g<l)))+6-(v)-h  +(((a-( a <j  - (2121)+l  -(s)+o))))+((k<y - j  +e)+m<(n= (a<( a +p<f))))-f<t)-s );;t  ;}
+    while(k);  
+    do  if   ((      ((d<    (l<v)+(h<c)+g)-  (((m)+8-(p))-(g))+5)+u+a  ));      while ((d)   )(n )  ;  <----- FAILURE
+    {52432<e;4;}  
+    if  (  ( (w)- (w-(  (c)<z)-o-  (i)+((b))-(k)+w)-b))+(h); else   ;  <----- FAILURE
+    { (c<b)+  0-m-(z)+(d);if(i)if  (q);   if(o){ ;}}
+    while(t  )r=o +2627-u;
+    do{}while (c  -4-(w=(r))+(8<a));     
+      if    (((  q +b<s )+0+(5+o +(d<f)+(   (e))+816-6-((h+7)<d)+(035-s)-2<    ((y )+c<(l +( (c)<o)+q+(c)+((e)-((b)-     ( (e)<d)+ (p)-96<d)-(h)-l-8+(y=c=n=x=i=      ((n)))-q<(y))<(   (b<h)<n)))-(e)-((l<n))+(c))<(s)));  else;
+    while     (  (0834<i)-(s)-s-y < (j)-r  -(f=l=x=q=o=v=x=w=f )-h  +1-i-q-(5958+w)-(650+((((b)))<t))+(8+l))+a-((e< p )+(((f  -i ))-0298031+k+(72))){ }  <----- FAILURE
+    {do{}while   (p);;}  
+    w  -(g)-q;  
+    (  (c)+b)<b;
+    { if((((k )-a+k-v))){if c +b+(m)if    (4);else}  }  <----- FAILURE
+    {  i=m=  8-b-(b)-f-(a< ( 6<(45))-x )-(j=m )<(  060+m);74<j;;{}   (t);;;  }
+    { ;   while((c));if(7+  (  231079))if(d){while  (f);;if(k)if( (g))if(a)}}  <----- FAILURE
+    {  if(k)-(4+(n))o=(65- 1-(x)-((79-b))+z);}    <----- FAILURE
+    while(q){}
+    {if((h <e )+  (e-4-(l  <a)+((o))-(a<k))+x -1-c  );;{}}
+    {  ;if(l)-(r -(s=z= (((( (((b  +((i)-f+u+92-  i +e <(g))+b+((m))))< 9+ a  +f-2-(t<(z=x=  (t)))))-f  -b)-3<0)<7)))while    ((w=    (  (w)<2)+v+x -(o-(g-(s<8)+355+i -   (x)+  6-e-r<c))));    }  <----- FAILURE
+    v <lf=f=z=y=i=n=w=f=w=q=q=2;   <----- FAILURE
+      r <x ; 
+      { }  
+    if(2);    
+    if(((u)-p)-(q  -e-g ))if ((  (f)+65- (2<g  )))while  d  -x +  (e+91<f)-298-6+d-(u<t)+4-(c);{};;   <----- FAILURE
+    {91<((y));g=s -h  +h;;}
+      (y)+(d)<(z){}  <----- FAILURE
+    if(271+(p)+r+((f=k  )+(h)-(((8<h))+(i)+((s)-03-    (  (    3+(u)+(((t)<z)-((h))))-(h)<(t))- 55-(s)+(l)+(  ( (k)-(2+r)-(8682-q-((q<l)-8-s+z-n ))-(l<((w)<i ))-(l)+x-h<x))-a+(o=l=y )- (4-o+ (z))+(g )-(s<r)-h+  0))<o))  (e)<(s );
+    { ;;u=t=g=(h<y);;}
+    q=  (y= ((m)+l+m))+t;   
+    if  ((((d)< ((z  <  (((z  +(((  (x)+u)-a +x + (f-( 876-(p)<(49)-o))+o+( ( ( (h<y))<(0187+t+6))+  35)+t+4)-h)))+ r -(c)-(v<g )-(w)<(j  <9)))+h<(6+v+  (u)+z-((  2< ( (  (8)-k))-(b  )))))+d))-y-s);else(k<f );
+    if  (b-  (u )+  (o)){  f=(  (j)+((3)<222-g+v  +(d))-(d))+b;(o<m)-h; (k)+s;}
+    {; ;}  
+    if   ((n)<s);
+    if((i )-w    )if(q){while  (s);if(((q<1)<(e))+( (y)+  (0)- 9));   ;}
+    if    (s-(m)+(m)-(x)){ ;while ((  (  (v)+h+m  +( (3+2560+s)<h  ))+p<w)<e)if(d)(b);;;d <5-t+(o<b  ){}}  <----- FAILURE
+    while   (r <(8+1+(b)-m -w  <( (k )-l)))+(n+ (((0+(88<z)+v -( 55)+y+(f )-f))<a  )- y +71+  (c<((((9+74<a)+w+l)-(g)-(c<(0<n))+y+((8)-(f)<97)-i  <(((a )<49)+0-a+(u< (z))<(g)))))-( 22094-c)+(z<l)+j)if  (  h +d);  <----- FAILURE
+    {604389-n;}
+    while(z)r=m=2+(x+(f)+l  )+(g)-d-d<(o< (k )+6+( (w)-(e<g)<7-(r)+z));
+    while  (z)while   (c);
+    while      (1);
+    {if(2)if (e)if       (  (31082-  (d)-(j)< (684-(p)))); elseif (7-((j))){};}   <----- FAILURE
+    if    ((z)-((((  t +(m)-z-z +b <b +(h<(   u  -r<i)))+28+k<f )+n-9)<(b  -(n)))+(w  <o)+(u<k  + j  )+3){   (((t))<b)+8-(t<  l -v)<(w<(2))-((   ((  (k)+(h-3)<j))-k-h  +  208+(m<b))<r)-(e<s);5;;;if   (k){ do  if(( 4967)-e+   t <o );   else;while((n  ))+m-(x)-(w<1);;}if    (b );(q)-w;}  <----- FAILURE
+    while (8 )while((  (  (m<k)<f)-(f<39)+q-w  +(9+z -9))-(5)-(n  )-(h)+o<g);
+    while(z )while(c)t=n=n=e=s=a=s=e=g=l=k=l=a=u=b=c=d=c=v=y=n=x=f=s=s=i=y=77<(t)  5566+(n -p <((a<v  +   (980<i))))+(k<(r  ))-(n)-((h +(r  -z)+(n<y))<( (0+t  )< ((   (n  +(699095<((8)<((t<s +v  )-o  +(h  )-h<c)))-  (y))<h))-(q ))-f+u+(p)+(q)+x-c)+(d)+m-w;  <----- FAILURE
+    if     (k )+(q<l);else;   <----- FAILURE
+    if( 7-((b)+6-i+(f)+y< (i<r))<y);elsef= d -j-o;    <----- FAILURE
+    while3+(( (a+6)-y<c)<u);   <----- FAILURE
+    while  (g+(s)<w   )while      (w);
+      if(f<t)if(y  ){ while( ( e  +(( (8803)-j)-95)-(x +6028-((  (o)+i<(z <d))))-1))if ((  (g)+ x  -(4)-a+(u ))+40-(c<l));    if   (t);else;}
+    do;while  (  c -(z-o  )-  9  );     
+    do;while(i );
+    {76;;if(r)do;while    (  (o)<w);while(u);;}
+    while(g);       
+    m  -0<(z);  
+    p=l=h=k=m=1657;
+    { do;while    (((d<k)-1261+l+e-   ((o)+1)-x+5615-z -((c)-(z  +(z))<((((n+i  -(w  +1)-(m )-486)<(p))+(g)<15))+((d)))-b<g));}
+    if (e <647- z  +(55-904+(f)<v));
+    if  (s  ){while      (69-m);while(((m  -  v -u  +  (a)-(g  )+f  -s +m  )-u -s-(a<e  )-n-6- (b))+(r)-(b)-(j))while (v-(( 5-72-  y -(5)+(1)-j +  (q<f)-02))+(t)-z)while(t);}
+    7<k  {}   <----- FAILURE
+    {{ 3<(  u - f +r-3);}}
+    if(v+(y<(14<  5383722-a)-d)<(w-( (p<(w)-t)<m)-m-(i<  (c))))if   (a<(  (4< (s))-633)+p)-(t+d  -z < x  +b-66-n+u  -(5299-(o<a  +w-(s-(u<j)-( 1-(b<f)+  17))))-( ( 69)-(17833<98)-9-h-w)){ while(z)(g<  (r))<(n<j);;if(    (y)<q )do(w  <h)+( 71);while  (k<n  ){};}  <----- FAILURE
+    {(s<(y));; (b ); (x  +(g  -o)-  06-c+g-e-(p<(y<(s=  5- r +(194)-(h<(  (  ((  (u<q)<( r +(n<(p  )-t-(d<(i))-l)-n)+(v))-(  (r )))-c))-k  )+g+(((  (u  -(125<((8)<(0<s)))))-   74093+o)-((x)-73681)+(e<v)-  246<u)+ 614-(c)))+73-(y))+w-((j<y))+ (d))+x-(h)-k-j;((o));}
+    r=y <(((w))   );
+    c   ;
+    {  ;if(2+(  ((   (k-1072+(950))+(f)<t)+(  p + (e)+(  f  +(a)<t  )+( (g))-(  (78)<(((((   (s=(096-(d  )-v  ))-y+g+((t))+l ))+(r<1))+x-  k  -8+((((n)+7+(590))))-x<e -f)))-  w +l +(v  )-m  <d)<p)-(m)));}
+    do;while(i=g=r  -   (y ))+(s){}  <----- FAILURE
+      3+(s)-(w  )+(m)+(  7-k+(p<p)<c)+t-a;   
+    (b)-v;    
+      (u<46-a-((e=q=u=9+j))+(t));
+    if    (w);
+    if 4-((f)<c)-l+n+b-i+(u  ){ ;}  <----- FAILURE
+    if      (r);
+    {{}{}do if(q  +(h)-i  );while ((l))m=  (70<n);}  <----- FAILURE
+    while(46-r  <(v)-v)while  j -p  -(((g <(r )))+w <(g )+r);    <----- FAILURE
+    { while  ((v)-t)+(((b)+(h<56+(k-  (u  )))-(k)+64-m)+q-z<  (82)-i-((u)<g))-g+((d<   (((t)+((m)-r)+g)-r<i)-(64-i<y)-u)+(v +e-c  ))if(  (c +n  )-(5-749))if  ((f )-0-(((u)-((  (b)< (47-(l+(549279)+k<y)<s)+r-f+w))))-v-32-(d)+r);else;  }  <----- FAILURE
+    ;   
+    (m);
+    do;while     (u<y) ;  
+    {;     (y)-((t))<( j  <u);if((3-(s=h  )))if7119657-(501+w)+( (z)+02)if(19) ;;}  <----- FAILURE
+    while(s=c);  
+    {;g=w= 9049;}
+    {if    (  ((k -(j)<(66<13))-h));else1;}  
+    if(( (m)<09)-     0-(l<6)+v+v+(t)){  h=(s  +(( 71+19+5-i +(l)+q+b)<t)+h+  (z)+(w -((l=(l=c=x=b=n=   8969-a  -(i<f)-(q)+ (w)+(3-x<(d  -(037)-f<w  ))-  s -((272))))-((v)+(57< 3+( v  +a+((p)- ((v))<  (t<q)+3-(x< 2972-(h)))))+y +((g))-(v)+s<d)+(6)-(b -  1+l+q-(y<n))+(t)-(g)))-p-(n)+(u));  ;}
+    do  if(c<8);while (15+u-(s)+(v)-v  );
+    if((8-919))if(v)9<  7-c;;; ;    <----- FAILURE
+    if((72+  (o  +z)<(j  + (      ( 5<l)-q+  (f)+8+  6)- ((v))+n<1+r))){while((p)-o)((  (w)<g))+w ;;;while(b)}  <----- FAILURE
+    while(s<  b -(x  <(w)-(x+(t<e)< 17+y-a -((v)+(h<r)-( (n<l))+(n )<(w))+i+((g<s)+p))+2964-(u)+792))if((q=(z +f+155))){while(14)while((d)<4448+g) (3)-  c +791+   (l  +  (5<h)+(f )+b+h-(  (  f  -((932)+(j))-  ((d)-v-z -4-   3-(q  )-(w  <j)<x)-o)+  l  +p - ((((y<u)))<10))+((r )-(s)+v )+(g ))<(w)}  <----- FAILURE
+      if((w +x-y));else;
+    if   ((j)-m -h)if  (i);else;
+    while(q)(p)< 6+    (489)-4+(k<s  )-(935);
+    if (c)if(0+(u)){while  (o<l); } 
+    if  (k-(((g)- 5<e))-(33+b)-z+ 5-(l)-j+  ((( ( (  6-(   (m)+9)-o)+t-7)<q))<((a)-(j<f)<(r  )))-x-(z  <r)- (p)<s);
+    if(y);else  if (((s  +(514))-d+(((((g=p=l=e=d=h=d=t=j=a=w=e=c=b=i=y=s=o=t=q=d=p=w=z=n=o=u=a=e=  (e +(o)<(963)))+c+a+b-e+4<z)+(z)+z+(q)-h+    j  +(   (z )-e+v+b)<(d))<h))+(99-1-44-2+(v)+(j)+(  (b<q)<f))+   (x )+(     (0)+(((j))<n)+i-n-(m<    (398))))<y){  }
+    if ((c<u))if(d);else;else ;
+    if       (o);    else;
+    if(e)if(s){e=19-(i)-b+l  ;}
+    if         (0+(q)); 
+    while       (((a)))-(p+(q)+p-m  );  <----- FAILURE
+    while(0+    ((b)))while(r);
+    if(p  ){;;}
+    if ((l+((x<7)-4)+(c))-s){  while((8)+v  )}  <----- FAILURE
+    if   (((( m  +(d)<v)<e)<v)-i <a){  {}}
+    if(  4){; }
+    if  ( 6150  )if( (0)+  37+ 98+z+(o)+(( (z)+(b))-(5))-(k  -1996846+q)<(l)){if(d +z ); }
+    if (e<z)+(((w )<o ))+( (g))-(9+z-(c<t))-(j)+((z)+(y )-4+p-l)+(c);   <----- FAILURE
+    (  (b  )-g-m)<((r <((q)<(     299-(j)-f  +j-(  (j)+l<f  -6-m-s-m))))<z)3616<j;    <----- FAILURE
+    (f<w);
+    while    ( ((   (z=h=l=(  d -(r)-53689-12+m)-(2<r)+(f  )-(z))-z)+(d-  h  )+(z))+(d  +g -( (y)-(r)-  ( (x  )-g))));
+    {  ;if(r-(g=h +8))m=f=30- ((  (w  +y+(m  <v))))- (l  -q)-p+u+y+   (e)<(k<     ( ((x)+a))+   n +( (29<o)))  ;while     ((x));x -(x);}
+    7 ;
+    while (( 71< 30-((b< (  (790))+((r=u=l=f=w=g=l=s=  (v)+t-(0<a))<y)+q))-(x))<p)if   ((d<p));else;  
+    {j <d;;while(j);;}
+    {;}
+    while(6);  
+    if       (j);
+     i=(i)5;  <----- FAILURE
+    {;  (t)+(l);}
+     if (k);else;
+    (((959<f)+g))- (d)+(s<z)<(q=z=c=o=b=d=d=s=q=w=u=f=n=n=r=r=j=k=b=y=w=j=w=u=k=a=b=u=h=3566114  ){}    <----- FAILURE
+    if  (z= l  +d)+r -(t);else;  <----- FAILURE
+    {;while (61)(  (u<4-(8+  ((e)-5674<399+r )+m  -(v)+w))<f);} 
+    {while(h=107-s)+(u)+(k+t  <o){};{}while    f -l-(j+(e<c)-0+(w)-6247-j )while  ((b))+((a)-(i)); }  <----- FAILURE
+    { if(3<23){;{};if((0))while(j-(e)-    (  42)-(c  )-((g)+z+(  (n +g+(v))+s+k  -(d))<g)+(r)-(v-k  -(e<l))+9+      ((((72+p+(f <6)+(q  -3+((t)<r)+q  +  (  096<(  m  ))<((e)))- 70-(t  <n)+q +(r  <e)))+  (g)+4)-7-648+37+u+h-   (k -p-(  (  5))-  (((h))-g))-7+  p +(i))+    26-(s)+c- 95570<p);;}}
+    5c=c=y=w=d=u=w=a=362;   <----- FAILURE
+    {}
+    { if          (w+d  <r);elsea  ;while(u )}  <----- FAILURE
+    {11<    (o<e);;  {};u -(n  -y)-q<m;}
+    if    (v);else; 
+    do;while   ((  (k)-o <t));   
+    do{}while     (i )(((z=90)))((j)<j +q -b)+t;  <----- FAILURE
+    while    (  t  +s-30-9+(l -691+ (2-t+n+d  )+(r)<(  p  ))+(k)-  (k +j+ (w<7)+k)+(t)+(4<y )+((  (v))<  z  -a-o -((t  - 9+(w )<g)))+(x  <n)+e-(h  -q <g)+a  +e -s-3+3889-(    (( (m)<    7-(v )))+k)+b +z); 
+    {;{}  ;;}
+    {if(  (x)-(  (h)+j+((w<e))-( (f)-(c=y=h=l=o )-(s)<k)-b  +  (a))-r  )if   (w  -r); else;;}
+    if  (y);else( (r+((g=(e))+( (3-0781643+8)-(v <i)))-  (q)-u  +7-u-(0)<g)+l-m+2)- ((h<j))<(m);
+    if     (h);
+    while (x);    
+    {  f=d=l=81;while   ((b=( h +(w)+  y  ))  )i=b=n=o=p=w=f=t=h=x=p=d=h=m=h=x=n=q=c=u=k=y=l=v=k=d=w=s=b=r=l=v=p=e=o=x=p=x=t=u=s=o=g=v=m=o=z=q=y=m=k=i  +7<(i<i); }
+    { if  8-((c)< 1)-9-4+   7-j+l-(v  )-(a)if(n  )ift  - (m=d=0)-(((g<t)<g)){while(d);}  while    ((l=7)-0743-p  -1)do3734;while    (3498+(v<u)<m)-w-6+(c<r +t)-q-(s );  }  <----- FAILURE
+      f z=p=g=f=r=f=m=v=m=m=j=x=m=r=11;     <----- FAILURE
+    7151<(92091+p)-94+2+g +(w)v=q ;   <----- FAILURE
+    while((1))-((n  )+x<k);   <----- FAILURE
+    while  (v);  
+    while (w)while  ((f=     a  -j+w-(      (y)-u<i))-y +t -(q)-(h)-((2<i)<q));
+    if       (  d ); 
+    if (q);else(u  <l  )<g;
+    if(o ){;(((5<o +(i  ))<(b))+(x< n -(s<(    (g)-g)))-49- 2-  l  +6+( o <(g))-(((  (c))-z+s+l+a)-  (  (  1187820-n<r)+u)+(b<(  ((z)<r)+t<(  6+(m))))+s-6488)-p+6-068+(m)+w+(r)-b) ;}
+    {;if (m  )if(   (  t -(l)+i-(  021<  (w<e))<s)+d-f-(t  )<t);else;{}while (n);       }
+    x=j=g=r=a=k=z=s=s=f=g=p=k=b=n=k=s=q=z=j=j  <89-(0<308 ) if    (f<p);  <----- FAILURE
+    while (t  )while  859-h -814+(y);  <----- FAILURE
+    { while(z)}  <----- FAILURE
+    { ;if(q);}
+    {; ;while  (  (4)+(p)+((u))+m+  (  (((m<p)+972-i-7-(f<h))+r)+(r)+p+(o<8+g)));}
+    {;  ;while  (u)(   3-  ((a)+w)-  (8+q  )-b+r)+y+4+x<g  +(f)-(u); }
+    ifx +(((x))-( 8-s-p-  (  7<1-(t<f  )-(u)-(95)+0-n)-(m<f)-c)+a)if(2-( (q<w))){ ;}elses ;  <----- FAILURE
+    while   ( 68- k  +f+m+  h +b +(g<v  +(c=q=j=g=(l)))+j  +((0<w))-(f)-  s   ){}
+    { ;;if(s<  1-w)if(t- (o))if    (  (23+  (((1<b)< d )-(c  ))+(z<v))+((  (h<(v)-(t))-   (((  9<f)<u)-  (b))-(j<  21+  ( 8)+73-(s)))));;u ;{if(s);;{}}}
+    if   (e);     else{}
+    {; ;{ }(  (b -(k)+((j<o)))-(j<36)+(43298<(v))+a)-(b)+a+l<(  40+i)+r ;}
+    {;;}
+    if  (t+(h)+(z)<51);
+    {  while((63-((n)<u)+m-o+m))while(i-(z ))while((t)+c);if        (e);else ;0811;}
+    if  6567+(h  )-k-(m -(1-m <l)-o-x )-(o<454)if   (h +    e  +  l  +(c)+6+(x<(q)+l)-x-(y<k));else;elsec  ;   <----- FAILURE
+    if  (z);  ;    <----- FAILURE
+    while  (r  );   
+    while  (40-(k))while  k +b+(x  );  <----- FAILURE
+    7495;
+    if      (( 1+t )-t);else;
+    if((((x)-((s )-(  3+(o-      (3263970)-q +(y=y  +t)-(u<l))+ n +8-f <(l))-c)+( (  (v=(k))+((h)-k<l)+(j)<(675)))<1-(l)-f+ (i  -t  +((c  +((m=t=t=h=m=b ))+(q ))<z)+n)-((e)))+p  +q )+t ){}
+    {v ;}
+    if              (((u)<u)+(w)+8-k-8+h<p);else(p<u)-w<((((((f))-a+d))));
+      if     (q  +76-(j +r));else;
+    whiles -(g  );  <----- FAILURE
+    if(b);else  ;
+    (m)-w-t  ;
+    if   (w);
+    while(560559-9+g+  d  -e ){  }  
+    {  (    (t))+c-v+b <(1)-(z);  while  (z);if((p)-((t<3)+u-m  -(5<r)<((( (  ((s=(t)))))))+(r<f)))if(x){ while(i<r)  ;;;while(    6+d-h  +z+g +((  99+n<f)+s-67))while  (o)if(g-(d<l));}}
+    while(1- u + z  +r-(r<i)-m ){  ;}
+    {;if    (1+w  -4  )d=q=(q)<(a< 7);}
+    266+         j -(s)- 5+   i  <(k  ){}  <----- FAILURE
+    if      (v); else  ;
+    if   (c -v+i)if ((o)){while  (m);}
+    {(  (82))+f;;} 
+    while  (e);  
+    if (6732);
+    if       (769-f+q); 
+    if  (   (u  +  (  d  )-z -(n)-8444+(((i)<(w<((9<(((h= r  )<(f=4)))))-    d +(o <o)-(  (j)-    47+m+(z=410)+(w<r))+(d=i=c )-c+p+((f<d))+h+(((962))))))+(c=18)+g-20+x)-   (5-53+(e)-((v)+h-b+44-f  -u)+588)+1434);
+    {;  ;; ; if     (w);  ;}
+    while(y ){ if(y){};;}
+    {  while(0-(i))if  k  +(y){if  ((a)<((b)));;;}}  <----- FAILURE
+    while(n ){ ;}
+    while (  ( e  <(s)-  (y)-l+  (f)-(040726<a))<z);
+    if((z)){  while(1)}else ;  <----- FAILURE
+    while  (   ((2-l - (f)-  ((d<(a))+(   k  -(  8-v<r)<0541))-(v<h)))<(u)+3)if     (z);else{}
+    {{};}
+      (c- d -s+(f  )-  (j))-p +85<(0659)+((w));
+    if(p<h)-k-x-(  y  -(  9))if(( ( (d<1))-l<t)+787+  (u)){ ; if        ( (((g))+t<b));else;while(6)}  <----- FAILURE
+    if (   (  (  (f)-n)+v+(x)+o +  p +d-(x))){}elsem ;   <----- FAILURE
+    { s=a=(x=u=1+u)<(m +w) ;;( 1-k)-l;}
+    {;    {if(w  +( (((  (2-r-(n)-( 7570+f<r)))-( (e)-68-((q<r)+c)-  (v)+h)<m)-i  <x)<5+p)<8)};  ;}  <----- FAILURE
+    if    (r ){if(z);if   (b<f)+(d)-(f<s)+  716+6-(  g )t=r=l=q=g=r=l=r=r=c=v=g=w=1;;}  <----- FAILURE
+     do;while          676-(m);   <----- FAILURE
+    do ;while(d  ); 
+    while(   (y)+(x<q))(0)< (    (678-e  ))  ;  
+    while  (((z)+( 258083353+(u)-(j)+a+k <m)-(w<9+c-z+j-m)+((m<z))) )0;
+    06-h  <(2296);
+    while(e=m);  
+    while(b){ }
+    do  if    (((n-3)<k ));  while ((r-96157)+u -1+(p -(k <(    ( (a- (t)))+m+s-g -j ))))+(9+a  );    <----- FAILURE
+    {;while (y+c  );while   ((16));    (59)+g-(n)+(((i  )<g)<j)<((l  )<r);}
+    while(z-(   d <q))if(o  +(a)+a)if(y){while  (s);  ;;;(m <m)<j;}
+    {;  ;while (b); v  ;;}
+    {if (m=(d=  659+i))+6-(i)+h -5+(q)-((0<  r  +(  ((k<(t)))))<(((a))))+((8)-9+6);;if((q))while (h)+((o +(9))+37+a+i-x  );{};}  <----- FAILURE
+    while  (e);   
+    {  if    ((b));  else; 83-a+(((  (((t)+(g))-(    (82822)-x))))-  (v  )+w  -b  +  ((6+j-r +(d  )<g)-c  )-(((((h -y+m)+y)))-(g)+(c -(    ((n)))+ 1311))+a-(92+(n -977+d<62+a)<(((d<q)+(w<p)-(7-  (c))+ ((   (i))-o-04+i <u  )-((g)))<m))+  p  -( (0))+(d)+r-e)<((  (2)));}
+    do  b  -y;while(((057139-  (h)-02+g)<(k=( (u<66)+9-((o))-  (i )+q+5-p-(t)<j)-((x<e)<g)+w ))+((((((((t  <(a=m=n=f=i=r=e=f=i=h=n=z=w=p=w=f=z=z=o= 5452-z+ (y)))))<p ))+ 453)<0))-m )  t - k  +   (( (z)-((967))+(l +n+(t)<(r))-z)-((j  +(p <(k))))+((o<x)+(r)-a -(u)+(u))+(f))+  0+(z)-(s);  <----- FAILURE
+    if  (m){  if    ((    (t  )+  (((    (b)-(089<o))<p)<w  )-(v)+ 83+(e<h)+1));  if(g);   ;}
+    if(  h ){ 351;  while (57-(  ( (c=2))+g  +(  ( (((b)))+(p)+i))+s));  ;  }
+    if(l);  else;   
+     do( 94<v  )+(288<(p))<(2408<j);while  (m)  ;
+    if  (  w -06<s); 
+    while( (0)+d)while(6<(g)+k  +(i))while(((u +n  +((((t<r))<(n)-((x -(x  - d  -(u)-j)<999-h-a  -l)<(o))))<g)-z)<u);;        <----- FAILURE
+    do;while(g)+y-(o -d+r<q)-(b  );  <----- FAILURE
+    33-f  ;
+    {  if  (n){}{;}}
+       177{}  <----- FAILURE
+    if    ((q)+(9-9+  (1+  t +f)+j-d-l-(q)-(j)-74<(h))+02+m  -o+y  ){;if(f)}  <----- FAILURE
+      {((w))+(h<x)<(((x)));} 
+    { if (f)+((x=((f)<b))-(z-121837))-(   (k<(((    5-k)<k  )+(s<(o)-k)-c <n )+g  )+m-x+2-f+z<l);{}}   <----- FAILURE
+    if  (n);
+    if     (6+p-s<   (38<i)-1142+(6-v-n -t +(a +u+(e)<y)+(  (r <   (v  -b)-h))));
+    {; 65;;}  
+    {   ;}
+    (f );   
+    {(  (z<((o)))+(26-i+p))-u-s+j  <(u  )-(((  f  )<g));;  24;;;{};}
+    if  (i  ){  ; if(q); else;;}
+    if( ((z  )+e))do;while   (((  t  -(g-(v<6)+h+c+   (  (r<k)-(33+9-(u))+     (469-(2462962+0)+k)-w+t +l+((w +(t))<(  u  +v)-(a<w))+e+   (a)+31-(d)-((l ))-f)+ j  )-(  4)<(l))-441+(k )<f)+(v +(  r  )-(4<10)+  (  37)+s+c +h-  00- 735-(h<h)+(g<(z))+(   83+4-b+c  -x)+x<7673)+x<y);
+    if      (s +e+(x )+    (  e <r))-g+6-7- (k+(50-b ))-(n)+ (o )-p-a+n+(   (c)-j+x-4)+(86081-r)-r-((m  +w)+y-x +(w  -(e)+( l )+(f+(   (  9+(o)-241)))-(l)-(5<y)+(p <((7)<g)+(w<s  ))))-  (w)+v-(o<2424);   else;  <----- FAILURE
+    {;{}while      (r); ;}
+    if    (  (   36)<4)(o<f);
+    do;while (v ); 
+    if(b  <v ){;  }
+    {; {}}
+    while   (p);
+    do  if(z);while(f  );  
+    ((a<l)-(    ((m<u)-( t +( (c)+f)+y<z)-  t  +((z -c<u))+b+t<o ))+6- ( (((v))))+s+    (g)+(f));   
+    while  (       ((e +y+y)-(v  <d)+(o  <(a)-b)+d-5+k-45+m  -(c<i))-(m));
+    if((36+u)+(a)- ((t  )<f)+(b )+  86-r-((z+((g)-k<f)+(   ((1463+q)))))-p +d-j-t-u +i-c+  (l)+s-(a)-(( ( 7-o))-h  <3)-0);  else{}
+    {while(r-x  ); while(o);}
+    while ((x-( (x)))<(83079)); 
+    {p=r -5+(o<y)-h+z;  while((o<b )-9+w+s+r  <000)if(((i)-120-(  (k)<k)+3))do;while( (e)){;}{ }}  <----- FAILURE
+    {q  ;}
+    if   ((m))-(657540-y-r)if(l-(g)+f){while(p  -s)f  <z ;7;}  <----- FAILURE
+    {{}  ;if(e)while  (((e)+z))if((k)-2+c)if (m+((y))<t)i +c<(x);;;}
+    while(o=e  ){}
+    {  (j)-c;  { }}
+    if  8-(g){  while((((2<k)+8-((k)+ 23- (y )+t)<p  )))do(( (  (e +z +(l)-(582- (k<a)+s-(u)-6+( ( (7+c)-(k)-(x)-1+(v<99-(u))- ((p<s)-h+d  +89)- 607<e))- j + (  (v))-d< 3)))<c))-(o)+(  406)-94640;while(  ((x<z)<e));}  <----- FAILURE
+    {{}52<((p<c)<m)+y -o; ;}
+    { if( h -  (k)-((o))- 9  )((s)<( 1+o+t<x));{ while (w)if(l)+( m  -g-(u)<x)+r+(v-d -(  7))do;while(w);4;; (((o=i )+     (m  +0806))-m-(v -y -o-d +(w<o)+ 9-(x))-m )-(c)+(k);if((o-6<(a))-(i)+a)while(t  )  ( (3))-m;;      w -i-8+003;;}  ((h)+(x));}  <----- FAILURE
+    if(w);  
+    if(n+52)if(f+ q  +((((g +c+z)))-(a  +c))-(d<(g<a -(a  )-u)-l+(b=44)-(f<(((((41<0+(t))-(k)<(j))<j)<p)))))if(d){  ; while(14  )if((h)+3+x -v<h){};}
+    while((28-s<s  )<q); 
+    while   (o -j+(e=(484-  (((    7-z+(d<o)-(  (  90+y+(b)-k-l)-i<x)+f)+8<7))- (125)+c<((a))))-((8<(   (43)-g))-6+7462515+ 8+(8+a<v))+  21+(6<((h  +(e=g=(i-8))+(d+   (( (i ))<(n  )))-(j))))+(y<f)-h -p +k+(d)+(q=(q)));
+    {  while(z)+407+5-l+( (706))-a+u  +c -(l); while(h  )if(5+(x  <n)+a  +(r  )-27738<  (m))if(d-6){}}  <----- FAILURE
+    while(73  );
+    { ;}    
+    if   (r  +84-b  -(3287<n)); 
+    n ;    
+    if(m){  while(t);; ;while(4+(s)+e-z  +k)if (l<l)( (h)- 62);;{}}
+    if(h  -((z +g )-(p=(8))<  (a)+(v= ( ( ((y<    (o)-(r)-m)-3+(k)+h-  (  24)-   (j)+(s)+w<((o)))+(v)+e<v)-j+l-(  ((i <m ))-(l)+y-(d)+(v ))))-l  -(z <u)-0-(l))-((r=78))-    u  ){  ;6296;;}
+    17l +(((03)-r  +(s<q)<(u))<d)-(o)-m+  t +76;   <----- FAILURE
+    { (9)<y;  b -k;}
+    while(   ((   (f))))  ((((((5))-t-(o=5)-(g<c))))+3)+t-d;
+    {while((x  +0+l -(x)+a-  84323<(48)+t  + (o)+(7-  ((z+  6<47+8+(m))+x  +k)+(((m))))-(w<g))-w <t)while (t );}
+    if     (y)59<u;else(k=u=n=322)-(b)+( c  <s)-c  (82<y)+((f)<n)+(r)+v +1+v +((l-(q )-(7757+(k -(w)))+(c  <   (05)-r-(t<  7)+(t=(((v<r))))-(  0+u-25+n )-(    6-u-s-(16<723301+(w<s))-(h)))))-o;  <----- FAILURE
+    {; if((    (d  )+u)+ ( (i  -k  +m+j <(  67))<y)-c +v-(d  )<(  w  ))27;}
+    {;if(z)if(a)while(    d +o- 3<v)if   (a);else;}
+    if((n)+86303-((s<e))-95<(q<q));{}{  ;;}  <----- FAILURE
+     ;  
+    (j)54-(u)+(d)+y;  <----- FAILURE
+    do if  ((u)); while(926-r -( (2)+y)<  (a));    
+    {do if (m);else ;while(e<(k +(r  <e)));;;}  
+    if  ( a -0-(i)+(z  ))if   ((    (k-1- ((m<y)-w-x-k+j+z  -  (  j  )-h  + 8211+a  )-f+x<k)-(n=(3852<6052))-m)-(65144-p)- (j- g  )-(j +d +n)){;}
+    (l); 
+    while    ((09<l )-(j +f)-z<67383-(516-(m<d)+(   (   (y)+(c<g  )))+(g)));    
+    if    (3<o);
+    while    (  (6)<k  );      
+    while((c)-(52)-d  +(i)-  (    (    (u  )+x +(r  )-  ((y=p -y))-f-i-(v -r)-(((u +2)))+h  +5+j -(f)+ 4880-(j<r -((u))))+u-((  d  )-u))+((((l +01-     95879-(a)+y-x+((  (  x  - n +9))))+(  (b )+n+(((  (12+m )-r)<(i<h))-v )+v))<202))-  b +5+(x )-p-q-764+(k)+(t=o=n=r=n +945)<u ){}
+    {; ;while     (  5-(t)+((  ((r)+(r=(((v))))))<r  ))-d+(k)(9733<91)}  <----- FAILURE
+    8;   
+    (q)-(7)<f;
+    {(f);}
+    if(  (3+32232-((  (5+( j <(n<  41618966)-e+(d<c))))-50+b-b+ v -t  )+((z)+n)+(z)+j))if((k<g)+  547+y-(v )){if((v=s=v  +u)<g)if  (w)a=  ((((a)<g))<d)+(c)<(09);;}
+    dop  ;while(z  );  <----- FAILURE
+    do  (s<u)+o;while  (8267+(h<s)+  (u)+b-(g)+8+d+  (838+(c<z)<r)+q-(b<f)+s+220+c)  (f-  (m<n)+(8+(a)-(v<c)-b  +0+(j<010341+r))<q -c+ u );   <----- FAILURE
+    ((a)<e )-q  <(3<((  (t)-   (p<n))));
+    q  +s<  k +((335)<y);
+    do  if(c);while(e  )80036;  <----- FAILURE
+    {  ;{}while(   (e)-(e)-r+  47+q+4<a  )if  (x);else; ((15-s))+ (x<y)+(e=z )-(3)<(a  <((0063-(( u -  0-(f -(  z ))+(j))<k))<(n<(b=((c)<y)))));}
+    while  ((  (   (m)))+  l -d  -i-(c<(i<b)-(m))+8-f-m+(h<(z=  47-((n + (9<q)- 7-(w  )+d))-c+(a))-(((g <((c))+t -(i<g)))<i )- (  (l +(n))+(y -(k)+ d -8<e)+y-b-l)+n -c-(k)-8242));
+    if   ((v))+m+ 4-d +((z)<4)-v+(y);else{}  <----- FAILURE
+    {{} ;;}
+    while(x<(b)+  (d)+z);while((((n<v)-u-b  -(53590)<6660)))j  +b-(k <y)<(i=(v)+a+n);  <----- FAILURE
+    { {while (j);};while(k  )(l -84);  }
+    134-(c<q ){}  <----- FAILURE
+    if    (    727+d +(  (( (0<i )<(c))+((  ((z))))+(r<y))<(o)))if  (o){while((7-d))if(  ((z)<(f ))+( (w))<74);  {  while(1)t <(h);}}
+    if    (j);
+    if  (m  -(((k=(g=d=l=p=q=1))-i<q)+u+j -o<4-(d)));elsez=(((i)+b<(  (e<n)-(n<e  +d-n+(n)))));  <----- FAILURE
+    {;(c);}
+    if(f -p-q-r){; }
+    do  if  73-    (w)-o-( ((j)<a)+(78)+d-c+a-(x)+c+(m));while((p)<e)r +d;    <----- FAILURE
+    if     ((l<  (d)+(j))-((e))){while(z)if  (z  );elsewhile(9872+71-f  +9980503+s+ 14-q+(x<z -h))if (j );  elseif (y)if(p)}  <----- FAILURE
+    x=9;    
+    while((s=d=a=b=z=((z -q)<x))+g- 077+d-s+222765-2<(( (r<m)-  ((054))+(o)-(i)-29+((((v )-(2<r))))-(l<    (i=7)+e+e -b+s+g)-((i+s -t  )-f)))+q);   
+      96+  (t)-(c)+(h <w)+je  +h;    <----- FAILURE
+    while  ( (j) )while(e);  
+    if   ((b)<n){ ;if(k){ if (g  )if(n); else;c ;}{  ;;}}
+    while    ((f)<d )while   (b);
+      ; 
+    { 8;;if((z)-   ((s)<   3-x  +q  -(30<h)-u-((u)-m))+((  ((y+  (w)< h  )+o)+w-w<o)-7-(t-(a))-(i))-((j  <d )<t)+(v)-w -f+l <k ){}}
+    if 4-r+(s-(d +   (k-  (t=l  )-(s<  s  +i)+a-g-(((((i<e))))<s)+(((24)))+d+q-d))-m   ){while(2+(4))if (((l)+ (1)<(4)))16<(a)+(a);{}}  <----- FAILURE
+    (l)<(6+(  (g)-( 4)));  
+    while (  ((  x  -n  -(m<h)<(j)+(k ))+  (62<  ((z  <(908+h<(d<x)-(e)))))+  (617)+(5-q ))- g  +x  );  
+    (2);    
+    while    (u)f=u=x=v=m=a=z=z=o=n=(x <v);
+    whiler  -(p);if( y )472- ((z))+((((e)<w))-w+(e)+(z)<759532)-j  +(    5+37992-t)+h-s  -(64<6+f+   858-(t)-w -f)<y31668<h;    <----- FAILURE
+    if(t  -((e)-  018<(d))+40- 72+a)do  if  (v);while ((p));else(g)<p;
+    do8;while(  (h<    ( k  -((1467<(d)))<r)+(v=(l<x))-1-g +(w))+y  )(p)-o  +((v<o)-v<f)-   8+(9+q)-4-p <(((n))-(8));    <----- FAILURE
+    whilef +7+2+y-(g<u)+((t <s)- (s)- 3-      j -(   e  -(h<e)+(((a)))-(( 596+(g)-(s=o=(  (m)+(d)))-(j<i)+(j))-4-u-c-c+r-  (j)-c-8+d-q)+  (h)-((5)<c  ))-p-m+(9<t)+(d<(29<x))-(g  +((  l +q)))-90+(l <r)+d+(f)+(b )-87-((h)-n)  );  <----- FAILURE
+    {  ;} 
+    e=(8865<l)+l  (6<j);    <----- FAILURE
+    while (h  <e); 
+    while   ( ((k)<y  -((v<e))))f  ;
+    y   6563;  <----- FAILURE
+    while(w){}
+    if(b);
+    (e  <f  )787;  <----- FAILURE
+    if (   (p<n)-((o)+(4-(0+l-w-h+9)-(b= ((e-(j)<s -(   (4<((14521<o)<a  )+n)+((s )<f)+((g  )<((y)))<(m))+p)+v  -4<w)+x-o)+(1-(1+f  -s- h -(6-c)-7666709)-8756)-6)-o  <g))do;while    (80);  
+      (z)-k+ (v)+p-((    (n)+((x<g)))<(s))<(w=u=z=i=z=r=i=v=k=w=s=i=s=j=x=x=o=t=y=k=l=l=b=h=e=o=u=i=q=k=f=i=j=x=d=i=r=a=i=y=o=o=  (w));  
+    {while6-( (y))if ( (s));while((((j<(0+y - 138+(h)+l +   r  -(((       (o )-q-   (c)<k)-842-39<(d))<u)+(h -v+(z)-(((y)-( 98449)<g)<7-z  )+  (w)+z+k<v )-(p)-(c<  (x)))+(q))))-f<(r));      ;(n<e);}  <----- FAILURE
+    { if((a=((3)+y +x  +h-w-w-(b<l)-  0-o+ 70-t))+ (n)+(p)+  82906)while    (p  );}
+    while (53-u);      
+    (z-q  <b)<m;
+      while(n<e)+(u<d);  <----- FAILURE
+    do;while   ((i)-j<87+a+(g  <   (b)-(((20<((v)))<n)+((e-(m  )+(p)+y +(  (c  )-q)))))-5 );
+    while  (o)-  ((r )-t<  (n))+(p);  <----- FAILURE
+    {{};  }
+    doh  ;while    890- 5-s  +((((q<  (((((((  u ))-0-2<s)<3-(18-z)+  (q)+v)+c)<8291037+( d  <f)-5-(r))-   (v))-w))<n))+(y<(((v )<f)))-(l){i=(       v -b);while((g));}  <----- FAILURE
+     {}
+    while(  51741-(  2+(g )<w)-n  <d  +y-5);  
+    {    ;if   (v);else{}if(u<r)do    u -o+o+(y=(((8986< (p=i=r  )+g -i)-n  -i<(k <k ))<a)+r-e)-( (v));while(s)}  <----- FAILURE
+    while  ( (3+(d= 3)))do h  ;while   (3+( 22-x  +( (h=83)+c  )));
+    while ((d)-e+r-8+( ((v <8))-n+  u  -y)+(i )-l-((f)<k)-     (t=((o<t +g  )<a))-q+u +(b<p )+1)7<((0)<k -3+n-t);
+    if        (  u );else;
+    while(2)while  (f);
+    if  (l);else48+66;
+    {if   (a  );else;;  ;;  ;}
+    while (h +(x)-w  +(a)+u -100+p  +  (z)-a);  
+    m=f  (j);  <----- FAILURE
+    { ;if  (s)if 1-(q<i);   else;}   <----- FAILURE
+    while(m   )if(p);    else(u)-c+  (  (g )+(b)+(( 15)+l+r  +q+  5-(h<g)+(k)-(u))-n+m  +m  -  4+ (w  )+(1)+n+((m)<m)-((6+(g)<l  )+(y=f=t=e=l=f=h=l=(v ))<(i)+a-m-(((a)+10)))-(w)+4+(k));
+    if(m)-e-(z)if    (j  -1- ((d<c)<k  )-(p)+u-h-( ( (c)+((v= 5708)-5+n)-( (    (i))))-((x)-8<(m)-(o<w)+(k  )-(914-(k +c  -u)-n  <w)-(2)+e-8)+3-b+((w ))+s<z  +(i))-c+f-l);else;    <----- FAILURE
+    while((9)-u)((3<l)<a)<(w <e);
+    while     9-(i  <8)-(y+0){ if  (8);  ;}  <----- FAILURE
+      if  (i){;}
+    {;if( 6+ (g-(  45+l)+(c)<9)-(   ((m <v)))+x){  while  (n -(c))}}  <----- FAILURE
+    {  ; (e)<t; if ((x<252)<g);else;{}}
+    5+l +y-g; 
+    { {}  ;}
+    while((g)-g-(g)+ ((  k +(v)+(x)+50)+o+ (t)-u<(d<g)-n)-r){ while(w<w);}
+    while (r  +(z + (o)+z)<k  );  
+    155<875  (  ( (l<e)-( ((o -(( l +15<(09<(d<(x< (  (y)<039))-(u))))-p -(n)<n)- (j)+  (54)-b+a-w+l-w)<(g<(x  +(9+((o <p)<(668)))-(a))))+ (w +j  ))-(a=(s ))-a)-( (i)-(((q)+(i<j)+h<a)-x  )+(j )< (14<f)-(   707<(k)))-((e<p)+((c  )+(3678)-l+2))-( (720- ((u))+x-r ))+     ((n=k=(((g)))))+n-x +(a));   <----- FAILURE
+      { ;}
+    while( (   (   (243<m +g))-(e-40)<m )+e +  ( b  +r)-q<(t<o));      
+    if (r)if    1-(k)+(m=5-(  v  )-(((s)-n)+v<z)+w)+(q<w){while(s)y=o=(9-(q))<(4-y  );if((z))+((e+y  )-((3)- g +((c  <z))+l +(u)+o-(t)+ 967- (c<2)-( z )+w<  28+( (g))-c  +(j)-q ))(((k  +v <(n))<g))-j  <(n < 3);;if(v);  46+k;;;{};;}    <----- FAILURE
+    while  (y)v=1;( v );    <----- FAILURE
+    if     (   (u)+f<  (c)+  ((  t  )+l) ){;}
+    {while(((u))<(q -(m)<s))if((n )<(l));}
+    {  ;17-q;}
+    { ;;;(8<j);if(i-(e=  (n)-t  )<t);}
+    {;  ;(4)+((o)<  (h+7<(w)-(q))-(  ((x )-n)+((((w  -(v<v  )+(p)<((u ))+ x  ))<d))))-r+h<k +2+k+(y<k);while(t){};m=2-(( ((y<l)<p)+z<(   s  +i -2- 47+((   ((a<j)))<(s))-m -(a  )-o  <(4))-o)<i);}
+    {;if0+(  ( p  )-(y-((k)))-e ){};}  <----- FAILURE
+    {{}}
+    if (1507<b);
+    while  ((t))do;while (c);
+    if   ((   (( 882)-  (x ))-(n<l)+(q)))if  ((e)+(   01<g)- v -g);else;
+    if      5+(f);  <----- FAILURE
+    {if    (  28+53-796<j)if(l)while(6<(j=((y=j=e  ))-(j)))while ((j ));   if((w )  ) ;;}
+    if  (i);  
+    if (c-( (((f)))));else ((b)+(((  ((s)<( 519)))+(8))-t  +( (b +  (8))+k+(r))))-f-(h );
+    if(i)if   (f)if(k);else;;; (h=g=h= (x+(f <t)));;  <----- FAILURE
+    if   (211+ r  +(g)-m+(q  )<h);
+    { if((n))if(p);;;;;(m<w);}   
+    while(i  ){}
+    ; 
+    if   (k-  (l)-(((s <o)+(g)+v -(k)+((    8+s +q  <q)-(h ))-e)+r<(  v )-y +k  )+(q<m)+e  +p-(  d ))+( ((388+f+(p<j)-  (k  +v<  b )+(z=  86+f+d+p -((y=o )<8-(s)+( j ))-  l  -(40)+(s< 3)+((m  +w<(k=h=m=i=l=l=e=j=u=d=m=o=l=v=615))-(08<b +(((f)+    2337+r<(y< (j)))))))-z)));  <----- FAILURE
+    {while(b<5)-(((v))<  (i)+a)if (575 )while(5);;}  <----- FAILURE
+    if (x +((g +(l -( (y)+g- d +a<(s))-9)-r)+5<(p )-a)-781-4+y+((c)<t)-v<t); 
+    while(j +44  ){ if(x+t  )  ;}
+    if  (p<(l)+l);else  (   ( (  ((y=(   49+(x  <(u))<6))))+k))+(m);
+     (5-(21<13872)<(((b)+(   (030<f ))+v<w)+h+  8-h +(  0+p)<r)-9+((g)<(i)- (b)- (q)-  i -9+9+q+y-s+(((   (k)<m ))))) 2;  <----- FAILURE
+    do ;while  21-(l )  (y);  <----- FAILURE
+    while(d ){;;while((f<(  ((m)<w)+(  661)-08+(h< c  )))-k+h  -m -r -(p)+ a -y-((v))+x-270)if   (b);;}
+    if(m<n){  {}} 
+    do i  ;while (761 );     
+    while  (9);  
+    {;if((j<b)+g);}
+    if(8191+(l)+z  -(e<(f<d  -k))+8+(  (e))<e); 
+    if  (m  );else(q  );
+    if    7+(1-6);else315<i ;    <----- FAILURE
+    if (r);          
+     (   (r  + ((  (n)))- (3<d)<  (g  -( (p)+u-(j)+k-g+  ((((e)))<(516<t)-5)<((o))))+(t -(x<b  )-n  ))<((  x +k)+w))-(r  )-t-(d)-c +(i<p){}  <----- FAILURE
+    if(91)do if   (4+p-  (f)-g);while (g);  ;;if(4-w<(  b  +(b<(a))-88-t))if(p -p+ (m<(i)-x))(g)-(0<(k)+  ((   (z)+w<a))+(g)-( 28-(  (n)+  7)-(w)+w)-f-61)-a<(o< (j));  <----- FAILURE
+     if  (w  -k);else (d=3)-w-  ((w<q)+(s)+(f))+u+6903<(((l<m)<l)<( (w +  w <c  +y+((i  -(t)<v)-s<(m=    e  -b)-26))<e));
+    if (g)x=t <(z );else(t);  
+    { 29;;(j<q)-(g  )l= (7)-n+s;}  <----- FAILURE
+    while (((u=  (z<2)+j)-m+c)+f-(v))e=o=16;  
+    if  k  -(      (l))-a-((r<c)+(i)-((n=2)+d<(1-4+ (x)-c))+t  -(g)-t  )while   (85- 915+(e)+p-(o -(534)-160322<n)-(( (k)<s)-p  <d));else{}  <----- FAILURE
+    if    ((x -(r  )+ 8-e+i-z<    (i<p)+o+(8- t  <(  ((b)-4)))-(a<p))-(f  )+t);else{;}
+    {;{};}
+    { ;(w); (e  -(e)-f+h<c)+z;u=(l=(z))<(a);;;}
+    while   (v);
+    { }
+    {;while  (95-s-(  (w  <t)-x-(f)<59+z  -31574-(a<(i  <v  ))+m)+g<b);;7-c+(m )+z  +t <(z)+(d<(y));}  
+    x=n  +  (h)-(z)+x <((85+u)<(b)  );  
+    ; while   (1)-(r+(y<l))do ;while(l);; a {}  <----- FAILURE
+     while         (z  +(s<p)- s  +(j)+45<(z)-j);
+    {;if    (k+(i  )+(q)); }  
+     63;
+    {(j)<((4-(d)+((l  <j))-1<(((   (t  )))-(p)<((y)<x)))-(    30)+u+(e=(l ))-e);(((h)<(((  (  (a))-(a))))))<(  (s=x=p=i=(44<(i<      (    8+z -231725520-k -y))))); {;};}
+    while  (w );   
+    { ; ;  }
+    if      (l); 
+    (1-r  +  n  +q)(p=d=(q)+(y<5));    <----- FAILURE
+    if(k-  d ){  while( (x)+(g )+(84<((s )))-h-x+(j)<((j))+ (u -x+  012))do{}while  ( (0- (g))-(f)){ };}    <----- FAILURE
+    r=((7+b +(  ((   (8)-(a)-q-(  (p=h=l=a=( (p<u)))+r +(h<t)-((p  +(b)+x+d-d -(w <t))<a))+  ( (     (r)<t))- b -(k)<u)-((m  <x)+(w)))-d-g+  82395380449-o-0)< (7)+(q<24))+q )-(b<l)+a-(6);
+    if  ((p)){while(x)if(s);else;;;{};  ;;  ;; ;;((q))+a;}
+      { } 
+    while(s +((y=a  ))-   (8<(((u+4<(5)))))+(((p<  (((x)<k))+z-a-(i ))-5-(1<o))+(   (75<e)+o +((a))-(59)-i+(w<l)-(f)+(h<r)<j)<((((n  <(  (j)))-(h<o)+n+l+(i  <(m)))<c))+(x))+(a)-t<569+y);    
+    while(q)while (f +o);      
+    if     (z);    
+    do  if   (d);  while      (i);
+    if(e  -m ){if(     (h)-49193+43-5<(a))if   (n); while(b)  ((n))+(g<u)+n+  (b);}
+    {{}  c +(x);  }
+      ;
+    while (  (      (o  <  (k<i))-(  817-n+(((n)<(s  <i))+6+i+i -(i-((q)<j)+(u)+(s))+3+(  60+n<k )<i)-p)+(a+r <w)+79)-b+52981); 
+    if(q ){;{}if(485)+i-(g<t)if((v)+(z<j)-d ){ ;}{}}  <----- FAILURE
+    if(  t  <(l )+  (  880))if  (i)ifw +(l){if(x-  (  8790)+(c )-(c)+(r=j=l=(q=y=f=(a<z)))-(p<(     (i+1+p  <a)))-d)if( s  <i);u=2+( b  -e)-w<(s<o  );do  if((u)<(c));while(h);;;while ( (r<7)<z  )  (x)-  591-(n)+a  ;}  <----- FAILURE
+    while (l);
+    while   (51516);
+    {;{}}
+    {  if(s );;} 
+    if   (m)+v+c+(b-(v)<q );else;  <----- FAILURE
+    if      (((p)- ((z=j  )-i< 85)+((k)))+14868){  while(a +   (v<r))if    ((790- (  e  +(7)-(j)-(p)-h))+(w=       (u)));             ;}
+    {; }
+    if    o +(3)-(r-(i)-   (o<(01+h)+((p)))+i );         <----- FAILURE
+    if(s+6)if(l<4){if(c)+(n<t)-(p<v)while(c);  {; ;}}  <----- FAILURE
+    (l)<a;
+    {  }
+      {  if(r-(r+5)){};;} 
+    if (( n <r)){ if   (0+(u  -  ((930)-( (b)<(5<9))< (87<a)+z+s)+(h)+m)+  (( ((r<(t))-(m<d  )- p -  1+ (z)-(( 01+    ((98))-234<m  -(l<(y)-i))-66))-(m))+0+(w)-(n)+(h)+ 4+(s  +  (k)<b))-66-u+((  d -l+(67+o<(p))<y)-q)-s+(u)-((b=g=t  ))+ (((  k  -7+(d)-(k)-58)))+7);else;; ;}else(q<o);
+    {  o ;;    }
+    while((((53))-k  -s-  (s )-80+  (s)+l-y -((h)-2+(j  -4-k-t< (w))-(f))+(m)+13-p<(i ))+z  +((n=o=a=d=o=n=o=r=3)<g))while (n);;{  ;}  <----- FAILURE
+    if(q);elseg  + 50<(3734682)n  +(6619)-( d )+(p)<(w)+(409);    <----- FAILURE
+    if    ((5< g  +(c  ))+92-79-6+5+3488-t<4-y-d);     else  ;
+    {; ;((m)+(k ))<((s)<  (7+b<k  )+(    (((w)))-  (g +(l)-(k <x  ))<d));w  ;;}
+    ;  
+    if ((j  - (3))); 
+    if( v  -(g))if ((53)); else{}
+    while(a);   
+    (k);    
+    if      (a )-c -(y)-8+(b);else;  <----- FAILURE
+    if(  u +(f)-25490){(8-(u));;;;;{if   (y);while (e);}while (v  )g=u=y=(e)<u  +(e);;}
+    {;while  (d);while((887)+(   n +  5-((n)))-((m)))   (50)-z<4;;}  
+    (m  );
+    if (o);
+    if   (a);
+    while   (a <r);      
+    {; ;if   (02+t -(u)+x); 4<40- (m)-((((9+r+t)+h  +((b)<(m))<(7<w))+( (    (( (r<    ((r<(  ((((j)<y)<2)-(a -(50)+(m))- 73720)))-s)+h-m )<k )))<02114)))+(b)+40731-((7<(1<p))<s);  }
+    if  ((41-d  -(  (96+r)+  e )));else((k));  
+    {  ;if(z  );;} 
+    while  (q +c+(q=y  ))if    (g);      else;(s);  <----- FAILURE
+    if (z  -54)if(((89-e< (957+(6)+(p<e)-((((b)<   (r-a  )-  2)+(4)-(g<c)-r+771-  m  -(y )+u  + 8-r-(h)-(m-1+s+96+(8)+c-((  ((o))<(y)+((j)))-f+(k))-(r+ (    a +f-f<28022)+(z)+j-((115-u))))))-(g<  40+  (  2)+k+86+p)+g+k-((o+  7)-c)))+(v))<(s))+(x  ){  if    (5); }  <----- FAILURE
+    s=p=b=x=g=o=g=w=s=e=f=k=h=p=i=v=l=d=u=p=s=r=p=w=o=a=v=3-5;  
+    if   (( x  )+  (j<((l  +(t))<(355<(x<4+(t <((d  ))+      815036)+(u)-  ((95)))-88+0+  i +(j  )-f+v -(p<(   ((e<g)<q))-l)-(p)+(c<41-2)+r+(s))))+w+((f <(p))+q +q-61-(e<h)+  i  -d<w)<u);else ;   
+    98<109+ns ;  <----- FAILURE
+    {{}while  ((d+f  ));     3500;;}
+    if (p);else;
+    {;while(((d)-x<u))(p)<(h  );while  (k -(o+((k)<((n=c= x  +d-(o))<o))+l +(i <s ))<9)}  <----- FAILURE
+    while (x)while    (e  -(u<o)<q);  
+    {z +d +v+86-(i<x)<  (u)-31-(  u  )+(h);  ; while((n  +(x<(p)-4+h)+u)<274);}
+Recall set (size 1000):
+    if ( g =7-( o )+5<( n = c < n - l + z ))720- a - c - e - e ;
+    if ( j + p + v <( g = c - e +( j )- j +( t = t ))) d = h = e -4- u <(97)-4;  <----- FAILURE
+    if ( r = z = b =6< s )do if ( b - e )if ( h ) b ;else ; while ( v = v + y - j < y - b );
+    { if ( i ); }
+    while ( i + f -55-( l = p )< a )do while ( p ) p = g ;while ( d = j = c = n + y );
+    if ( h + q < q + x )while ( s < d - w -( i ))if ( a ) c ;
+    do { if ( c ); else if ( s ); ; }while ( n +92< x - s );
+    do if ( n = c )do ; while ( y = x );while ( v - v + c < l +075);
+    do do do if ( e ); else if ( k ); else ; while ( w );while ( c + p +6);while ( q = k );
+    do if ( c + i -( c )< o )if ( l ) k ;while ( u = b + h < k - r );
+    { if ( x = k = y = z ){ { ; }do ; while ( m );; do ; while ( w );}else  r - t + i ;do ; while ( r = e );}
+    do if ( v = h )while ( s < m + t ) a = g ;while (6< c - f );
+    if ( f = b =5-1-( p =8+( a )+( r = h = n )+7)+1)( d =( w = w =1< j -6-( c )+269))+585;else ; 
+    { do if ( q =0< f ); while ( q = m = k < g );do ; while (24406<6-( z =4- g < r +( q =( l <0)))-59);}
+    while ( e =11+474){ while ( u )if ( x ); else ; ; }
+     o =( d - m + d +( n )-( b <( b )+ z )- y +( b = m + r < h )-62+1);
+    if ( q = f - l - j <( k )){ { { if ( o = f ); else  z - k ;; ; }}}
+    if ( w < m ) i < u + p ;else if ( h ); else if ( q ); else ; 
+    if (( y = z )-( e = u )+ r )while ( b -7){ do ; while ( z );; ; ; ; }
+    if ( y =( v = v - g ))do  q + d +( h )< q - z + f ;while ( f = m );else ; 
+    if ( v + g < l -2)if ( i ); else do do do ; while ( t );while ( w );while ( d );
+    { { { if ( j ); else if ( s - v - j < l ){ if ( f )while ( c ); else do ; while ( r );}}}}
+    ( s = l = z =654)+66< z - s -( a = i )-(( l = t )< p );
+    while ( k = c = k =400+4-( h )); 
+    do { do if ( i )if ( g ); else if ( u ); else ; while ( t ); r = p ;}while ( z = t = x +( m )- f );
+    if ( n - s -5)do ; while ( g = o = j =17-( h +4<47)-( g =( a - v < q + s + w )-0-5-941-( j < d -9-(675)+ m +6)- o -( e + t ))+ j -86);
+    if (67){ if ( h )while ( m ); else while ( n ); }else { if ( t = v )do ; while ( n = o );}
+    while ( x + g +42+ k +( i + c + n <( k ))- c - l )while (9- k )if ( e +( h ))( c );
+    { ( d =15)< t -60-( p = g = j + b -5+5702< n + l - p )- u ;{  v +0;}}
+    do if ( e = i = w ) w = x = o ;else  k ;while (( g + c < n - a )-8);
+    while ( u < c +6)if ( q = u ){ ; }else if ( j ); else while ( f ); 
+    (802761< s + p +86);
+    do ; while ( m = y =7599);
+    if ( c - r +0){ if ( t + l ); }else while ( c = a = t < f )while ( m ){ ; }
+    do ; while ( h +( v < r + a + r +4)+ s -(( u = f )-( k )+ k )<( c = z - c )+8- w +( e =59));
+    do do do do  y < o ;while ( v );while ( i );while ( c = x < j - b );while ( h -( o )+ v + n );
+    if (( l = n - c +1+95<4-( f = d = e = i <(( b + y < l )+244486< n + b +( u )-60-10))+ g + l - h )+(1-5-00)+1+ q +( l =( f = j = i + v )+ o )< y ); 
+    while ( w = v = h )while ( b < a )if ( z )if ( x ); else ; else if ( r ); 
+    if ( l = g = j = m = l - d +( f = i = d )+ y )while ( r = g = f = a = n = d = b - v < b - b ); 
+    {  b + k <269;do if ( v )do ; while ( u );while ( d + u );}
+    if ( p = r )if ( a )if ( h ); else ; else ; else while ( z )if ( b ); 
+    while ( p = h = v )while ( a )while ( f + i < p + p )if ( b ); else ; 
+    if ( y =56< j )if ( c = o <(8+( o + i )- f +47+( m = p )- r -(( z = r - p <0)<( h )- o - q )+46906-1< g )); 
+    ( y -( n <( t ))-(( d < f + z ))< h +( w - u - w +720+ v +45))<1;
+    { do if ( u )if ( o ); else ; else do ; while ( p );while ( q +( o )-( x < i ));}
+    if (( l ))do { ; ; }while ( f < m );else { while ( p )do if ( h ); else ; while ( j );}
+    if ( l < p )if ( n )if ( f ); else if ( t ); else ; else do ; while ( m );
+    ( z = k - v <( r ))+ f -( i - u )< v - n - h + o -( k +( m ));
+    while ( j = f = y < o + o +( m = o + v ))if ( k ) p = f = l = d ;else if ( z )do ; while ( z );
+    do while ( z = j )if ( t ) c ;while ( a = e + d < j +1+49);
+    do if ( u )if ( v ); else ; else  g = l ;while ( h < a - s - k );
+    if (860-( x - h < b )-44919+(( q = b < w - c )<( p = m < t )-4)); 
+    if ( n - e < h -( x )){ { ; while ( e = t = e = h )if ( i )if ( q ); }}
+    6086- a - n -6+7- r ;
+    while ( k ) s - w -( c - t + j +( l + l ))-(( j )- m < r - h +49);
+    if (( f )-2< x -5229){ do while ( f = a ); while ( l = m <4);}
+    if ( q = x - q < n )if ( j ); else { { ; ; }}else while ( m )while ( k ); 
+    do if ( n = i < h ); else { do if ( v ); else ; while ( e );}while ( n = e = o - y );
+    if (2-8+0+ u +6+( u = y <466))do if ( r +9); while ( d =(( j - u + t -( n < j - b )+( a = p = u < n + y +( n ))- z ))+ g );
+    if (6545<( n )+ f ) m = j + o < t + v -( q );
+     m =52204+ o -8<7204892+( e =( r - k < g + h )-( r - r < x - l -40)- a +9)+ d +(4);
+     g + y + s - j +( b )< k + b - l +49;
+     b = d <1-( g = m = z = a = d =( f - p +( k )+( d )-( f = r - d - c + i < l -22)-8));
+    { while ( x - c < z + d )while ( a = t = o )if ( i )while ( f ); else ; }
+    while ( y = v )if ( y = p )do { ; }while ( k = v );else if ( d ); else do ; while ( m );
+    if ( c = w = q + g < x - u ); else if ( z )if ( c )if ( w ); else ; else ; 
+     u + c + i - o + b + z ;
+    if (( b )< v - a +15)if ( g = j )if ( c = l ); 
+    if ( j = x =( b = v = q )+0+475)(( q = i )< a )+1+( p + x + d < q + h )- m ;
+    if ( t =4699+( u = k = g = j = s = f = v =( k -9-96- q - r <6)-995< b - f +( w = v = w - d < u )- u +4)); 
+     l = k = x = e +( n = w = z = f - u + d < m - q + r - v )+ q -5-(69<0)< p -(( s = a )+( k < f )< d )+50;  <----- FAILURE
+    if (( o = j = y = n )){ { do ; while ( s = a =( a = i +( k )< y + i -2)-( j - o < g )-2< c -( k = n + d + u )-71+244-7);; }}else  p =15- w ;
+    while (( x -29))if (( w = r ))do { ; }while ( c );else if ( z ); else ; 
+    77;
+    if (( y + g + j +( o = o = y + s +( f = m )))<48-64+ b +1+7); 
+    if ( d =9-( a = t ))if ( w ); else  g = h ;else { ; do ; while ( j );}
+    if ( b + f -1+ d )do { { ; }; }while ( m );else if ( t )do if ( q ); while ( b );
+    {  r = y = r ;}
+    if (( u = a -( g + s + q +9< e - v )))( p = o - t - v + g )-9+ p ;else ; 
+    if ( q <7-( d = a = r - a -4-( g -7-7)))if ( i - h < v )do ; while ( a - v );
+    if ( e = i ){ { { ; }}if ( d ); else ; ; ; }else while ( d - u ); 
+    if ( h +5)while ( y = j = c )if ( z = n )if ( i = v ); else if ( r - o - u ); 
+     i < g ;
+    if ( w = r = z -7)if ( f - x < g )while ( l = x )while ( u = t ); else ; 
+    if ( q = n ) z + r - b ;else if ( m )if ( f ); else ; else { ; }
+    do do while ( v )if ( z = v ); while ( g = w < p );while ( h - u < s - f );
+    { ; if ( x = t <084)do ; while ( q + r + o < c - k +1);; }
+    if ( v = q = k =(( k =( n = d +805527677-1+ v <( p = w = r = i =(2+ u -( z -69)+ c )))<(2709))<24+024)); 
+    { do if ( s ); else while ( p ); while ( f + l +5< w + t - x );}
+    {  l = e =( g - i - n - n )+4+24+ y + h <087+ g ;}
+     z =2+(( j = u = d = v = g = w = p ))-( g - b + y -( u )<( m = p = v ));
+    if ( l = f = y = t = j =( z = l = s =75- y + d +( v <( d = k = w = d +80+( u =7- y + c ))- q -657-(2))- j )); 
+    while ( u = w +8- u < c - k + z )do while ( a ); while ( e = z = d );
+    ((8))+ f +( r -70188-( j = y = x - b + u < i + q - m )+( f = i )+ s )+((01- m )+ b +( j =49)-48)-0+82+ s -04;
+    if ( n + f ) q =6< z + b ;else if ( u )while ( m ); else while ( s );   <----- FAILURE
+     n = d <( h =(1+2-1- n <88+0)+ s );
+     b = l -( c =9- m + s +( k - f -47-1+2-(( k = c )< p -41+( z )- b )-(2+ v <2)- e +8)- l + a +57+ l +1+ n <67-0)< x -099681+2;  <----- FAILURE
+    { while (( y = d )+ y <( b - g +( z )))if ( u - m < d )do ; while ( m < r );}
+    while ((( m = k + z -5< m )< f + y - y + k - s )+( o = z = m = n - n )-8); 
+    { { if ( l = f ) c < d ;do while ( h ); while ( p );while ( n )if ( g ); else ; }}
+    do do while ( y = d )if ( o ){ ; }while ( p < r );while ( j + m < r + y );
+    { if ( y ); }
+     g = a +( g = m =94805+( h <99+07-9-( d < a -( c ))-8-( f =( k )+ r +( m )- o - o - j )-( p - q + t )))- y +( c = v = y =1095- u +7);
+    if ( v = l -( k = u = p = w < y ))if ( f = o ){ do  i ;while ( b = n );while ( i ); if ( z ); else ; }
+    do do while ( l = f )do if ( g ); while ( z );while ( l = x );while ( t = t -41);
+    { ( v =2574562<( x = c = i = n =20<5+( y )-5))+( y = v );}
+    do if ( i = j + e - w +692<( s = p = n + g ))if (8- h ); else do ; while ( o = h = u < x + a +119);while (605);
+    { ; { do ; while ( h );; ; }while ( b )do while ( g ); while ( l );do ; while ( w );}
+    if ( s + e -( w )< l + j + k + h +( d - w -5))(48)< w ;
+    do if ( k )if ( w ); else if ( x ); else ; while ( z = j + u - i + w );
+    if ( f ); 
+    while ( s + l -8- i < c )do while ( g = y ){ ; }while ( s - v < d );
+    do do ; while ( f = r = k = h = c = k );while ( f +8< j + s - i );
+    if ( p = u = d = n -0< l - o ) o = j < g +079;else if ( f + k < u );   <----- FAILURE
+    while ( m = n = l < e -16+( b = q = s =4)- e -9+ e +4706); 
+    do if ( p = c ){ if ( v )if ( e ); else ; else ; }while ( c -4< u );
+    { ; if ( j =4-5<( s = m = c =4+7- t - h +( i -5<( n = f =0-0)))- r -( j =6)-5- y +2+2-6)while ( w ) i -6+ y ;}
+    if ( n =( k - x < f ))while ( v = n = m )if ( z ) f = c = c ;else do ; while ( n );
+    if ( s +80)if ( c - y - k -( g = w )); else do ; while ( n );
+     k = e = p -9+( d )-67< j -68- f +09;
+    if ( u -( p )< e +( v )+4) r + e + m - p - q ;
+    { while ( b < e )do while ( s ); while ( v = q ); d = z ;; ; }
+    do ; while ( v =( q = a =( k =(9+0< u +( o =1108)-4568-412)+54+2+( w =( x =7)))));
+    while ( y + l )while ( e = a = q )if ( o ){ ; }else if ( g )if ( f ); else ; else ; 
+    do if ( r - p - m +6){ {  l = f ;do ; while ( a );}}while ( q = r =( j < w + s )<4+9);
+    if ( l + r -( t )){ do if ( i ); else do if ( z ); else ; while ( w );while ( i );}else ; 
+     b = o =77+( z = m +1< m )< u + q +( f < w + z -4)- v ;
+    if (( n - r < d )-( l - y < u +( a )-( e ))- h )if ( b =(( v = g < m ))); else ; 
+    ( v + r + r +( e - h + c )-8)-( n + p - e +97+599);
+    if (( b + w ))do do ; while ( d );while ( j < k );else while ( f - c - m + c ); 
+    9<( t = d < u )-( g = h = i )-( m = i -4< b - c + q - i )+ o ;
+     c -( k );
+     t ;
+    if ( h = v = k = w = s = p = y = q = a = m )if ( s ){  h = d ;}else if ( g ); else if ( s ); else ; 
+    { { if ( v + b - d )if ( n = k = j )if ( r ); else ; else do ; while ( p );}}
+    if ( l =( v = l +9-( u )-( u = h = n )+( w = j < w + a -17)< w +4- i + g )) s =77-87;
+    if ( v = v = s = e = h - d + c + l )if ( x = b = w = v = w = a )if ( v = p ){  p = n = a ;}
+    { do  c +( v );while ( e = m = m );; while ( g = t + w +5< b + e ); }
+    { {  h <7+56-0; w = i = a = y = u ;}do { ; }while (( x = s + h <( q = v = d = e = w +8667)- c - j ));}
+    while ( b = t < w - w -800)while ( v - d )while ( v ); 
+    while (559- r -6+829-4+ m ); 
+    if ( k = d = k )while ( m < k - o - b )do while ( i )while ( n ); while ( k - c < h );
+    if ( e = x = j -( k - f < e )+( s = m - o < o + n )+09<( l =7757145)); 
+    if ( f = a )while ( z = y )while ( b ); else if ( h ); else while ( z ){ ; ; }
+    { { do do ; while ( l = o = x = e );while ( w );{ if ( k ); }; ; ; }}
+     y - j + c +( k + e < m )-( d = f - l -( g = c ))-( n )+ b -8812< o ;
+    do if ( h = q )while ( z = i < i - a ); while ( e = e = w = c = f = s =( c = e )< g + v -( f + v < z ));
+    while (69); 
+    if (( i )+ t < t -5)while ( y )if ( r )if ( p ); else ; else ; 
+    { {  n =10-( y =0+( i = g = m < c -( p = c = v < a )+0)-(( a =0+ b -1894579)-2))- d -9< z ;}}
+    while ( l = g = x < e - e )do  a = m = t ;while ( n = y = q = m = q );
+    { ; if ( g = v < t )if ( g ); else ; else ; do if ( z ){ ; }while ( v );}
+    while ( s = r = j )if ( h = j )if ( q )while ( v )do ; while ( e );else  b ;
+     o =( r -6-64+ c -167)< v + k ;  <----- FAILURE
+    if ( h = d = l = k < z )if ( p = l )while ( s )if ( u ); else ; else  b = x ;
+    if (( i )-( w + t - s < j )-50<(6)-( l + r < r + j + b )); 
+    if ( z = b = j ) g = a =0<8-4;  <----- FAILURE
+    { { ; } q = h - g - j -( x );{ while ( m = d = r ); while ( o ); while ( y ){ ; }; }}
+    do while ( q = s = y + v - r )if ( t < i ); while ( f = y = s = y = r = w +5+( k )< u -( q ));
+    { if ( c = r )while ( o = l = i < c )while ( w - m -( v )< z )if ( e = g = t ){ ; }}
+    do while (( l - k )+ d ){ ; }while ( t = q -8+( l )- b -5+( a < a - n -025-( q < v ))+088- y );
+    { while ( q )if ( p < z )if ( g ); do if ( y ); else ; while ( c );while ( t ){ ; }}
+    { if ( h =( c =( t = p )))if (( y = q = l )< z -0+7- n +( e = d < p - u )); }
+    {  h =( t - q -(1290641101+( k )-( r = n = v = k =9-( f + i <( o = u = j = p = n =8< s )+ s )- t - s -9+ t )-( c )<0-1-29)<626951)+(1);}
+    if ( h = i - o +( c - q -( y = b )+( u < c - q -0)+( r = w = v = o = p = b )-( i = h -4591)< d -8)<26- t +2+ n ) r = d - u +( q )< n ;else ;   <----- FAILURE
+    do while ( t - i < w ){ while ( p )if ( q ); else ; }while (( r )-( q < e ));
+    if (4109- z ); else do  v = g + v +(415);while ( w = y =(8+( k = u = l - m +6+( o = j ))+((( i = d = u = x )+( l = r < p )+ b ))+ b )+ p <25821);
+    { do ; while ( j = s = m = g + g - l -( m < n )-( p = j +495< d ));}
+    while ( o = m =( r - s -( b )< t +( p ))-5- f )while ( a = q = m = t = w + v - x ){ { ; ; }}
+    do while (85<80); while ( i = d = r = f - s );
+    do  s =29-(70287+0-( y =(( r - c )+ p -( l = p = d = m = p )+( i = h = j =( a = y =41+ m < l -( f ))))+ v -8)+6+ j -( t +2)-07)+ q + j +81-17-95+6;while ( o = e =068);
+    while ( o < d + x ){ if ( o )if ( k ); else ; else ; ; ; }
+     o = h - n + e -( b =9-( a = e = j =( e + b < h )+ m )-61< q +(( x = g + w - v +( x )-4684)))-6;
+    do ; while ( l <( l = g = e = i =7194925));
+    if ( p = y )while ( c = v )if ( b ); else ; else if ( s )if ( n )while ( q ); 
+    if (5-4); else ; 
+    { do { { ; }; ; }while ( p - z );if ( u ); if ( n ); else ; }
+    if ( c =60< y -01-( v + i + d )+1-( m +( a = r +7-( d = u )< g - a -( q )+ j )-2))( i =60-2)- r -7+ y < v ;
+    { do if ( k = x ); while ( v = h < h );do do ; while ( n );while ( t = a );}
+     k =41+11- e +94- w -(( d + w < h -6)< o -( a = q ));
+    if ( r = f )do do ; while ( w );while ( b );else { do ; while ( h = n );; ; }
+    if ( b +( g ))if ( f )if ( g )do ; while ( e );else  w ;else { ; ; ; }
+    if ( j +7+ e )5+2+( q = v = v = c <41-( q - g < s ))<6;else if ( q = n +85- v <5+( t = k = j )- e -( y -( p )+( v ))+91); 
+    do { if ( s - q - a - o )if ( o ); else { ; }}while ( j = t -( r = f ));
+    do  v = g = w + y + v + x +851-166;while ( y = e = s = s = f -( c )+ t +( k < w ));
+    do while ( k =( g )< b )while ( d = m )while ( r ) z = u ;while ( n = a = y < u + t );
+    if ( u = u = v - i < g + m -( j = g ))do { if ( m ){ ; }}while ( v = p = b = c );
+    { do ; while ( s + i < o );{ while ( a )while ( b ); ; }if ( k ); ; }
+    { if ( l )if ( u ) q = c ;else if ( l ){ ; }while ( a )while ( b ); ; }
+    do ; while (7- s +4< i );
+    {  b = i =( q )+( h + p < k - s )< a - z - y + j - a - u -6-0;}  <----- FAILURE
+    do do  m = v =( g )< y - r -8;while ( x = z + m - v -( o )< o +( j ));while ( t -2);  <----- FAILURE
+    9;
+    while ( o = g + x + r +07+ r -41< n +( y + b < f +( z )+ u )-6); 
+    { do if ( a ); else ; while ( c - i );{ while ( d = y - e )if ( c ){ ; }else ; }}
+    if ( w = v = e - o + o +7- l )while ( c = n +0)if ( g = o )if ( u = j )do ; while ( h );else { ; }
+    do while ( p - b + k +6759)if ( t = b < u - h ) w = k ;while ( r =7- o - z );
+    do  g = i + t - q < k ;while ( t =( y =( f +( y )<8)<51+ t ));  <----- FAILURE
+    if (8< u + q )while ( g ); else if ( v = c ); else if ( y ); 
+     x = l -8-7+ f + x +( o = n < s - i + v )<( d -8- c +( g )- n );
+    while ( k =( b = q = z = i ))if (05<( w = o )){ if ( l = m ) r = a ;;  p = k ;}
+     j =772-8< m ;
+    if ( x =( a = w )< g -( b = o = z )- v ) t =( v = k + c - y < w - l - t );
+    5<700;
+    { do { if ( u ); }while ( v = e );while ( x )if ( m ); else if ( q ); else ; }
+    while ( t = q = v < c -( u = v ))do do ; while ( u - u );while ( z = t = a = r );
+     h =( l + x + n -( p ))+26- r ;
+    { { { ( j = a = o < m )- n <80;}if ( d = u = u + b < y + l )do  v = a ;while ( l = b );}}
+    do if ( r - g < w ); else do ; while ( n = v );while ( v = m -27< t + s );
+    while (644< b + v + r - o -74){ ; }
+    { while ( z )while ( p ); do ; while ( x );while ( f ); ; ; ; }
+    if ( j < e ) z = j < m ;else while ( y = l )if ( v )do ; while ( w );else ;   <----- FAILURE
+    if ( k )if ( y < l )while ( a ); else if ( g )if ( k ); else ; else while ( o ); 
+     h =( t < a )-997< p + d + x +( y )-( g < z );
+    if ( m = r = x = d = f = o = p = a + n + d - m < f ){ { if ( i +( p )<( g - i - y < g )-82); }}
+    do  y = x + l + l + r +41+41;while ( g = o =( y )- v < k +( k )+100);
+    if ( l < l +1)if ( s < s )do { { if ( f ); else ; }}while ( o );else if ( c < g ); 
+    if ( w = v < i + f )while ( g < c + p )while ( f ){ if ( b ); ; }
+    while ( s <1){ if ( c = p = c ){ ; }else do ; while ( r ); q = n -( l = w )< y +0;; }  <----- FAILURE
+    if (( z =( c =727+ n ))<9); 
+    do if ( j ){ do ; while ( v );if ( i ); else ; ; }else if ( o ); while ( c < d );
+    if ( m = d )while ( e ); else if ( f )if ( e ); else ; else if ( s ); 
+    { do  g = n ;while ( c );if ( s = a )while ( w )while ( b ); if ( g ); }
+    if ( s < l + p + r + q )while ( q = o )if ( s ); else while ( r ); 
+    if ( z < i + p ) c + k -11< u -( m = c );
+    while ( q =((89))< w +( z = x ))if ( h = a = v = g = x - o + v <2)if ( g = o )40< o - e ;
+    if ( l = r + l -( l )< t + r )do if ( y )if ( d ); while ( d = e < i );
+    while (( c = i < h -58-( x )+74957-( x = m = n = v = q + d < x )-( v <8+ x )-(0)- o )- b -267); 
+    if ( w = p + l -( y ))while ( j = g = r = e )do if ( r ) l ;while ( a = j );
+    while ( v = v = k < i -07+ l - x ); 
+    { if ( j = s )do if ( i = y ); while ( a );while ( f = u = a = k ) z ;}
+    if ( z )do if ( n )if ( e ); else ; while ( o );else  h = q + b + a -( l );
+    if ( q = c = l ) p <8;else if ( x )if ( y )if ( f ); else { ; }
+    if (0+47< i )if (29+ n )do if (( b )) x = x ;while ( g + v + x - h -168-4);else ; 
+    do ; while (( a = j = u = w + p -( a )- i <( i = k = n = y ))-( d = b = w =( c )+( v = o )+( y < q ))+1+ g - e <( s =6-25- b )- h );
+    do while ( o + g -( u )+( u )-( f = m )); while ((( l =9< r )<9+ z +5)< p );
+    if ( j =06<( p )+( m )) j = t + z +82-( i = z = h );
+    do do if ( a ){ ; }else do ; while ( r );while (8< q -( h ));while (( i )< g + e );
+    if ( g = n )if ( d + x < v ){ ; ; }else  o - u < n - i ;
+     b =( p = q = a +( b +( t ))-577+ x - k +15-( h =( j )+( b = y = x )-( e < y )))- u ;
+    if ( f = p <4)do { ; ; }while ( q );else if ( f = l )if ( g )do ; while ( b );
+    if ( y = b ){ do  z - e < v ;while ( b = u = n );; }else {  y + e < r +1;}
+    if ( x = f + s )if ( b = b )if ( y ); else ; else ; else do ; while ( n );
+    { if ( u -1< a ){ do ; while ( h );; }; do {  k ;; }while ( f );}
+    while ( n =9+ d + t +9-9) e = a = e = i =24< p -9218;
+    do while ( q = r = g = k -( p = a = a =( c )-( k )))do while (( t = b )) x - f +( p );while ( u - r < j + u );while ( a =8<172);
+     o +6+ y +8< e + w +( o - p + d - m +( i - n + m )< o + g + m -( i )-( y )+ r +5);
+    if ( u = n = h = p )if ( g )do do ; while ( r );while ( f );else do if ( d )if ( e ); else ; while ( a );
+    do while ( i -( k ))while ( x = s ) t - k ;while ( g + w < y +( l ));
+    if ( a = x -( o )<( u )){ do ; while ( d - l );if ( n )if ( z ); else ; else ; }
+    while ( f -2<( f = e = l = h = b + p < o +08))while ( h =97<0- h )do { ; }while ( p + r - m < t + r - w );
+    { do  h - b ;while ( e + k < s ); a < k ;if ( r ); else ; ; }
+    do do {  j < a ;}while ( o + a );while (( k - d + e )< e - u +( c ));
+    while (( d )< g + p - g )do if ( g )while ( s )while ( l ); while ( i = s = y = r );
+    if (( d = s = s +( h = r = b +89< q ))<0)( r + p -0)+( m = g = n = g )<( j = g = n < h );
+    do if ( c = b -4)if ( w = s - x < j + d ){ ; }while ( j +02+ b -( h )+6);
+    if ( s = e = y = q =795+( u )-( b < m - d )<1204)64;
+    do if ( v < u )if ( a ); else  t ;else  x < v ;while ( o = a = d = r + j - j );
+    if ( f -5< y ){ ;  x = c = b =( m -62<1789+ o +( r = s =0158082));}
+     e =9+( u = t = w = e = j - l < s -6);
+    2<( d + g - s +( s ))-9-6-( a = i + u - k +26-( b = b ))-(5+ i );
+    if ( g = j = r +( z < h )< l + o + h ) b +7-( j = n = e );
+    if (7+ x ){ ; { if ( j = f = b -( v = i = l + o < n + j + w ))if (1)while (9)do {  v ;; }while ( u = b = f = r = g );}}else ; 
+     t = s -01+417+09804-7- h ;
+    if ( u = i + a -( t < u + d ))do do  f ;while ( z = s );while ( o = z );else ; 
+    if ( m +5) f = i = v = t = r = e =(( j = o )<( c = r +( i = i + g + g ))-468-5)< c ;  <----- FAILURE
+    if (0558+9+ m < d + d +8+( k + r + n - k )- b +99); 
+    { if ( k ) c = x ;else  d < e - n ;if ( l = p ) f ;{ ; }}
+    { do if ( r )if ( s ){ ; }else ; while ( j < p ); b = v = j - o + x < z - g ;}  <----- FAILURE
+    if ( h = b - l +( z = f ))do if ( j = b ){ while ( a ); }while ( r = x = u = s );
+    if ( n = w < g - h ){ while ( p )do if ( f ); else ; while ( a );}else if ( v ){ do ; while ( v );}
+    while ( x )if ( j -( a )- m ){  g = b = e ;while ( r = d )do ; while ( g );}
+    while (( j = k = k = q -54+89)+46-84+ r < y ) c = z =22-4-( h =5<( e = j + g + r < b + z ));
+    if ( m - g + y < w + e ); else if ( c = v ) b ;else do { ; }while ( k );
+    { ; ( l -( a )+ h -56)+( m + r +( m )+( c < s - s ))+ f ;}
+    {  h =622< z + m +0- z -( c =( e =7))-5;}
+    while ( b = k = i < x - l + e )if ( r = u = d = y )if ( h = a ); else  k ;
+    { do if ( c ){ ; ; }while (5- j );{  x = r = n ;; ; }}
+    do do if (7); else { ; }while ( k -76- u - t -( z = g )<04+( h )- o +( y = h ));while ( l );
+    if (56+( s < c )) e + a - q -( b = w < q );
+    while ( w )while ( i +74)if (( k = a -( w = n = c +16<( u )+2-04171- n + t ))< y ); 
+    while (( c = s + a < e + c )-1)while ( o - j + t )if ( t = z + d < o ) q ;
+     n =4+( x =( m - z - r <( o = r ))-96-( a = h -2- n - d -( k = i + n - m )))-( p = g = c = u = d + b )+6;
+    while ( i + w -( y < a )+98+80)while ( o +805) h = v = u ;
+    while ( u < v - t - m -( k ))if ( e +9)if ( k )do ; while ( b );
+    { do ; while ( b = y = a = p = s =( a = y )+ y -7-( f - o +16)+( q -885+ c +9)-75<01012);}
+    if ( x =51<824-7- c -4)if ( n = v = a + m + z < v ); 
+    do  x = n + u -( r )-( i = w )-( w );while (( i = l = m = y = s - r < d - y + g - q ));
+    { ( u = k = k + u -( a )+( q < q ))<( g =( h )< j + q +4-5+ j -6);{  u = c = m = n =7;}}
+    { if ( b =9)if ( y = k = j = t = b +( c =166+( o = h = s < d -90-895095692796)<0+ a - h -8-( j = d = d = a ))+788<( q = f = q =6+259)); else ; }
+    while ( p =59)do  x = o = w = x = f =6- r <( z = j + w )- n +8+( l =( c = l = d = n =1< s - a )< w + r -9-( q = i )+64- z );while ( i =( d = e =(8+(( j )- n )-1)-86+ u ));
+     f = m =8-(( f =( v = i = r + j + c -5))+ e <((( h =( h =18-( f = c =( y - m + r -(( h = w - b )+( p =6-6-(( w = s = e = k = o =( r = j = c = q = e < t + s )+( n = c = t + k + i -6< v +( h )- a )< d )+2- r + m + q - f )+87+2))<128)<760- q )- q +51+( v = z ))+ y )<29-5+4))+2)+ q -44< q ;
+    if ( r - h -88+ d <( g )); else if ( q = e = d + x - g < h ); 
+    { if ( y = x - x )if ( e )while ( s ){ ; }else if ( p ); else if ( i )if ( s ); }
+    if ( c - c )if ( j ); else ; else if ( m )if ( f )do ; while ( c );else ; 
+    if ( y =22+1809); else while ( e ){ ; }
+     h = o = a =( g +(( v + t +9-( z + l < i + l ))-( w = m = p =( n )- j +( q ))+ j + x ));
+    do while (( b + v ))if ( y = f = f = y ) a ;while ( n = g = z +( e )+ g - f );
+    do if ( l +71){ while ( r )if ( u ); else ; }while ( c + k +8<1);
+    if ( x = e =( t + f < s - t )- s -( x =( w < v )<( z - q + r -7))-41+ c -8); 
+    if ( j =5)if ( q )if ( a < k )do do ; while ( t );while ( j );else  f + o ;else if ( o ) z = o ;else ; else ; 
+    { if ( p = o <5)if ( n - b )while ( j )if ( x ); else { {  a =17+( s )- u ;}}}
+    if ( k - f -54){ ; { ; }{ ; }}else while ( h )do  g ;while ( d = l );
+    { { { while ( g ); ; }if ( p ); ; }if ( q = h < b ){ ; }else ; }
+    if ( e =( f = m =7< j + k )-( k = d = y - t < x + k +6))do ; while (( z = h = m -6-58+7));
+    if ( x )do { if ( u = d = x )do if ( p )if ( t ); else ; while ( k );}while ( z = u = f - w -( i )+ c - t );
+    do  h = i - t <(( b )- o < n +4-( m = u + v )+( o =02< m -( t ))-50+ c +9+ g + l -( t = h = o = s = n = f = w = o = f -( z =( s <8))- o ));while ( r );
+    while ( x = h = n = b =( o +(( e =0<706+ x )))) s = a = i =1-( b =( m = m = d =(( c )< w - l -( e ))< i -( y -70))-85< s -0)-((( a )<( e =( m < s )+( u ))+ w )-07+ w - q - a +11<67)+2- y < o ;  <----- FAILURE
+    do {  v +( c ); e = e ;do ; while ( j );; ; }while ( j = v = m = h = h = n = x = j + z - q );
+    do { 06-9;}while ( a =10-278660501-0);
+    { ; do  l = c =(( e = i + a <( l ))- i +17- b - e );while (( g = e =( g = a -41< b )-( a +8-( n ))- p + t -1< t -9));}
+    { if ( a )if ( t )if ( t ); else ; else while ( w ); while ( z )do ; while ( o );}
+    do do if ( f )while ( x = q )do if ( v ); else ; while ( x );else while ( b ); while ( p =58);while ( u = x < u );
+     n = p = b = p = u = v =4<9-1- i +(((( x = z =20-9+24+5+( c )+71+0)- x )+ p +58<0+ z -( e = m -( r = k < s )+( x - p +0+ q )+16+8)- e + f +2+6-1- l ));
+    if (( v ))do { ; }while ( d = a );else if ( w )do ; while ( s );else if ( o ) a ;else ; 
+    0710;
+    while ( u < v -8-( z + r < u ))if ( j =( f - t ))do { ; }while ( o - u );
+    {  e -478+9978+( c = l = h = g );}
+    { do while ( c =(9))do if ( l + x < h + e - o ) x = f = k ;while ( h +5-( p ));while ( m );}
+    while ( c = n = q =0+ z < g -( j )){ if ( a )if ( j ); else ; { ; }while ( o )while ( f )if ( t ); }
+    do ; while ( g = v = k );
+    if (( y = n = p )< r +05) c + n < j +62;
+    do { { 2;; do do if ( w ); else ; while ( w );while ( n = i < y + y );}; }while ( o -5- d );
+    do { if ( u )if ( f )if ( d ); else ; else  v ;}while ( j = r + s - h - m );
+     e = a =7+ q ;
+     g =( r = m - n + u < r + b )+4+ w -(( r )< v + l - t + d )<50;  <----- FAILURE
+    {  e -( w = f )+( q - r )+85< f +7-( c - l + c +( h = g )); u = v =( j +6+ c );}
+    2+ d -515+ x ;
+    if (57)if ( b = f -0<51)if ( m ){ do ; while ( r );; }else if ( n ); else ; 
+    { if ( u + m )if ( w = u )while ( j ); else if ( z ); else while ( x ); else { ; }; }
+    if ( d = x +( z ))while ( z - j + u )if ( r + h )while ( u )while ( r ); 
+    while ( a + o -( p )+12-749<6-( p = s )+ h - h ); 
+    while ( h = v = i + r -( y < c )< l - k +( y ))do ; while ( z = r =( p = o = f )<( u < j ));
+    { do if (( n ))do do { ; }while ( z = e );while ( h = m );while (96< e -4-( q ));; }
+     h = k -2;
+    do if ( y )while ( f ); else if ( j ); else if ( g ); else ; while ( u < y - n );
+    if ( a = g ) y = x = g = x = q ;else { while ( n = f )if ( f ); do ; while ( p );; }
+    do ; while (( a =8- v -06+( w + t -( s )+( k = z = i )< d + l + s -795)<9)+( u = l =70+ q )< h );
+    { { do ; while (( f = d = t ));; while ( p =488+ p < z +00)( k + s -( u )-( p )- g +( t +( o = c ))-( b = z = w =( e = u + f < d ))<(4+ q - n ))-15-(0)- p ;}}
+    { if ( u = f ) x = q = i ;else do  n = m ;while ( a = b ); i = k - c ;; }
+    if ( v = k - e )do ; while ( s < f + t );else if ( d - f < u -( a )) o ;
+     e = p <1+ j -( s = z )+1+(15+( c )+49< g + r +4)-88- x + u +7+56+4775+40-9;  <----- FAILURE
+    do  z - e -507;while (2-((( l =( s =52+ v < d +( f = c = j = m -6-( b + p + b -67)- g <( q = k )-( p + m -6)+2+ s - c ))-( f = u =50+4- q )-5+ w -9)-(4<((2905)+ j ))))<9);
+    if (7<( m = z = q - t + l ))do ; while ( a = n = n = u = j = n = s = g );else  d = f = b = t = k - u < f -( x );
+    while ( k - n + i < f - f - b ) b + e < g - r ;
+    { { ( h = a = i )-( n )- r -7;do ; while ( r - u ); m = y - a -( p );}}
+    while ( x =(50+ c +(( t + z < r )))- g -42- g +0-7-( y = i < m )) e =68;
+    if ( o < v )if ( q < g )if ( i ); else ; else ; else if ( d = g )if ( i ); 
+    while ( g + k )while ( l - l <5+( x ))if ( v = r < u + w ); else if ( y ){ ; }
+     z = s =42-9<5;
+     x =60< j ;
+    if ( o =9< k - d - j )if ( u = a )while ( g ) l ;else 2< r - o ;
+    do ; while ( r =( i )-( t )+4+ h - l <( k + i - v + w < e - m - y -1)+ v );
+    if ( m -(5))if ( v +( q )-2- z -( q =906))do ; while (( x )+( u )< b + f +1);
+    (8-( s + k +9-(( w = z +5- g )-65)-( n =6+ j <( y = t + w - z +20-( p - p +( y )))))+ h )<(4-79- r )-06;
+    while ( n = p =( f = l = i )<( i - b )){ if ( v = r ){ do ; while ( d );; }}
+    if ( j = o = c = l - b )if ( w + n )if ( w )while ( n )do ; while ( n );else { ; ; }else ; 
+    if ( u =( b = b - y + q <8)-87)while ( l + t -( c )) h < l + l ;
+    if ( s < e + o + o )while ( y = v +( o )< q - z ) t ;
+    do if ( a = j = f =7-9)while (( t = u =7691177))if ( n = m ){ do if ( v = t ) f ;while ( m );}else do while ( u < d + n ); while ( c <( u < h ));while (57);
+     c +550-( l + y < d -299);
+    while ( d + c + g - r + a <( d )- w ){  l - k < i ;}
+    if ( i = u = c = i ) u = v = z = h = j ;else { if ( n ); ; }
+    { while ( u = i = n =6< u -( w =((15+ v <1)+0)+ e )+6); }
+    while (07); 
+    while ( o =51-( v = v = g =( k = q = n =46<( t + f ))-(( t = f = q )-( i - y + z < q + t ))))do do ; while ( z );while ( f = f = w +5);
+    {  r = f = n = d = a -77+( g = u +1)-( r -(( e )))< a -(8< n + b + r -94)- y -5;}
+     m ;
+    while ( k = b = e =052+19441); 
+    { if ( m )do ; while ( o = g < g );else ; do ; while ( c );do  a ;while ( u );; ; ; }
+    if ( x = m = n =5<8){ if ( s ){ ; }else { ; }while ( v ); if ( t ); else ; }
+    { do  l = k - c ;while ( e < g + g );while ( a )if ( t ); ; }
+    while ( z <( q )+25)if ( h < c )if ( n ); else if ( t )if ( l ); else ; 
+    while ( a = a =( v =( k = e =( f = v )< o )<( n < f ))-72){ if ( b = k = u = l ) b <( m +( v )< m + g );}
+    do do { do while ( r )if ( a ); else ; while ( f = e < k );}while (2< x );while ( b + g - r +04- p );
+    if ( f = y = r = f = a = e = k + x < m -( w )){ if ( m )if ( t ); else ; else ; { ; }}
+    if (7-8-(7+1)< a )while ( r +( v )-602-( v = x )- r < f +( t < r - j )); 
+    if ( t + j )while ( f = t ) t = z ;else if ( i ); else if ( r = o )while ( y ); 
+    do if (1< l ); else while ( u = g - z -2< r )do do while ( l ); while ( g );while ( f + l < j - f );while (4);
+    while (( h +98+1+ t + m - d )<( o = j = k )) g = n = a = o = v = n = y = v = p =4+(65)-1<(6+( y +( h < w )-( h +8+( c = j ))+ h - n <( s = n -( y = f < t -0)+ b - o +2-4- q )));
+    if ( v - w + o -( a )<( n )-6)2;else if ( t + j - b - y ) s = t = m ;
+    { while ( x +21+8226)( s )+( x )< g + c + h ;}
+    (( x =0))< z -9-( c = y = r +678)+2- b +1688;
+    if ( l = f < n - f + v ); else while ( a = o )if ( f ){ ; ; }else ; 
+    if ( b =( h = d = w )< t ){  r = c = a ;if ( l )if ( e ); else ; }
+     h =(52986+ h <(91-( k = t - x + u <0477+ j )+9<( k = r +18< g - q )+ v +0)+29+07)+ w ;
+    if ( r = g = p < f -74)while ( k ){ ; }else if ( n )if ( f = f )do ; while ( u );
+    if ( y < i - z + q )if ( s ); else ; else  f = p < q - i ;  <----- FAILURE
+    while ( l = a + e - y <( a )-00)do if ( i ); while ( r = y = l );
+    do do while ( w ); while ( k - l -( z )- z );while ( f = q = s =09< r + m -( e < i ));
+    do do ; while ( q =( d + p < a )+ e < n - x +( e )-0);while ( r < n -92-( y ));
+    if ( c = f < k - q )if ( w = q )do if ( j ); else ; while ( l );else ; 
+    while (( z )+( k )< k + j + i +7) s = k = r - y + f + s -( t )- l ;
+     n = t = x +5+( i =( q = l <( h = c = a )+( p = o = v )-44464-( p = g = e = n = d = f -( n = t ))- r ))< s +18;  <----- FAILURE
+    if (4- l - a +5+ q + z +769-( w = j = g = h = q =1< s + e -1)); 
+    if ( z = x = q = o )if ( t = a = g = u = n )while ( p )while ( j ); else while ( d = u = p - y ); 
+    while ( f = q =5+( n =0< d ))while ( w = d =7) s =085+( g =8-( o -( j = w + p - h + e < m -( d )))<17- i )+( g = t = e = z =2+(( e - c )-04)-4-1)- r - s ;
+    if ( d -2+ y <( l + m - o -( d )+4-( p = z )-( y = k - e < g - v ))+ g -8788-58+6); 
+    while ( h = i = y =( q )- i +( k - a ))while ( a = d + l < r )if ( f = q )do ; while ( h );
+    if ( h - s <0){ while ( z ); while ( s ); ; }else  y - t ;
+    if ( n = y - p + j < w + q ) n = m - p - r < a - s ;else { ; }  <----- FAILURE
+     f = z +06;
+    { if ( z )if ( b ); else while ( f )if ( i ); ; while ( f ); ; }
+    while ( j - n < l + u - i +( r ))while ( s )do if ( c ); while ( f = z );
+    while ( k = w =1+ t ) n = y =644- r -4+48+97-9+ c +42;
+    { while ( m = j = x ){ { ; ; ; }if ( b < a + v )do  s ;while ( g );}}
+     d = i + f +( p - n -( f )-( l )+( j = n < q )< x +( t )-6)- g -5106;
+     y - d -( k +6+( e )<( n = q = u ))-( g + z +( n = a < b )-66);
+    do ; while ( z = j = l = l = d = y - k + q -(( j )< w + d )+( x = o = o < y - q )- k );
+     v = d = c = c -8+( r = x = k )-4;
+    { do if ( j = t ); else  v = u = e =( i = q = n = z = s + a );while ( c =(( k + o < q + r + x +5)+4+9< y +2+( t = f )-2));}
+    { do if (5- t - n +( i = d )< v -( d = p = i + n )); while ( p =( f + j + k < p + m - j ));}
+    if ( v =51- t ) v = i = r = t = r = f =2< v - o + n ;  <----- FAILURE
+     z = u = m = e =( o + t )+( h = x )<( n + j + l )-(( c )< r - y );
+    if ( e + m + j <( x )-2+ b )do  q - y <2;while ( r < y + j );
+     o = h = c + y - u -( z = z +( e = e = f = k = v = r = h = j )-02+( q = s -( m = r )< l - a + x + r )+8<8)<9;  <----- FAILURE
+    while ( h = j < s )while ( p = z - i + u )if ( b = k ) w ;else if ( h ); else ; 
+    if ( d = x = f = k = o - g ){ if ( e )while ( g )while ( f ); else if ( x )if ( y ); else ; ; }else ; 
+     t = j < o - g +( d = f )-( v = a = u - z < h )-( o = x = g = s = s = z = a );
+    do if ( i <42)while ((0+57)<99)if ( n = r - x - o < n ); else do ( e = m = c = k = d - v + w +5+482< x +( x )+ z + f )+49<4106+686424;while ( s + i +8-8<0);while ( z = a );
+    21<( x = o + u + o -( o = q = t = o )< z - e -2-( z = u ));
+    { ( n = m =( f ))<987; e = a + h -( d + v < k + q )+( j = k )+02;}
+    if ( k < j ){ if ( x ); else ; if ( n ); ; }else if ( l - q ); 
+    if ( a =( h + k < b )< g +( g - b < k )){ if ( k = k = t ){ { ; }}else ; ; }else ; 
+    if ( l = g +97- z < r ); else { { if ( z < h - q )do if ( u = d ); while ( m );}}
+    {  v = s = h = f = d = y =21<( p = x = x = t =( q +( z -( c )-( f - u < l )< x -4- e + y +( j - w ))+ n ));; }
+    if ( k - p + z + b )do ; while ( n = a );else { ; ; ; }
+    do ; while ( a = x );
+    if ( q = o )if ( f = a )while ( h ){ ; ; }else do if ( l )if ( m < l ); while ( r );
+    if ( d + r + y < s ) f - i < o ;else while ( u = m = t - v + q ); 
+    do if ( p )while ( z )while ( d ); else { if ( l ); }while ( j = n - h +1-8);
+    if ( u =712802+114969+ w +0); 
+    while ( r + m - t +( f )+ n -2)do  l = z + r ;while ( w < g + g + h );
+    if ( h + x +( r )){ while ( r ) y ;; }else while ( h )if ( l ); else ; 
+    98;
+    do ; while ( h = r = t = y = m = c =2885-( o = g = y =( q =( s )-( q = t = z )-1- p +8-( a = p )< h + m -60+( o )-( x )-478)));
+     o ;
+    if ( p - d < f )do if ( c = a ); else ; while ( j < x );else if ( o ); else ; 
+    while ( f -5){  y - q -( b )+ z -(( j ))-( w )+4+ i + e -( t = w = o = c - f -( m - p - r -( s = q )))+ d - z < h -70;}
+    do if ( l - u ); else do if ( g )if ( z ); else if ( n ); while ( w = r < k );while ( k -( w =( c = i )));
+    { if ( r = p = m )while ( g ); else  x = n ;do { ; }while ( e );; ; }
+    if ( l = k =( e )+ c < f + v -5+( h ))do ; while ( j = h = f =8);else  t = h = l = d =( t )+45<9+( d );
+    if ( h ); else ; 
+    if ( m = p = e +( p = u )- j -( u = a = k = n = w = q )-( e )+ f -( q = d = y =0< e -19-7-( w = c = h = e ))+78< h )if (60< g +8+ u + s ); else ; else ; 
+    9-016+246;
+    { if ( f = y )if ( u )if ( f ); do if ( i )if ( t ); else ; while ( y );}
+    if (( m <( t -( t )< m - c ))+ t - z ){ if ( r =5) e + i ;else {  m = t = b = v ;}}else do ; while ( u + r );
+     i = d -5+6-( h = m = o -9711-( t = c = z = x =4- o -( b -( e )< f - b )-( o < b -( z = h )+ e )+56- a - e -85+8608< z )+ l +6+ k +6< k + m +71212);
+    while (( c )< b - f -86)do while ( v = g )do ; while ( k );while ( e );
+    while ( o + w - g < y - j )do do do ; while ( y );while ( x +( c ));while ( q );
+    if (( r + f + a -76-( x = d = g = d )-( m =8417-( f = u < l )))); 
+    if ( y = b = l = p = b - e + k + l +0) i +00-7< s - j +4;
+    do while ( s ) t - w -6<190+ w ;while ( s = k = e + e +86-5- w );
+    while ( t = m - u ); 
+    if ( p = n = y = f + e < f )do while ( d )while ( y = s ); while ( l + j + p );
+    if (( o +8+( c = a <70-711+85)+ q - u <14+80- j ))while ( d = b = j =4<6); 
+    42;
+    while (27075<2); 
+    if (1)if ( q < a - c ) l < r + i ;else do  y ;while ( j );else  z = v = j = k < z ;  <----- FAILURE
+    while ( e = n =5-( i = n = u - j < b - m - j )+6)while ( z = y = c = n + f + x )if ( a = s )while ( h ); 
+    { ; }
+    if ( v = m + c + s - c < f )do {  e ;; ; }while ( w = d < y - z );
+    do  b ;while (8);
+     c = g ;
+    while ( j - n + h +( h )< j )if ( s = b ){ while ( e )while ( j )do while ( u ); while ( w );}
+    while ( o - w + e < m -( a )+( q ))if ( h = f = l ); else ( y )+ r < t ;
+    if ((0+ p +7)<( a = h + o ))if ( n = v - x < a - v + x -4-86- a ); else ; 
+    {  x <( r )- k +7-(( y = z - z + p ))+( n = o = r = y <( x )- n -( d )+( y = a = n = i ))- p ;}
+    if ( o + o < l )if ( x )do ; while ( s );else ; else { if ( m ); else ; ; }
+    if ( h =24+( e =( j = t - k <5))<64+ y )while ( c = j +89)do ; while ( k = t =(( y - k +( h = c = v -( o ))+(( d )-0+8)+( x = e = e = x =( d = l < n - u +01- f ))<7+ n - p )-(12+ g )-991- f -6281< m )- c );
+    while ( t = u =( o = i = u = h = u - c + m -9)){ { if ( y = r )while ( z ); else if ( z )if ( s ); ; }}
+    if ( g + z +( u < d + p )<( c - f ))while ( n = v = m ) f = a = q = s ;else  g = c = o <(( b ));
+    do  z =80;while ( t = t = e = t -( p = u )-( d < y )<( c < s )+( r - l < u ));
+    { if ( c + u - p )if ( o = n )if ( a ); else if ( t ); else ; ; }
+    5+(8)- y <12;
+    if ( x = s < r ){ if ( d = p ){ do ; while ( s );}; }else { while ( t ); { { ; ; }}}
+    { { { while ( s =6+( g - w < q - a )<8- u )while ( t - z + q -9) d = h = g < l + f ;; }}}  <----- FAILURE
+    { { ; do { if ( o ){ ; }}while ( f = q );{ { ; ; if ( n ); else ; ; }}; { ; ; }}}
+    if (5)if (6< e +( o ))if ( y ){ ; }else while ( e = o < h + o ) y ;
+    if (( e )+ k )if ( o )do ; while ( g );else if ( j = k )if ( u )if ( f ); else ; else ; 
+    { do if ( q = v < o ){ { ; { ; }}do do ; while ( e );while ( m );}while ( t =080- r );}
+     a = r = g - o -4;
+     h = m = k = z = d +1-((90+5+( w = w =(41< r +( m )))< w )- h +( s =1-(8+56+( w - m -( c ))<282)+8+ h < a ))+6;
+    { { while ( q = s )if ( u = n = c )if ( k )while ( v ) o = r ;}{ while ( v ) s ;}}
+    if (( o )-10<1)if ( c = e )do ; while ( b );else while ( r = y ); 
+     k =2686222+686<2;
+    if ( z < c )while ( e ){ if ( g ); if ( d )if ( d ); }else { ; ; }
+    while ( a = p = z = f + j - r - r < t -( n =( b +6- r + q + b )-( n + h + x -( u )< f + l )< d -1)+ i ); 
+    { do if ( t = f = a = g + l -( m ))do  z < g ;while ( x = c = a < i );while ( z -( p = x - w +4)< x - t );}
+    {  d = z =976<467;}
+    if ( h = u )if ( i <1)( r )-( s = d )-8< q ;else ; else if (( m = m = p )< t +10+( j )); 
+    if ( w - l +( v )+( j ))if ( d + h < g - y )if ( p ); 
+    if ( v = x =( e < z )+( h )-( g < m )+( x +8- w <( f = g = u ))+ e ); 
+    do do do { while ( p ); ; }while ( p = b );while ( f + v < y );while ( p <( o = q = l - d ));
+    ( e = d + o )+( b = z = g )+ e +( y - t +0-( e - l - p ))-45;
+    { do if ( e ); while ( v < y );if (( e ))if ( i = m = s )if ( g ); else ; }
+    if ( r < p + m ){ while ( q - r ) t ; e = g ;; ; }
+    do { if ( s = g + c ){ while ( e = s )while ( m )do ; while ( g );}}while ( i = n + k + o );
+    while ( f = t = t - e + g - k < w )if ( p < g + y ) q ;else if ( u ); 
+    do if ( s - r +( p ))( l = v );while ( p = a -( m )+( m = i = w )+6);
+    if ( e = n )do if ( g )if ( i ); else ; else { ; }while ( v );else if ( w ); 
+    while ( a +5- m <( t = k +11579-1- y +8< l )-4+5-5); 
+    { if ( t = g ){ ; ; }else do ; while ( c );do ; while ( h );{ ; ; }}
+    if ( g =4)while (( m )- x + s )while ( f - w )while ( m = s = d )while ( p ); 
+    do while ( w = d + r < b ){ while ( q )do ; while ( j );; ; }while ( z +442);
+    do while ( c = l = o = s )do { ; ; ; ; }while ( e );while ( q = k = e -( l )-2);
+    if (( z -( c ))+ n -( x = x )< o - b +( r - y + h < s + x )+45+ i -6); 
+    while ( h =( l +6720- u - d )<( b =( c = z - s -( r + s < y )-( t = q - p )+ o < k -09- q - p )- x )+20+2168); 
+    (58+8-88)+(( v = p -( v )+2< o - b + z +( p = b )))-912;
+    while ( z < h +12)do if ( y ); else if ( p ); else ; while ( m );
+    if ( w -( h =( w =( v = s = p = o + f + a -( z = b )+ b < d +( a )+ v - x +18)+ v < e + k -71+1)-586)- r +( a = j = k = c = q = o = u < s +70215+9)); 
+    if ( v < i )if ( w ) e = d = m ;else if ( s ); else while ( c ); 
+    if ( b = d =7)if ( r =25){ if ( h = e =( v + w < e + t )- t <( y = t =(( l = a + y <( t )- r - z + i -5)+( t =( s = i - z -07)-4- w +( p - s - s < f + y + l )- x )+5)-886)+ d )while ( l = p = y =(7+99)<6- l -2); }
+    { if ( z = p -( k )< b -117- l ) v <758;}
+    while ( y = b = o - z + m + a +5)( d - t < i + t - t - g );
+    if (82)while ( z = q = l ){ { if ( t ); else ; }}else if (1+98){ { ; }; ; }
+    8661+2+84;
+    if ( y )if ( w = z ); else while ( z = r = k = e )if ( f ); 
+    while (24< g - t - q )if ( j = h < t )while ( e )while ( w ); 
+    if (( e < v +02)-( h =8< f )) p = j = k -2;
+     b = f = y =8+8;
+     a = v < s -1517;  <----- FAILURE
+    if ( e = r < l )do while ( u = w )while ( e ); while ( e - n );else while ( n = d = v =64); 
+    if ( n - o - k )if ( g = u - r < h )while ( r )if ( k = c = l = a ); 
+    while ( r =( h = n = q = t )+( x = w = p )+ u < d )while ( v = d = x = c ){ { if ( p ){ ; }; ; }}
+    if ( b - h <60)if ( z )while ( u ); else ; else do ; while ( q );
+    do do if ( o ); else ; while ( u + v - w < l - r );while ( e = a = c + v );
+    do  f -( a )-5-( f = j = t )-5;while ( x = b = u = s =781- w );
+     b =( v = k = c + a - l +(5-( t - a -( f )+1- b + j -0< t )+ v )-9+( j ))- n - u ;
+    { ; if ( t )if ( c ); else ; else if ( p ); else if ( a ); else ;  a ;}
+    while ( d =( g =( i = b )+( h )))if ( c = l = i = k + v ){ if ( c ); do ; while ( h );}
+    if ( v - h +( i ))do { if ( p ); else ; }while ( d = o < j );else 8;
+    { { { if ( v ); else while ( k )do ; while ( t );;  f - w < y ;while ( a ); }}}
+    if ( v = c = q =( g - h ))while ( v = h )while ( a = p = n ); else while ( p - b ) h = h ;
+    { do { if ( y ); else if ( x ); else ; ; ; }while ( r - y < i );}
+    do if ( g = y = h ) b + o - a < c ;while ( i + q -6-4);
+    do do while ( g = e = l )if ( p = j = n )if ( b )if ( a ); else ; else if ( v ); while (5);while ( k = w = z = y = d = f = z );
+    if ( d = g = z + k < k + u )if ( r )if ( x ); else ; else if ( d ); 
+    do { ; }while ( o =8+ y <4+((( q = c = u )-( c + e + k < g - v +8))-9)+ e +(7+615)+( v +(8201+( y = h = b = i = f -0- p )- p - e +9)<7797));
+     i = f = n ;
+    if ( f = v = e )while ( q + h - t - n ) m = s = m ;
+    if ( e - x < c - p +( x )) p = n + r - t < r -1;  <----- FAILURE
+     w <((( k = o -( i =9782-( o -( n = y - i - y <9)+( v = i + k < u + t - k + a )<709)+ i - m )< n -15- c )-6+2+041)<55);
+    if ( p = u )do do if ( d ); else ; while ( h );while ( w );else if ( q ); else { ; }
+    do ; while ( p = e = e = o = g =1-( j = e = s = o -( p - f <5-5)-4- i <8)+2+ j <( g = v = g = y - t + t +1-8-9+0- f +((( f = r - u < x + u + c - s ))< v )- v -6+9));
+    if (97){ { ; if ( b )if ( o ); }if ( l ){ ; ; }; ; ; }
+    do if ( w )if ( p ); else ; else if ( l ); else ; while ( b < p + p );
+    while ( h = b = z =( k = a = a )-517){  i +101-( h = j = d )<1+( e = m = k - e + j );}
+     q = l = d =(4<( u + h ))- y <( b =(( s )< e - o -6)-7+9+7-( w = x +2< x -72+( n - k ))<5- x );
+    if ( z = r = i =184< m -15129)while ( s =6); else { ; }
+    while ((8+ h )-1)4< w -9;
+    do  z +( t = o = x = g = f = j + v < z + w )+( w = b = u <( z )-( f ))< b ;while (5+ b <(( i = j = n = o + u < q - x - z ))+ e );
+    if ( a ){ if ( h = t )do if ( j ); while ( q );else ; }else if ( p )do { ; }while ( m );
+    if ( f = p = o )if (9-61< l ) h + k - j < y ;
+    { if ( b = w = e ){ ; ; ; }else ;  p ;; ; }
+    while ( m =17)if ( f <81)while (47- z - b -(025+0)-70<7); 
+    do if ( f - h < m )do { if ( q ); else ; }while ( j );else  w = o ;while (( u < x ));
+    while ( b = z =1-( x =( i = h - z -( p )-( n + v )-(( i < y - g )< z - a )+ e )+( w = n )+ t -0+ x )- e ) s + w ;
+     k <2;
+    if ((( y - t - k )< q + k + j )<0- p ) t = h =( v -( q )+7<( a = e + u - p ));
+     k - s - p - n +( j = x = m )+( x +0< g +( q = e ))+ k +(( c =9));
+    if ( h = a < p - h )if ( z )while ( z ); else while ( g ){ if ( q )while ( e ); ; }
+    if ( w = b + s +( d = i = r +( w )+( m = b = f )< g )+ i - u ) g = j = z = w +4+( q + v )+( b = x - z );
+    if ( q = c = f -( m )+( e - x )< l - l -7) y = x + g - l +( s )- p ;
+    while ( g =7- l + t < a + o +( r - u < z )- s +4-8)do { {  i < x + o + p ;}}while ( q = h < q );
+    if ( v = p = q = m =( h = i = e )){ if ( b )if ( a ); else ; else do if ( g ); while ( i );if ( w ); ; }
+    if ( h = h -2-1) g = r =( r )<( o < m );else while ( j +( g - j )-( o )< e ); 
+    do  n =( b +( p -6+( k = y - h < b )+269-( n = q = a =7+ s - c < b )+58-(1146)+9405-57));while (( w )+ a + n +( w ));
+    { { if ( l ); else ; ; ; ; ; }while ( s )while ( l ); }
+    { if ( r < j ); else if ( s ); else  c ;do { ; ; ; }while ( d + s < b );}
+    do ; while ( k =( b = l = m + h ));
+    if ( g =1)if ( k = m = f ); else if ( j = k < l )while ( j ); else { ; ; }
+    do if ( u ){ ; ; ; ; }else if ( o )if ( c ); else ; while ( t );
+    8-(( o = c < x -89-0-67))+ u <( n - m < u -( s = r = b = k <1-(( b =768+48- s )< u + o ))-85);
+    if ( y = c = l )while (( j =5)); 
+    if ( z <1)if ( b ){ ; }else do if ( p ); else ; while ( s );else while ( q )while ( m ); 
+    while ( v - v <( o = i ))if ( y = c = m ) n + f - v < d ;
+    if ( q = s - k + y <( i -9)){ ; do if ( f ); while ( q ); q ;; }
+    { if ( c +04+( j )<( q )+( t )){ { do {  p ;}while ( x = b - y < u );}}}
+    { while ( y = t = g =6-75)if ( d = h ) y = h = x ;else if ( b )if ( b ); }
+    do while ( v = t +71-( y = r = j = p -( d = h =( v )+ c )< r - o - n +( y = h = n )+( y - v < v ))+0< n )0-(61+6);while (( h = x = s =64+62475)-1-( o = i < i ));
+    if ( d - u +6- n <91)do ; while ( z +54<( b =171- y +0< o +( a = d +9- e )));
+    while ( k <( n = m )+7)do { if ( s )do ; while ( l );if ( b )do ; while ( o );}while ( v = i -( n )-18);
+    { if ( l = b )if ( v = r ); else if ( q = l )if ( o ); else if ( y ); else ; }
+    if ( e = x = u )if ( b + k < r ) i < e ;else if ( u = g ) v = a ;else ; 
+    do if ( u < q )do  v = t ;while ( z );else while ( h ); while (( j - y + s +28));
+    { if ( x = e -( r )< n - c - c )do if ( q )( d );while ( z = f = l = m = l = e );}
+    if ((95291)) b = o = b = c -9-(( z ))+9+6;
+    while ( f = o =8< u +7){  e = h = j = h =8+ j ;if (( i < r )< j - f + z )while ( d < i )if ( i )do  z ;while ( m );}
+    if ( e = n + h )if ( n - t + u < h )if ( b < i )if ( j ); else do while ( w ) v ;while ( k < r );
+    while ( a + j -( j )< s + v )if ( t = w )if ( z < b ); 
+     o + j ;
+    if ( d = j = k <( p = c )- p )if ( a = k = w = q = n = l )if ( n < v + l )while ( w )if ( v ); else ; else ; else ; 
+    if ( q = w =52- i < n - a -( x )+88+ w -( i -( d )< w - k + b )+487); 
+    { while ( y = g =6); }
+    if ( i = o = r ){ { while ( y ); }; ; }else while ( k = h ); 
+    do { if ( x = a = h ); }while ( e +( o )-6< e - n + g -8- u );
+    { ; while ( t +( n = l = t < e )<( q = w + v - r -9+099+ x - j )){  v = p < p - v ;}}  <----- FAILURE
+    if ( t = m = v = a -7< t )do ; while ( a );else do { if ( b = a ); ; ; }while ( o - m );
+    do { { if ( g )if ( g ); else ; if ( z ); ; }; ; }while ( w );
+    ( d = o =71< z - k )+( z - h -( q )+ w <( e - j ));
+    if ( z = y - n <( h )){ if ( t = v )if ( x ); else  u = k = g ;}
+    while ( h = q = e = l = x + t +( b )< h ){ 7+( s );{ { if ( l = w )if ( n ); }}}
+    { if ( u +6<844+( x -( j )< g + i ))if ( z + i - i <( c = t )){ if ( s = g = s ); }else ; }
+    do if (( o )+ o - w <( f )- n )while ( r )( s = o = r );while ( t = d = n +( u = z = k - r )- w -40< h );
+    do while ( i = z = n )if ( g = v )if ( g ); else ; while (61);
+    do do if ( k = z ) w < z ;while ( z = h - e );while ( s = u + y + y - q );
+    do { while ( j - e + q ); do if ( k ); else ; while ( f );}while ( m +0< f );
+     s = h = e ;
+    while (110-9)if (0<5-8- x - s ); 
+     k -( g =( t =2+79681)-(( r +( f ))-( n < j )-( x + f + s - h -( n + m ))<9)-7216+( s = n = p = o =( w )))<( p );
+    while (( i + t )+89+55-61)do ; while ( a = n +9+( g )- w +(( z < a )-( g = o )));
+    if (55+( l = b = b )+ z -( m -( r ))-16845); 
+     o =5;
+    while (( l = f = s - p - l )+(4-( p )- o ))if ( d = p + o +( x = b )< z + n +4); 
+    if ( h = p ){ if ( g )while ( b ); }else if ( w = b )if ( p = t ){ ; ; }
+    { while ( y = n = j = f =( q = z )-( y = b )< h - i -( j )-5) f +9+( y = y = l - g - p )<( i );}
+    if (( n - z )- w +( j = f = c )) i - w + n < t - z +5;
+    if ( v = u = s =2+( j -( h =( f = r = v )+9))+( u = t -9)-6< k +2+( o )) z = l = c + a + f ;
+    ( v = f + l -( f )+641)<( b = u - e < t + l )-( b )- h ;
+    do if ( l + a -( x ))do if ( c )while ( l ); while ( f );else { if ( z )do ; while ( p );}while ( c );
+    while (19- v < i )while (21)do while ( b - p ){ if ( p )if ( o ); else ; }while ( n < v );
+     i -1- k ;
+    do  i = n = u = x = b +16-5- m ;while ( e = p = c = s = z -20< g + z );
+    do if (( g )< r )do do ; while ( f );while ( u );else  x - b < j ;while ( n <8);
+    (27868)-( h - t +((( t = m = z = a - t -( e = l = q )+( d )- x < v + c +( h = i )+8)+ a < v )- w ));
+    if (2) k = u - e ;else { while ( o = z = l )( c < f )+999-4-(( v = l = l )-( d < u )< g );}
+    while ( w =9+ u < a )while ( h +( v = z )-( s = y = v )-( r = u - j )) f - q <(( q = r )-( b ))- f ;
+    if (( j < b )<8- y ); else { while ( i = t ); while ( a ); ; ; }
+     q =8<( n = z = q + s -952);
+    { do ; while ( t = k );do do ; while ( i );while ( w );do do ; while ( v );while ( i = t );}
+    if (8<9) w -(( z = z = k < l +1+( s = p )-( g = p < s - t )+ n + p +(801-585))-4+9<9-(2- f ))+(701);
+    719- r <( e +( s = j )+( i < y )<9410)+( m -( b <( d = z = y - b < x )))+ q ;
+    do if ( y < v ) l +( z );else do while ( z ); while ( l );while ( a +01);
+    if (( q = j - v - e - l +( g - p + f < n - g )))do if ( i +9); else ; while ( h =87);
+    do do ; while ( o = x = x +9264-( s = r )< s );while ( z < w -( p = i )-( z )+ q );
+    if ( w + b +( m + c < g ))do  t = c ;while ( m = k = l );
+    do ; while ( d = q = h < o + m );
+    do ; while (1+ g < i - e -( p = m = w - u -( n ))+( u = g = p = e = g = u - r + x < g - r ));
+    while ( y =62)if ( n + r + u + b - f )while ( y - y )while ( g )while ( y ); else if ( i - l < b ); 
+    if ( p = x - o < k + w )if ( a = q ); else { if ( b ); ; }
+    if ( l - r +7<789+( j )); else while ( v + k +5); 
+     p = k = u = p =90;
+    while ( l = p = b +( e = f )< q -2-7)if ( q = k - l +( b = b - g < n )); 
+    while ( x = e < k )if ( m ){ if ( j ); ; ; }else while ( t )do ; while ( b );
+    if (60+4-(1)- o < a )if ( r + r -( y ))while ( v -18); 
+    if ( t =178)do ; while ( b = o < g );else if ( r )if ( a )if ( f )do ; while ( o );else ; 
+    while ( u =7288)while ( f =( m =2+( j + z -( j =4+( v = j = g =227< e +( y = w = d = m + n < x -( a ))+ s + j )+(( z = q = s = v = t =5<( e = m +0+ l - k < q -45))-26- t )+ i )+0-1- m )))8+87;
+    while (( f = i + w +( j = r ))- a -(( h = s - e - l -9< w - r + i )+6+ a +7)- x + r -0+ z + f ); 
+    if (088- i -9-6); 
+    if ( f + f < k - m )while ( h = k )do if ( a ); else ; while ( z );
+    if ( n + y -( w )< v )do { do ; while ( y );; ; }while ( m );else if ( a ); 
+    do { while ( k = k = r )if ( x ); }while ( a = m - h < k + o + u );
+     j = g +( r = e =620<( d = v = n = u =(6566))+61-( h -( e = m -( p = j = q + z - w + t + o -( i -6< p - k + k )<6))- h )+ x )- h - t - a + u ;
+     s -15-7;
+     y = p -7+682288+59466;
+     e - b +5+ j + a ;
+    { do ( d = u = s - g -( s = t )< q + h )<414;while ( z =97< g + u + h +( j )+ a );}
+    if ( c = n = q = q = v = g < t )while ( n + w - a )if ( t = w ){ ; }else do ; while ( h = g );
+    while ( a < a )if ( j )if ( h = i = z )if ( z )do ; while ( v );else ; 
+    if (( k = w =( p -7770+ a +5<0))-4-((86)- i )) s + v <(( s =6)+10);else  n = t ;
+    { { while ( x )if ( i ); else { ; ; }{ while ( e )if ( s )do if ( j ); else ; while ( o );}}}
+    while ( k = q = b = y +( a = n =746- z +( b + k - f -( a ))- d +( t = i = f - q -7<( j )- y )+ p < g )+ o + i ); 
+    if ( j )do while ( n )if ( k ); else ; while ( w );else if ( p )if ( x = m ); 
+    if ( p - f - o - x - s -( y ))do  g ;while ( n = f < b + n + q );
+    if (( n = m )) l = g +6<( x = o );
+    { while ( p = c = d = y =( j = w = o )< i ); { do { ; }while ( m );if ( e ) z ;else ; }; }
+    if ( k = t = a = c )if ( n ); else if ( o ); else { ; }else { ; ; }
+    if (( u ))571+( z =84-(0-( r = o = o = w = s = w =0- b - g +((6+ q - t +069)-122-96+ o < v - x - d )))<6- y - w )+09;
+     n = p +75+18;
+    if ( f = e < i ){  g = p ;; }else while ( s < r ){ ; ; }
+    { do while ( c ); while ( j < t );do if ( i )do ; while ( e );else ; while ( f );; ; }
+    if ( t -11<64)do if ( z = h )do if ( i ); else ; while ( g );while ( g = k = p );
+    while ( k = i = a = u + a +44<( s ))do { if ( p ); else ; }while ( m < z +8);
+    if ( y + i - r < a - v )while ( h ); else do do  l ;while ( g );while ( h );
+    do if ( f )if ( f ); else ; else while ( j ); while ( u = a + v + d -8);
+    do ; while ( c =5+8);
+    do if ( d = v - c ){  z = y = o + c + b < b ;}else { while ( o )if ( g ); else ; ; }while ( v =1);  <----- FAILURE
+    do do if ( t +7< l - a -0)if ( n - p +( q )); while ( l +( b < r )+ j );while ( v = o =8< g );
+    { do if ( x ); else { ; }while ( b = r = f < o ); w + g +6< a -( w )+ j ;}
+    while ( i =(( e ))< d -6)if ( b <( a ))do { while ( j )if ( z ); }while ( h < f );else ; 
+     i =( g -( b )< x + a )+( q = z = a = z =( q ))< c +( y = c = h =05-( a = r = j )< z );
+    do { { if ( d )while ( s ); ; }do if ( r ); while ( u );; }while ( i - y < g );
+    while ( s = z +6+9- j - s -06<7440- y ); 
+    { ; ; do if ( f ); else ; while ( f );while ( r )while ( h )if ( n )if ( k ); else ; }
+    do do if ( y = q ); while ( k - m < w + h );while ( d = z - z +19+ f < i );
+    { while ( n -41- q ) h = t =( k )- f ;while ( p = c + j -( o = q - w )+ m +( u + z )< r - y ); }
+    while (( g )+ y +110+ z )do ; while ( y = r = n = k = y = n < a );
+    do if ( h )if ( h ); else if ( i )while ( x ); while ( n =( e )< e + f - f );
+    while ( p =( t )<9); 
+    if ( r = f = p - l - w - n )if ( e = n = e = k + m ); else { while ( b - o -( f ))while ( s ){ ; }}
+    { if ( i < t )while ( t ); else while ( l )do if ( t ); while ( i );if ( u ); }
+    do if ( l = e -62< w - i + y )81+ f ;while ( g =( a = x + g < y ));
+    if ( d ){ { ; }}else if ( m = w )if ( i ); else if ( l )if ( k ); else ; 
+    if ( u = k + n )if ( e < a )if ( h ); else { while ( i )do ; while ( b );; }
+    { { 545+ j + f - n - c - l ;}}
+    { while ( n = w = y < e + c )if ( v = x = k )do if ( b ); else ; while ( n = d );}
+    if (77-0< g - g ); else if ( z ) i = f = w ;else  s = l ;
+    if ( c = x = u )do do if ( t ) j = n ;while ( i = e );while ( p = k = q - o - t );else { while ( c ){ ; }}
+    do if (( x = e <( w = q =52850+(0-068-( v = m =2-( u = x = y ))-419))-15)< o ); while ( j = k = a =472+ l );
+    if ( r = q = j = z =( f + y - s < a -( v )))while ( w +7- a )do ; while ( g < u );else { ; }
+    {  d = d = f - x - m -( t = d < s - a )<( w = a + d < t - h );}
+    if ( n - y +( w = s )-2-41-( s = k ))if ( d = n = h ){ ;  e = l ;; }
+    while (8-7< b - s -( e + e )+ c ) t = h -( e )+( r )-( l + u < n )<9;  <----- FAILURE
+    if (( k = y = n )-5)if ( o ); else if ( w )while ( c )while ( e ); else do ; while ( f + t < n );
+     c =4+ r -2;
+    do { do if ( y ); else if ( g ); else ; while ( b );do ; while ( t ); o = q ;}while (( c )-5+ g );
+    while ( z -( w < h )<50){ if ( y ); else ; ; ; }
+    if ( y )while ( s = h )if ( x )if ( o ); else ; else do while ( k ); while ( l + b );
+    while ( l )if (414<822)while ( g ) u +( k + c )+( k = u = n - f - s - x +( h = r )< r -7+679);
+    while ( k + b -( h )< u + a +( e )+ n )if ( g = f )if ( s + z ); 
+    do while ( c -( z )+ c )while ( v ) e ;while ( f = q = n - l + v < v - k + l );
+     g + f - i -1<(74-29< f -4)+(2+ k + b +5- w );
+    if ( h + b + t <1+ r - v +( q = i - i < q )+( a +469-( n < t + a )<2+8)- q )while ( x = s ); 
+    if (06+7<04); 
+    { do while ( b = x < v - h )while ( p = f - n < o ); while ( q = p = x < f - y -( i ));}
+    while ( l + p )if (( k )< t + y ); else do while ( i = n )do ; while ( p );while ( u - o < d );
+    if ( k =( i = k +( t = h = j )+71)); else  c = j = m = w + z - g < v ;  <----- FAILURE
+    if ( y = v )if ( d = p = z ){ ; }else { ; ; if ( h ); else if ( z ); else ; ; }
+    if ( p = e = w = v = c = g = z =( o = i - j - r < g )+ i )while (( t = t = h + f ))do do ; while ( l );while ( j = t );
+    do while ( t - l + z -29< p )if ( i ){ ; }while ( t + z <( q ));
+    while (( k = w = l )- o < x )if ( a - h - u <( u )) c = m + e < v ;  <----- FAILURE
+     l + p +( z )- c -(( o )< p -( f )-292);
+    if ( n = u =( k ))do while ( d = c - k )if ( k ); while ( t < g + c );else ( k );
+    do do if ( y ); while ( u < f + w );while ( y = q + e < z + k );
+    while ( u =554-( w )+ e + m )while ( n = x < m -5)if ( s = z ); 
+    if ( a = h = v -8<7)7+( y = w )< j + h - b - b ;
+    if ( x = w = f )do if ( v ); else ; while ( z );else if ( v )if ( s ); else ; 
+    { if ( x = q + j < p ); else  r = o + b -( i < l )< z - f - x ;}  <----- FAILURE
+    while (( r -( i = v )-( d = i )- t )< g - l ) m - i + z + b +( j + l + n )-( g < f );
+    do if ( n - r ) v < s + a ;else do ; while ( k );while ( w = r = p -4< o );
+    if ( g -4)if ( v )if ( l )do { ; }while ( v );else ; else  o + g < a ;
+    if ( z = t = o = o - l < b - i ){ ; }else while ( c ){ if ( k < t ){ ; ; }}
+    { if ( r = f = y = y - n - c )if ( h =( p = v = z = u = i = n = h =4-(7))- q -9+61)( f +08- p - j )-(( c = x =( l =04+(0-(( c )+( r )+( b )+76+ o < y )+ v )+( j = b + z +( q =( m = u - x < r + x - h +( l )))-5- c )-800)<6)+4)- b ;; }
+    do if ( q = h - a )if ( x ){ while ( b = q )do ; while ( t );}else do { ; ; }while ( j );while ( b =5-(0));
+    while ( h =( v )< e )while ( z - y < f + s - y )if ( q ) e = c ;
+    while (( k = i )< c + z )if ( y ); else while ( l < x + q )while ( n ); 
+    do {  a = c + j + q ;; }while (51+211);
+    if ( s - f < l +64){  c < h - l ;{ ; }; }
+     x =( a - a -( v )+( i = f )< l )+( c = x - e < t - d + o );
+    if ( b =94-(06+ s < d - f + y )+98< r +( j =12<( p =602557< p + f ))+ w -26+1); 
+    do if ( q = g )while ( a = e ){ ; }while ( s =( t )- u + a <( n )-( e = t ));
+    while ( i - s - a < k )do if ( i + d + x )do ; while ( j );while ( v = e = f = i = c = h );
+    if (( d )-6<( p - j ))do if ( l < w - b ); while ( p < k );
+    while ( z = v - z )if ( r = r )if ( j ); else ; else if ( y ); 
+    10;
+    if ( j = i =97< r ); 
+    { if ( g = q = m )do do ; while ( v );while ( w );else do ; while ( t ); k +( n );}
+    if ( h < o )if ( b ); else if ( u ); else ; else { ; ; ; }
+    { ; { do  l ;while ( g );}if ( u )if ( y ); else { ; ; }while ( c = e = w ); }
+    while ( f - z - o + b <( a ))if ( x < w - m + m ) s <8;else ; 
+    while (6647<( v < n )+ z ){ ; ; ; while ( i ) z = j ;; ; ; ; }
+    do  q + k ;while ( q -58< e - w - x + p +77);
+    { while ( s = a -9)do ; while ( t =( b ));{ { do { ; }while ( z );}if ( g ){ if ( n ); else ; ; }}}
+    { 156- o ;}
+    do ; while (4-9679-( h =( j = j = z = k = w + a + g +8-( c )+ q -(054+ g < n - f -9)< d +8)));
+     e =( v = s =( q = v + y < r + o )< r +( y )+ x +( f = h = e ));
+    do  n = g = a = p = i = q = r = l = c = x = w = s = y = z = f = v = u =5<01;while ( e =46< m - a -( h = y )-8+7- l -9+( o = u - w + i +( i )-( h = i < u ))+0-8-4- q - o +0+8-2+ t - o -( d = b = m = h = j =7-5-9)+ k );  <----- FAILURE
+    while ( y = o =( n =8+ e ))if ( r = r = r < t )if ( z = g = h ){ ; ; }else  h ;
+    { while ( z = o = f +7922)if ( x = e - z <( e +4< p +( n = z < a )))( s +( a + x + y + b )-( y ))-1;}
+     y = n ;
+    do { while ( c < g ) n ;do ; while ( o );while ( m ); }while ( o = s = t = y = s + e <( i ));
+    if ( u = f = t =( b = r = i < l )-0159-( m = p = o = c = b = o = e - c )-( x = f -( q )- l +( e = n = x < n )+1+6)+5+ z )if ( i =9+4+ d -774782+8<60); 
+    { while ( n = w = q = z + r < b - j - d )while ( j < l )do if ( q ); while ( x );}
+    while ( i <( p = f + i -( a + t < m ))-( p ))if (( y )+2)do ; while ( v = u = r = n +7< t + q );
+     n + y + u -( i )-( l - b + l + o +( j ))-92< i -(( f ))- w +28;
+    { ; { while ( d )while ( t )if ( a ); else ;  w + n + u ;if ( i ); else { ; }}}
+    { ; if ( w )if ( g ); else ; else ; ; if ( c )if ( s ); ; }
+    do  d <((( t < y + n )+ k <( f = e )))+( h = b = i + y -( l = p )-2< l -( x ))- r - x - s - j ;while ( x = p );
+    do if ( w + s -( o ))if ( r ); else if ( h )do ; while ( b );else if ( c = p ){ ; }while ( a = z =54+1);
+    19<( j = l = a = s =01- z <( y -( p =245-4< i - u -( z - x < l )+ m -( f - m + j -( l = r ))+ b )+478))+ b ;
+    if ( k - b + i - t +( b = e = o = z = c < t )- t < d )do ; while (0+ x + o -(0< o ));
+    89+ o < x + b - e -(( h = u )<( y ))-( g = i - a + h + u );
+    if (1- d < t - g +85)while ( u + n +80); else ; 
+    while (02)if ( e = b = x ){ ; if ( f = g + o ); else { ; { ; }}while ( i = f < w + w ){ ; }{ ; }}
+    if (( g = z <( k + u )-( s - q ))< e )( u =( x +2-( e < b )))< c ;else if ( z -78+9)while ( f < y ); 
+    if (( g = i =( o )-( u = r )<405)< w + b - o -204)0+ q - u <2;else ; 
+    while (8< d + b -( f ))do  i + r < u ;while (( l = r = b ));
+    if ( p = w = z = o = j - i < j - n ); else if ( o < b + t )do ; while ( e );else ; 
+    9+( r = b + p +6)-(( n = u = u = m -1<( c = w = u = k - d + w -99+ z < z + t - o -( a = o ))+6)- i <(9)- g +5- l );
+     h +( q )-1+094+( d = i < c )-(( w )< o )- h ;
+    if ( y =( d - i + w )<7); else while ( v -( m )+8)do do ; while ( l );while ( z = k );
+    if ( r = a ){ if ( e ); ; }else if ( b ); else while ( l = g ); 
+    while ( g + n < p + t -2)if ( y - u ) d = w = f = q ;
+     h = e = t + r -( m )-( m = z )-( f = r < k )+( i = q + j + o )-6;
+    do if ( f = v = q ); else if ( s ); else ; while ( v + y + p );
+    if ( h = r + v - n - s )while ( o < d )while ( u )if ( i )if ( z ); else ; 
+    if ( q =( s =2+ k )<( v = j + r - z + d ))if ( f =8)while (9< a )do ; while ( n = j );
+    do  q + r - w +( k = s );while ( b = y = n - m < u - o -( m ));
+    while ( a = k = w = t = a = k ){ do ; while ( t < y ); f - s + k < w + r ;}
+    { ; ; }
+    do { if ( q - q +( a )-5< m )while ( o = q = v ); }while ( j = r < d +( l = y ));
+    { { if ( b + h - e +( c )- k ); if ( v )while ( n = p ); do { ; }while ( f = n );}}
+    { ; while ( b = z - p < v - k - f )do  t = w ;while ( q - z < t );}
+    do  o = c < e - x ;while ( q = w = o + h + a -( z )+( x = w < m + l ));  <----- FAILURE
+    do { if ( z ){ ; }while ( e < v )if ( e ); ; }while ( q - a - a +( l ));
+    { if ( q = j < b + a - q ){ ; 7< g ;}else if ( w )if ( s ); else ; }
+    while ( i - f < n +( u -1-( w + j -9< s + q +45)<( j = t = v < j - l )+018)+8) b =0-( i );
+    do { if ( i ); else ; if ( b ){ ; }else ; }while ( l = w + t <67);
+     l -2-( e = m =9)- z ;
+     n = k = c <( c <1+ r -45)+( g = n =8459<70- v -5-509+ r + h );
+    { ; do while ( q )if ( v ); while ( v +68);do ; while ( w );if ( q ); }
+     h = z =8+ p +( p = s - y + f < d + w )-( a = l = i - y + l +( q )+ a -0<9);
+    if ( h = f = i < e )if (8); else while ( b )do ; while ( l );else { { while ( h )while ( u ); while ( q ); }}
+    if ( z - b < d ){ if ( q ){ ; }else ; ; ; }else do ; while ( o );
+    while (( c = d = c < w ))do while ( g = x )do while ( e )if ( p ); while ( o );while ( z < n );
+     i + d ;
+    while ( k = c -1608)do do { { ; ; }}while ( f < n );while ( z < j );
+    if ( h + n + e + w )if ( l = k = d ); else  g =0< n ;  <----- FAILURE
+    if ( u < u -( b = c < x )-( g = r = d = v + o + z < w )); else while ( g =( l = f )-4-( z = f )); 
+    do if ( b + r + y - u -8-17+( a = n =7< u + x + o -657)-8- t +( e )); while ( b = l +58+265);
+    6;
+    if (81+8- j +7-2994- i ); 
+    { { do  i = u =( q = k )< w -2+( g -4);while ( d = t =(99+( c = j = j )+ z <9)< b );}}
+    ; 
+    if ( h +2< b +81){ do ; while ( l );}else if ( k ); else if ( d ); 
+    if ( y + e <1) u + b - g + n - d + a -( z - o );
+    if ( z = r +( n )< o - d ){ do ; while ( p );; ; do ; while ( d );; }
+    while ( o -75+( x )+ g -( s )-( a - f -46)- c +0); 
+    if ( i = k +( k )< u + h )if ( z = m = o )if ( e ); else ; 
+    if (065-6) m = u = n +( b =20+(06-((620<( u =1-( g = j ))+75)<0-660))+ u )- g - q < c ;  <----- FAILURE
+    if (( o = h = x =950+ i ))while ( d + v + d -0) q = m = y + w < p - n ;  <----- FAILURE
+    6-(5+2088- c - i -0);
+    if (68<(( s = a < d - y )+( z = c < p ))+ p )while ( f =( c )<( l )+( i ))while ( s = m < l ){ ; }
+    do ; while (196-06<445);
+    if ( f = m = w = z =0+ o ) v =(516<( x < d -0900+ l + d -( e = t <(7<( u =(( q )< p + h )< b - e -( t )- x )-( h = w = s = w = r < t +4)+2679))-7));
+    if (61<05)do ; while ( w );
+    if ( y -( b )+( i = i = z ))while ( c = o = s < h + j ) q = s < v ;  <----- FAILURE
+    do do while ( r = g )if ( m )while ( w ) j ;else if ( h )do ; while ( l );while ( y < e );while ( v = m = m =85< t );
+    ( l = d )-4;
+    do { { while ( i = k =( r =55+ x )< l ){ ; }}}while ( u =( d = s = a = a = y =2+55-(7-8<8-( g - k -(67< s - z -51+ r -( s +( b ))- y +( j = y = j = m <( a < n )+69))))< k )< q );
+    while (79899-4) d = y =( v - h - m + o - d +( z )+( j + t - u +( h )+5))+ x ;
+     e = c +77-(( g +(518251966-1-66781)-(1875664))-1);
+    do while ( j - m + x ){ while ( a = e = f )if ( t ); else ; }while ( o = g = i - r < t );
+    while ( b = o = x = v - q + y < e - g + v - i )while ( h < a )do ; while ( j );
+    if ( w = l = t = b = z )while ( h - e < t )if ( l )while ( f ); else do ; while ( q );
+    while ( s =69851+2)while ( s )if (57-5-4); 
+    do 9+(757626+9< v -( a - f )-( i + a +( j =5- r +89- c ))+( q = y = r + y +(18-2-88+2)- k - u )- y - x + y + r )+6;while ( n =0+46< p +9);
+    while ( g -4- w ){ if ( m )do ; while ( n );else if ( p ); else while ( v ); { do ; while ( x );}; }
+    { if ( r + p < j ); else if ( j )if ( t < z ); else ; else while ( o ); }
+    if ( r - q -2< h - e -( n )+ s )while ( m - g < x - z ) e <9;
+    if ((47< l + e -( y ))< e - y +2-471); 
+    if ( v = m - p < i )if ( c ); else ; else if ( j - h < n ); 
+    if ( s + e -( m )+4)do  u + p < l - r ;while ( s = o );
+    { do ; while ( u = i +( m - s < w + b ));;  w = h = l ;while ( r ); ; }
+    if ( c = l < j - m )if ( x = u )do ; while ( e );else  w < v ;else { if ( u ) o ;}
+    { if ( d )do ; while ( g );else if ( n ); else do ; while ( o );{ ; ; } p = v ;}
+     i = m = d = g =( l =777+( c =80< p +( y -9< y + l - y -( x ))-( m = d =( o = l )+748)))-8-74-46;
+    do ; while ( n = b =( w +(8- y <6)- r )- p +4- q -(189)+ p );
+    5+ m -81217;
+    if (( w )-( a + g )<( w =20))if ( x ){ ; }else if ( s ){ while ( p )if ( g ); }
+    while ( l = j +657+ k ){ if ( o - m <( x ))do do ; while ( r = g );while ( d = n );}
+    do ; while ( b = f = g =8< w + z -( k )+56+ v - i -( j = y = o + w +59-64));
+     g + h +(( e =87-(56)+ o )+(05- p + h )< n )+5- e ;
+    if ( l =( c = u = a = p ))while ( c = s = p ); else do if ( i ); else ; while ( a );
+    do if ( t < h - w )if ( l ); else if ( s ); while ( w - a < s );
+    if ( v < o - q )do { ; ; }while ( b );else if ( j )if ( w ){ ; }else  v ;
+    if (( r + h -( u )< d +( f )+ h )< o - d +( u )-1- j - y + n ){ if (( e = v = j < l )-25); }
+    do { while ( w = i =2) h = t +79-9+( c + k + l - e );}while ( v = o );
+     q = q = m =5-( q =9+5)-(6)-( k <756+ b )+976-48;
+    if ( s +6- y <( x ))if ( q = k = x )if ( r ); else ; else do ; while ( l );
+    do ; while ( l = v );
+    { if (40< u -( b ))do { ; ; }while ( r );else ; do { do  y ;while ( g );}while ( x );}
+    do do do if ( n ); while ( t < r );while ( j < n + j );while ( s +92);
+    { if ( u )while ( y = r )if ( z )if ( h ); else if ( b ){ ; } k + o ;}
+    if ( v =9)if ( j )if ( r )while ( p ) w = o ;else  d ;else {  u - x < l - l ;}
+    do if ( b +( j = v ))do  y ;while ( k );else {  z < g ;}while (( n < t -79+ y )- n + g );
+    ( x = q =(48< p +(9+20-1+ e -95750+4< h - p +4+ x )-6- j -1515-85)+ q )+1;
+    { { while ( x + g - u )do while ( s ); while ( n < d );; ; ; ; }}
+    { { while ( g ); { ; }; } t = z - v ;while ( q ); { ; ; }}
+    do if ( e = n = u )while ( z = y < i - y ); while ( m = z - t + g +19+8);
+    while ( k = a = d = s =( l = g < y ))( j - s + o +( y ))<( r )-81+( n );
+    if ( n + f + k <( j ))while ( s = v = g + n - y - o < o -1); 
+    if (47-( s = g =019<006+ z +0-(( u =( q -( h = u + l )+ s +0)< k - v )<9+78-9-499)-4858- q + y +( h = x =8))<2- k +61-7566+224); 
+    while (( t )+( r = r +(5+ p )-9+ p )) a =1;
+    do do ; while ( g = s +184< v - a );while (194-( g = x ));
+     z = h = w =( a +2- h +( o = w )+ u +71<0-( a - r < a - s )+ p +11);
+     c = n =( i = z )+ c +428202-0521<(( i )-( a )< i +0-97-( o ))+( a )+99;
+    if ( g = z = d = l = j = r )if ( o )if ( x )if ( b ); else { ; }
+    while (4) h =925;
+    while ( r =2)while ( e =5< f )while ( k - w < x ); 
+    if ( b =( v = e < f )<6-408-(8+((( s )< g + a )+( j <6)-2< a + p - r - n +57+0+ i +96+ r ))-1); 
+     n +09;
+    { while ( e + w + s - a )do { do ; while ( p );if ( w ); ; }while ( t );}
+    { if ( m ) b = o = y < u ;else if ( e = y ); { ; { if ( w )while ( l ); else { ; }}; }}  <----- FAILURE
+    if ( j = e = w = d + u + q + w <( f = o ))( a -6)< l - o -4;
+    if ( e = l < i + y )while ( o )do ; while ( s );else {  l < v + z ;}
+    if ( f = o )do { ; ; }while ( p = y );else { if ( g ); else if ( d ); else ; }
+    { if ( c < x - j ){ if ( y )if ( d ); }else do while ( v ); while ( e + n );}
+    if ( p < e ) z = l < q + o + n ;else if ( a ); else if ( j );   <----- FAILURE
+    { 9;}
+    while ( x =9<66+ b )while (( l - t - v - r + y -2+ q - k < c + k - d -( e = e = m )+ u + n + o )+ n + e +( s = s -7- b )< a -46+ t )do ; while ( c = k < t );
+    { while ( i ){ ; }if ( f )if ( p ); else ; do do ; while ( q );while ( t = u );}
+    { while ( q +( j )< v + k )while ( j = v = l = l )if ( o )if ( w ){ ; }}
+    while (( f = v + y < t + e -2)+ w )if ( y = v = p = s = q )if ( q ) w = l < l ;  <----- FAILURE
+    while ( e = u < o + z +(25+( b = v ))+ r - j ) y =( e )<( f = t + h + z -889- v < r + n +( i = z ))+9+204;  <----- FAILURE
+    do if ((( l = y )< k + q + p )< i +6- k +4)do ; while ( v = u - z < d );while ( s = t = f +7- w - r );
+    while ( o =( r + b +( e = f = v = y )-( p - i + c < b + o ))); 
+    while ( l = b = c = i =( z = h + r + k + f )-5+2){ while ( p = w = q - i ){ do { ; if ( y ); ; }while ( s );}; }
+     q = t ;
+    if ( a + j < g - t -0) l ;else if ( k = k ) y < b ;
+     n = s = e = o = p ;
+    ( j )-41-( l = k < h )< b + l -0624+ x ;
+    while (684598- o + c - w <(( e = k = j = h + h + h +5-( c < w )+677<9-( r = h )-( h )- k )+6-2- o )); 
+     n = c = g = j = r = i -69+ i -94;
+    if ( q <10)do ; while ( i -99+ z );else if ( s < m - g ) m ;
+    if ( d -9+879-5- t - h -( x - c < s + v )<79+ f ); 
+    while ( w = o -49< c - v +( x ))if ( m = z )if ( t ) f ;
+    if ( h + m +( j )-( i )+ b -8-0-566) l = j = u + n - x -( n = o )+ l <( m = h );
+    do { if ( d - r < r )if ( w )if ( c ); else ; }while ( k = t + w < i );
+    { while ( f +6< z - v +( e = u ))while ( c - o + o )if ( t ){ { { ; }; }}}
+    do do ; while ( a );while ((( w = h =2+ g +( p = t = h < m + r )+ v -772-4)+ g )<( v = t = e = c =(( v )+5< t + e + o )<( h = o < b ))- e - u + l +2+ g );
+    if ( j = s )while ( i )if ( w )while ( y )if ( x ); else while ( q < v ) w < k ;
+    { do do while ( f ); while ( n = v = j );while ( k );if ( y < b )if ( l ) d ;}
+     l = z = t =( i +8+ z )< v ;  <----- FAILURE
+    while ( y = w = n =470+0- x <41); 
+    if ( l = k = g )if ( z +8+( v )-0)while ( c < q )( j );else  u = e = q = k = t = x < z + n ;  <----- FAILURE
+    if ( w = q + w -20)do if ( p ){ ; if ( r ); else ; }else ; while ( k );
+    if ( a = c =( d - z <( g = c ))){ do ; while ( t + a );{ do  r ;while ( j < k + q );}}
+    if ( x = c = b = g = v = t =( q = d = k = e )<( k - b < g )+ v ) v = a -946<464-9092+0;
+     k = t = y =90+ d +88+170275- h +4-425-( p = k = m )+ n ;
+    while (( f + i < a - j )-( f - r < w )- m <( k = o )+( i = g < b )- z )0777;
+    do do if ( l )if ( s ){ ; ; }while ( y = p = k );while ( d =4796+ d );
+    if (( v = b = n = q = s + l < i )- d ){ while (( d - b )){  b - n < t - u ;}}
+    do if ( c < o + c ) a = a = c ;else { while ( z ); { ; ; }}while (92);
+    while ( o = b -( p )-( i < o ))if ( d = k + o ) l -7< n + b ;
+    if ( w = t = g = h = k = t = h = r = d = x < c -1)while ( i = v - b -7)do do { ; }while ( q );while ( s -( m ));
+    do ; while (9+( c = x - z + g +09< v + i - y -829-7)+ h + l );
+    { if ( z = l =( l +( h )+( l = d = b )+72+0)+( m = k +90+( e = c = f = u )< d - n )){  b = d =2- h ;}}
+    { if ( f - g +442)if ( g = h = t ); else do if ( y )while ( n ); while ( o );}
+    { if ( s = z = s = k ); { do ; while ( w );if ( w ); if ( e ); ; ; }}
+    70-4-518<9001;
+    { if ( r < b + h )if ( l = t ); else if ( b ); else ; else  w ;}
+     d +6-67+0+ v +8+2-118<4- i +(( v = g = k - v + k + o - b +( t - i +( h + y - d < u + y ))));
+    do { { if ( j - j + b )while ( i )while ( i ) b ;else do if ( r ); else ; while ( z );}; }while ( b + p );
+    do { if ( e ) z = p ;if ( n = c ){ ; }else ; }while (4+1+( f = f ));
+    if ( d =20); 
+    while ( p = q = w = w = s = v = h = e =( w + f )- g )do if ( s = t = r = u ) d = n +( l = v =15<6-( p = p = g =268));while ( t =9< i );
+    if ( e -7529)while ( j - a + i - f -( v )) d = n = g - z ;else ; 
+    if ( j < v + u )do do ; while ( u );while ( o = r );else { ; ; ; }
+    { 05<4886+9-2-7;}
+    while ( f = g = r + k <( n )){ while ( h ); while ( y ); while ( u ); ; }
+    while (( d =084)<( p = s =8< q )- p ); 
+    do  v =58< o - h - d + z ;while ( n = r = r = w );
+    if ( v = i = l = p < a ){ { ; ; }{ do while ( t ); while ( d );}; { ; ; }}
+    (6< z )+( p +( i = y -081-9+ v + t )+(2))- g +2+ j ;
+    while ( x +975+ a <5)if ( z ) t + c - n < z +1;
+    do { ; }while ( v = m =( v = m = o = n =( z - e +( s = j -41)-( t = d =( b < n )< k - s - i ))));
+    { { do if ( b = y = h +0+ l < v + l ); else  u +56< n -( x );while ( d = u <78);}}
+    do if (( l )-( x )<( b < g + z )); while ( x -( g )-( m + s - k +( z )));
+     d ;
+     a = x -( y )-( u )-( p = u )-( u = k < q )+( q =( i )<9)+5;
+    if ( u = n +( g <(( k =( n -51-6)+06-5)))-9200)while ( j - o - c ){ ; }
+     g = b =9-( o = q )+( m = f = d = o - i < z - l )< y +( k -( c = h = r ));
+     l +1< p ;
+    { if (5){ while ( f = e )do ; while ( f );; }else while ( y + p )while ( y ); }
+    {  t = n =( l = v = k - q )-( u < w - b )+5<( a = n =( p +4< c -( r )-( z )-5)-5);}
+    do ; while ( v = q + b -07+( n - z + v + n )<( k =( p = x )< d ));
+    do (0- j < s + w - l -0)< z - m -( e = p )-7+( z =8)+ q + b + g ;while ( l = c = y = h = c );
+    do ; while ( q =15-781);
+    while ( u = r = x -66)while ((1< f - u -8)-8018979); 
+    if ( a = s )do if ( q ); else if ( f )if ( z ); else ; else ; while ( o );
+    { while (4- b +94+( x < q )<( b - y < h +6)-6); }
+    do if ( t )while ( h ); else if ( p )if ( f ); else ; else ; while ( y = p = r = v = x );
+    { { while ( o <( p = z =( a = t + l -( g )< u + u -7)<( m = f + w - q <( q )))+ f );  k < c -5;; }}
+    if ( o = b + i < v + g )do ; while ( o );else  e + o < f - a ;
+    if ( x = x = l )if ( p ); else do ; while ( j );else if ( v ); else ; 
+    if ( f = l = s = h = s = e = u - j <( t + r < q )- e ) m + m +09-98+ o ;
+    if (46<41-( r ))( o + n - x < p + s - x )-7+ z ;
+    do do ; while ( z = k - q +( h )< b - c -6);while ( z +7< u + x + s );
+    if ( a = o = d < t - g ){ do ; while ( g );}else if ( s )if ( y ); else ; else ; 
+    { { do do while ( t ){ ; }while ( n = u );while ( i < i + t );if ( a ); ; }; }
+    while ( i = h - t < s )while ( p = g )if ( z = l ); else ; 
+    119<( l = b -( b < c )-( f = y ))-( f + x -1<0-2);
+    { do do do ; while ( p -( e ));while ( j = u );while (( p = v )< l -4+0-( f - p ));}
+    if ( w < r + q )do  q ;while ( z = y );else if ( z )if ( h ); else ; else  l ;
+     x = k -( w = q = t +592);
+    if (1- x -(985+ e +5)); 
+    6+( k = x = i )-(80- e )<( q = z -( h )+ r -( v = i )+ j )+ h - w ;
+    { do while ( s =22+ f + c ); while ( n = m =((( h = w )- m - h - v + j )+(66+( h < v + t )< e + m +( z )-( v ))< d + l ));}
+     t - v + f + b +06-9-( l + c < j + v - t );
+    if ( q + i -01- l -( q = q =( z )< t -( e ))< u -(( w < r + p ))); 
+    do ( n = r = b = i = m = z )-( q = a = a = x = q );while ( q - q + v +8+ r - e + p - r );
+    ( z = t = h = g = u + z )- o < r ;
+    if ((( l = b )))if ( l - e < s ){ { ; }}else { if ( g ); else ; ; ; }else ; 
+    if ( b + j -10)while ( v - s + c < c + x ){ ; }
+    if (( l = x )+( a )-( v = n +( z )+( l = o )))while (6+( v ))do if ( y ); while ( b + f );
+    ( p - r -( d )< w -116-9)+22< q +( w = q = e )+( b < s )+67;
+    if ( h = i =( x = f = f =(( a = r - q < g + f ))+66570929060-(( m =( s )<20+ g )<9-( x )))< r ){ ( i = q = q = e < d )-( e = m =82);}
+    while ( g = b + q ){ ; { do if ( d ); else if ( q ); while ( w );; }do do ; while ( q );while ( p = u );}
+    if ( d = n + m + m < n +( d ))if ( s = m )while ( u ); else ; 
+    if ( z + i < y )if ( o ); else while ( p )if ( k ); else ; else  l = r ;
+    if ( o )do while ( f )if ( p = b - v + a < o - r )( r )< v - d + v -( g );while ( n = r = x =4+ e );
+    while (( b )-( g = y = l )+0- z -807+ t <(6+( r = a )< j - j - w )-26- h )do ; while ( a = y <8);
+    if ( x - y -777)do if ( a ); else while ( n ); while ( z +( l ));
+    if ( o = f = i = j = c ); else { ; if ( c )if ( s );  v < j ;; ; }
+    if ( r - l - y -( s )<08-5+ j ){ if ( c = w )do ; while ( s );}
+    while (9-6222)if ( s =8){ ; }
+     s = w = i =( x = z - q < h + q )-45+1720+( r )- a ;
+    if ( c = x = w < w )while ( d )while ( j ); else do { ; ; }while ( c = a = v );
+Recall: 0.955, Precision: 0.704
+Example gen time: 18.83934450149536
+Scoring time: 364.79634046554565

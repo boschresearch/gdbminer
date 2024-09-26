@@ -1,0 +1,7692 @@
+
+
+Initial grammar loaded:
+start: t0
+t0: t6999 t4161
+    | t5644 t6113
+    | "false"
+    | t0 t62
+    | "null"
+    | t62 t0
+    | t5961 t2642
+    | "true"
+    | t5805 t6263
+    | t6999 t62
+    | t4499 "\"" t5324
+    | t5961 t6263
+    | t74 t4161
+    | t4499 t8105
+t6999: t6999 t74
+    | t5484 t6854
+    | t5484 t74
+t5484: t62 t5484
+    | "-"
+    | t62 t74
+t62: "\n"
+    | " 	\n"
+    | " "
+    | "	"
+    | "\n\n"
+    | "\n "
+    | "\n\n "
+    | "	\n\n\n\n"
+    | "\n	 "
+    | " 	"
+    | "\n \n"
+    | " \n"
+    | "  "
+    | "\n	"
+    | "\n	\n \n\n"
+    | " \n	\n"
+    | "\n	 \n "
+t6854: t74 t6854
+    | "."
+t74: tdigits
+t4161: t76 t6708
+t76: "E"
+    | "e"
+t6708: t79 t74
+    | t74 t62
+t79: "+"
+    | "-"
+t5644: t5805 t0
+    | t3309 t8106
+t5805: t5805 t8103
+    | t5644 t8107
+    | t5961 t8103
+t5961: t5961 t62
+    | "["
+    | t62 t5961
+t6113: t6113 t62
+    | "]"
+t2642: "]"
+    | t8103 t6263
+t6263: t0 t6113
+t3309: t3309 t1832
+    | t5961 "\""
+t1832: t1832 t1832
+    | "}"
+    | "<"
+    | "^"
+    | ":"
+    | "("
+    | talphanums
+t4499: "{"
+    | t62 t4499
+t5324: t8106 ":" t8104
+t4667: "}"
+    | "," "\"" t5324
+t8103: t8103 t62
+    | t8103 t8103
+    | t0 t8107
+t8104: t0 t4667
+    | t0 t8105
+t8105: "}"
+    | t8105 t62
+    | t62 t8105
+t8106: t1832 t8106
+    | t8106 t62
+    | "\""
+t8107: t8107 t8103
+    | ","
+tdigits: tdigit
+    | tdigit tdigits
+tdigit: "0"
+    | "1"
+    | "2"
+    | "3"
+    | "4"
+    | "5"
+    | "6"
+    | "7"
+    | "8"
+    | "9"
+talphanums: talphanum
+    | talphanum talphanums
+talphanum: "a"
+    | "b"
+    | "c"
+    | "d"
+    | "e"
+    | "f"
+    | "g"
+    | "h"
+    | "i"
+    | "j"
+    | "k"
+    | "l"
+    | "m"
+    | "n"
+    | "o"
+    | "p"
+    | "q"
+    | "r"
+    | "s"
+    | "t"
+    | "u"
+    | "v"
+    | "w"
+    | "x"
+    | "y"
+    | "z"
+    | "A"
+    | "B"
+    | "C"
+    | "D"
+    | "E"
+    | "F"
+    | "G"
+    | "H"
+    | "I"
+    | "J"
+    | "K"
+    | "L"
+    | "M"
+    | "N"
+    | "O"
+    | "P"
+    | "Q"
+    | "R"
+    | "S"
+    | "T"
+    | "U"
+    | "V"
+    | "W"
+    | "X"
+    | "Y"
+    | "Z"
+    | "0"
+    | "1"
+    | "2"
+    | "3"
+    | "4"
+    | "5"
+    | "6"
+    | "7"
+    | "8"
+    | "9"
+Precision set (size 1000):
+    
+
+ [
+
+ 
+	
+ 
+
+false,null,false, 	false] 	
+
+    
+
+ true
+    	
+
+
+
+[true,
+ 
+null,4E82
+ 
+,
+ 
+[null]]
+	 
+ 
+     
+	
+[]
+    -486801.e84
+
+    26E+6432
+    
+	 
+ 
+	
+ 
+
+[] 
+	
+
+     	true
+    [
+
+ 
+
+	 
+ ]
+    9E-4
+     
+-4578e1 	
+
+    [null]
+    [""]	
+     
+	
+[ 
+	
+true,
+
+	
+ 
+
+
+
+
+	
+ 
+
+false,null, 
+ 
+false 
+	
+]
+	
+    32E+5
+    
+	
+ 
+
+ 	{} 	 
+
+    [null,true,false, 
+false,true,false, 
+null,true,false,null,false,
+ 	
+
+true,false,null, 	
+ 
+	
+false,
+ null, 	
+  false,
+ null, 
+	
+	
+	
+ true,true,
+	 
+ true,true,
+	 
+ null,false,
+	 
+ 
+	
+ 
+
+
+ false, 	3e-6,[false,null]]
+ 
+    
+	     [false,true,null,true,false,	
+
+
+
+null,
+ 
+
+
+  	
+
+ 
+
+  
+	
+null]
+    -9e+6
+    
+	 
+ -2
+
+
+    
+	
+
+
+
+{"":false 
+}
+    ["<,false,false,null,null]  <----- FAILURE
+    	[""]
+    ["(	]  <----- FAILURE
+    ["<,
+	 {}]  <----- FAILURE
+    [null, 	
+  false,null,true,false,null,null,	
+
+
+
+false,
+	
+ 
+
+true,
+	 
+ 
+ 
+null,true,null,	
+	 
+ false,true,
+
+
+ 
+ 
+	
+true,false, 
+	
+true, 	
+	
+ 
+false,null,
+ 
+
+
+ 
+null,null,true,null,
+ 
+
+	 
+  	null,  
+			
+
+
+
+true,null,
+
+  
+
+ null,
+	 	
+null,
+ 
+
+true] 	
+
+    9E1	
+
+
+
+
+    
+
+-7E+57
+    	61319.E6
+
+ 
+    {}
+	
+    -6.51386
+	 
+ 
+    3e2	
+
+
+
+
+    
+	 
+ 1986
+	
+ 
+
+
+    -9.E7
+ 
+    
+	
+ 
+
+
+	
+ 
+
+[null]  
+
+    {
+	
+ 
+
+}
+	
+ 
+
+	
+    -8E-56
+
+
+ 
+
+    	
+
+
+
+[]
+       
+	 
+ {"
+	 	:-.
+	}  <----- FAILURE
+    {"":[false,false]	}
+    ["}:<< 
+	
+
+ 
+]
+	  <----- FAILURE
+    {"
+	 
+ 	:[",null]}  <----- FAILURE
+    
+	
+ 
+
+ 	
+[ -.51113E+1645,true,
+
+5e+52]  
+    
+	 
+ 	[
+
+true]
+    [	[]]
+	
+    0E+7
+    false 
+    43E2
+ 
+      1124.E509 
+	
+
+    [{}
+ 
+] 
+	 
+    
+ 
+	 
+
+ {}
+    
+  
+	 
+ {}
+    
+
+ {"
+	:true}
+  <----- FAILURE
+     
+-423053e74  
+    -.676e+1
+    [null, 
+	
+false,
+
+
+ true,
+	 
+ null,true,true,[]]
+	  
+	
+
+    {"<
+
+:9e666845254 	
+
+	}  <----- FAILURE
+    -09436 	
+    -0488.e2 	
+
+    
+[
+
+ 
+	
+
+
+
+[]]	
+
+
+
+ 
+    
+
+[false,true,  false]	
+     	  29
+	 
+    
+
+  
+ 
+{"<  :-0934	 	
+}  <----- FAILURE
+    1e19	
+
+
+
+
+    [
+	[",false]]  <----- FAILURE
+    [""] 
+
+      [
+
+ 
+
+ 
+{":false}]  <----- FAILURE
+    [
+ {":null}]  <----- FAILURE
+     	07.E-0
+ 
+
+    [ 
+	
+[null]]
+ 
+
+    -238  
+    	
+
+
+
+{
+	
+ 
+
+}
+
+  
+    
+  
+	
+
+
+ {"L":["}(:]}
+  <----- FAILURE
+     ["<:^
+
+]
+ 
+  <----- FAILURE
+    {} 
+
+    
+	
+ 
+
+	
+
+
+
+-.e-1  <----- FAILURE
+    
+[]
+    	[true,false,[
+
+false, 
+false]]
+
+
+    [",null,true,false,false,["}]]
+	   <----- FAILURE
+    [null,
+null]
+     	 	37.  
+    3e22
+ 
+
+    69E+4
+    [
+ 
+[",null]	
+
+
+
+]  <----- FAILURE
+    {
+	 }
+     
+	
+[",59695e+6]  <----- FAILURE
+    {"":950E+80
+	}
+    
+
+ [false,{}]
+	 
+ 
+    
+	20729439E+2
+    [-630e2	
+
+
+
+] 	
+
+     
+ {	
+
+
+
+}   	
+     
+984.4	
+
+
+
+
+    
+	 
+ 
+ -7.
+	
+ 
+
+
+    ["^<"]
+ 
+
+	 
+  	
+    null 	
+    -87612.	
+
+
+
+
+    [-.E1 	]  <----- FAILURE
+    
+
+  
+{"(:null}  <----- FAILURE
+    [",null, null,	
+
+
+
+true,true]  <----- FAILURE
+    
+
+
+ {}
+	
+ 
+
+	
+
+
+
+
+      -081.5
+
+
+    -727
+
+ 
+    3e+0
+    [null,true,null,
+	 
+ 
+  	
+	false] 	 	
+    6e-6
+	 
+ 
+    { 
+ 	
+}
+	
+ 
+
+
+    [",null,null,
+	false]
+
+   <----- FAILURE
+    {} 	
+    
+ 
+	 345
+	
+ 
+
+
+    {"::false}
+ 
+  <----- FAILURE
+     
+	
+[	
+
+
+
+
+]
+    	863466 
+    {
+	  	
+}
+    	
+
+
+
+	 	
+{"qE 
+:[],":false}  <----- FAILURE
+    [" ]
+	
+	
+ 
+
+ 
+	
+  <----- FAILURE
+    
+	
+	
+ 
+
+{"(::[],":true}
+    9e78
+ 
+
+    [{}  ]
+    [
+	 
+ ":"]
+ 
+ 
+
+    ["(:]  <----- FAILURE
+    -0.
+	
+ 
+
+
+    [",null,true,null	
+
+
+
+]
+	   <----- FAILURE
+    [",null,null,
+
+true,false, 
+	
+ 
+
+
+	
+	 
+  
+
+	
+
+
+
+
+[true,true,true,  
+ 
+true,false]]
+  <----- FAILURE
+    ["(",null,	
+
+
+
+ null,true,{} ]
+	
+    [null,true,true,null,false,
+ 
+true,
+
+ 
+	 
+ false,false,true,
+	
+ 
+
+
+	null,true,null,null, 	
+	
+ 
+
+
+
+false,null,
+	 true,null,
+false,
+	 
+  	 	
+null,
+
+null,
+	 	["]
+ ]
+
+  <----- FAILURE
+    ["}}"]
+    
+ -.832
+	 
+ 
+    {"":true}	
+
+
+
+
+    [null,true,true,false,null,null,true,
+	 
+ 	false,	
+   
+	 
+ 
+
+false,
+	 
+  
+false,null,false,false,-.
+	 ]  <----- FAILURE
+     
+	
+[
+
+ ]
+	
+    	
+
+
+
+ 	
+{} 		
+	
+    
+
+ 2570
+	
+    true
+
+    [true,	
+
+
+
+false,null,
+
+  true, 	
+[true],true,null,null,false, false, 	true,null,null,false,false,
+ 
+true,
+ 
+true, 	
+
+
+
+true,true,false,false, 
+	
+null,
+	true,
+ 
+
+ false,[false,false,	
+ 
+false,null,true]]
+    [
+
+ null,true,false,
+	 
+ true]	
+
+
+
+
+	 
+    0053382E3 	
+
+     
+[
+	
+ 
+
+ 
+ 
+	
+{":true}]  <----- FAILURE
+    {}
+    {"":[],":true}  <----- FAILURE
+    	-.	  <----- FAILURE
+    [
+	
+ 
+
+null,null,
+	 
+ null,[null,
+ 
+false, 	
+false,
+
+	
+
+
+
+true,false, 
+	
+  true,
+ 
+
+
+
+	true,null,null,null,false,true,	
+
+
+
+false,false, 
+	
+ 	
+   true,true]]  
+    [	
+	]
+     	[ 
+	
+ 
+	
+
+ {":true}]  <----- FAILURE
+    
+ [ 
+	
+ 	
+true]
+    ["^(,true, true,
+
+true,
+	 
+
+ 
+ 	
+null, 
+	
+null,true, 	false,null,  false,false, 
+	
+true,true,		
+
+
+
+
+	 null,
+null,
+ [
+	 true]]  <----- FAILURE
+    
+	[{":null}] 
+  <----- FAILURE
+      
+	 
+ 9580741.e739 
+	
+
+    [null,	1e-13761]
+  
+    
+	 [false,true, 
+true,false,	null]
+    	[false, 	 false, 
+	
+
+	 false,null, 	 
+  []]
+
+
+     
+	
+["("]
+	
+ 
+
+ 
+	
+    [",true,true,true,false,true,false,  4e3
+]  <----- FAILURE
+    [ -.E-2]
+   <----- FAILURE
+    {
+	 
+	 
+ 
+
+ }
+    [",-9713
+
+ ,true,false,  false,false,true, true,
+	 
+ 	false,  {":null}]  <----- FAILURE
+     
+null
+     	
+
+
+
+[ 	]
+     	
+-6.	
+    318e2840
+
+    [  ""]
+	 
+    [  
+ [false,null,	false,
+
+ false,
+
+ 
+	
+true,null,true,false,false,
+
+  
+  null, 
+false,
+	
+ 
+
+null,true,
+ 
+true,
+
+ 
+true,	
+	 
+	 
+	
+null,
+	
+ 
+
+null,
+	 true,true]] 
+	
+    {"":[false]}
+    
+ -874.e9
+	
+    [
+ 
+null,
+	 [null]]
+
+ 
+    -.e9121 	
+  <----- FAILURE
+    [false,null,false]
+    {  }
+    
+
+[false,null]
+    
+
+13.
+	 
+    {" 	
+ 
+	
+:[null]}  <----- FAILURE
+    [false,  true,false,null,null,true, 			
+
+
+
+false,
+ 
+false,	
+
+
+
+
+
+null,null, 
+false,false, ["^<]]	  <----- FAILURE
+    
+	2500372
+	 
+ 
+    {"a":[true]
+	 
+ }
+    
+	 
+ 
+831
+
+
+     72
+
+    { 	  }
+
+ 
+    { 
+
+ }
+    -4	
+    1e+5
+     	
+01e2  
+	
+ 
+
+
+    ["<,null,	
+
+
+
+ 	
+  false,
+	 true, false,	
+
+
+
+
+	
+	
+	 
+ 
+	null] 
+	
+
+
+
+  <----- FAILURE
+    
+	 
+
+	[true]	
+
+
+
+
+    	
+
+
+
+[ 
+true]
+    
+ 
+8291. 	
+    [ 
+""]
+	  
+	
+ 
+	
+
+     		
+
+
+
+
+	
+ 
+
+{  }
+	 
+ 
+    
+
+[ 
+ [true,null,true,
+	 
+ false]]
+ 
+
+ 
+
+     
+	
+	
+
+
+
+5.	
+    [-.
+	
+ 
+
+]
+	
+ 
+
+  <----- FAILURE
+    -42557E418
+
+ 
+    -94. 
+	
+
+    48e433
+
+
+    
+ [ 
+ {":false}]  <----- FAILURE
+    	
+
+
+
+  [[false,false,true,
+
+ 
+ null,
+
+
+	 
+ true]] 
+
+    -7
+	
+    [ 	"< 
+	
+]  <----- FAILURE
+      {}
+    00E678304
+
+
+    {"^::-.E0907
+	 ,":null}  <----- FAILURE
+    [false,false,	
+
+
+
+false,false,true,false,null,false,
+
+ 
+	  false, 
+true,[null,null,
+
+false]]  
+
+    [",false,{
+	 
+ }]
+	  
+
+   <----- FAILURE
+    [true,true,null,  	null, 	
+false,true,false,null,false,false,
+
+
+ false,  true,true,null, 
+ 
+	
+null,  -.03
+]
+    [":,true,null,
+	true, 	
+true,true]
+	 
+   <----- FAILURE
+    [null,[null,true,false],[] 	]
+     
+	
+-540e-79
+    
+	
+
+
+
+
+	{}
+    [false,null,	
+
+
+
+  
+
+
+	 
+ false,false, 
+
+	
+ 
+
+
+	
+  
+	
+
+	
+ 
+
+true,null,
+ 
+false,[ ]]
+     	
+-8E9 	
+    -096 
+
+     
+
+	{
+
+	
+
+
+
+  }
+    2e-1
+    {"":133579E+5,":true}  <----- FAILURE
+    
+
+ [ 
+	
+
+	
+ 
+
+["^^,true,true, 	null,true,null]]	
+ 
+  <----- FAILURE
+    
+	 
+ { 	
+}  	
+
+
+
+
+    [ 	
+	
+
+
+
+ 
+	
+-0e6
+ ]
+    
+	 {"^":{":null},":true}  <----- FAILURE
+    -.78 
+	
+
+    [ 	
+[false]] 	
+      [ 
+[false,false]] 
+
+    {"":false} 
+
+      {
+ 
+
+ }
+      {""	
+
+
+
+:0e323
+	
+ 
+
+}
+    2426820E6 	
+
+    [
+
+	 true]
+
+    [null,null,
+	false,false,
+
+false, 	
+ 	
+ 
+	
+false,false]
+    795E76
+ 
+
+    289797e9 	
+    
+
+ [
+	
+ 
+
+null,
+true]
+	 
+ 
+     	{""
+ 
+:[]}
+     {"::false} 	  <----- FAILURE
+     
+
+1.
+ 
+
+     	{"":false}
+    [true,null, 
+	
+{},-.96911 
+	
+] 
+	
+
+    
+ {"":null}
+    {""
+
+ :{":null},":null}  <----- FAILURE
+    
+ 
+	
+55.e9865
+	
+ 
+
+
+    ["^,false, 	
+{":null}]
+	 
+   <----- FAILURE
+     	
+true
+     
+	
+
+	 [
+null,true,true,true,
+	 
+
+ 91E550	
+
+
+
+]
+    -3E3 
+     
+	
+	7.E+1
+    
+ 
+33e+34
+    
+	 {""
+ 
+:{":true}}  <----- FAILURE
+    
+
+[]
+    [[true,true,
+	   null,true,false,false,	
+
+
+
+  
+	
+ 
+
+false,
+	 
+ 
+
+  	true,
+ 	
+
+
+
+false,
+
+	
+ 
+
+true,true,true,
+
+ null, 
+	
+
+
+false]]
+    3e30
+	 
+ 
+    true
+    ["}:^]   <----- FAILURE
+    		
+
+
+
+{"<":[null,
+ 
+null,null, 	
+
+
+true,false,
+ 
+null,
+	false,
+	null,
+	
+ 
+
+false,null,   	
+ 	
+true,true,  false,true, 	false, 
+	
+
+
+ 
+ 
+
+	  	
+false]}
+    {}
+	 
+    ["
+
+,[false,true,true,
+
+
+	
+ 
+
+false,false,	
+
+
+
+	false,
+	   false,
+
+ true,
+true,true,null,true,false,null,true, 
+	
+false,
+ 	
+
+	 true, null,null,
+	
+ 
+
+	true,false,
+	false,
+	 
+ 
+ 
+ 	
+
+false,null,
+	false,
+
+ null,false,
+
+	 
+ null,true,  true]]
+	   <----- FAILURE
+    
+	 50e-8
+    {
+	
+ 
+
+
+
+ }
+    -5922	
+    ["^<^}}1hxk"]
+ 
+
+    {	
+
+
+
+}
+    [false,true,false,true,false, 
+{":false}] 
+	
+  <----- FAILURE
+    	
+
+
+
+34291e9 
+    
+
+55010 
+
+    
+	 
+ -.7E67434
+	 
+    8e5
+	 
+ 
+    	[true,
+ 
+[null,false]] 
+	
+
+     	
+944.e66
+
+
+    [true,null,{":null}]  <----- FAILURE
+    [[false,null,null,false,
+	 false,
+
+ 
+ 
+
+false,false]]	
+    	
+
+
+
+[false,
+ 
+true,null,true,null,false,null,
+	 
+  
+
+	 false,false,null,null,null, false, 	[
+	true]]
+
+  
+    {"" 	:-.
+ 
+,":true}  <----- FAILURE
+    -.0	
+
+
+
+
+    	84.8e507
+
+
+      null
+    -5130E+0
+
+
+    [null,true, 
+false,null,null,
+ 
+ 
+null,true,
+	 
+ 
+	
+ 
+
+	
+
+
+
+null,	
+	 
+ 
+
+
+
+	false,null,true,false,true,
+	
+ 
+
+null,false,
+	false,
+	 
+ 	
+
+
+
+	
+
+
+
+ 
+	
+null,-53
+ 
+]
+    [[],-.e-12805]  <----- FAILURE
+    ["", 
+	
+[null, 
+
+	true,	
+
+
+
+	null,false,true,null,
+
+true,true,
+ 
+false, 
+	
+ 	null,	
+	
+ 
+
+ 
+	
+null,null,	true,null,false,null,true,true,
+ false,
+ 
+null,false, 
+	
+ 	
+false,
+ false, 
+	
+true]]
+     6208
+
+
+    0E4
+	 
+ 
+    
+ 
+{""  :{}
+
+ }
+    [
+ null, 		null,true]
+	 
+ 
+    [true,
+	
+ 
+
+
+	 null,
+ 
+
+
+null,true, 	
+{":true}]	  <----- FAILURE
+    9e9
+	
+    [":  ,4425e0981
+	
+ 
+
+]  
+	
+ 
+
+  <----- FAILURE
+    -.	
+
+
+
+  <----- FAILURE
+    86688E10207	
+    	[
+ {":false}]  <----- FAILURE
+    [",true,null,
+
+ false,false]   	
+  <----- FAILURE
+    [-95e-9]
+    -5. 
+
+	 
+    [ 
+null, 	 	
+true,
+ 
+
+	 
+ 
+	
+ 
+
+
+ 
+false ]
+    ["}",false]
+	
+	
+    -02	
+
+
+
+
+    -.525e+8	
+
+
+
+
+    	
+
+
+
+512478
+	 
+ 
+    [
+	 true,null,
+	 
+ 
+
+true,	
+
+
+
+
+	 
+ true,false,null,true,true,
+
+	   true]
+    -6468 
+
+     
+	
+{ 	
+}
+     	1.
+ 
+    1e+57
+     
+
+ 
+	
+{}
+    {"":null,":true}  <----- FAILURE
+      
+	-.e-8  <----- FAILURE
+    
+-.e-0  <----- FAILURE
+    [true,
+	 
+ 
+	
+ 
+
+[null]]
+    
+	
+ 
+
+	
+
+
+
+{}
+    
+ 3.699
+
+
+    69E1082
+
+
+      2778248.e5	
+     	[",[true,
+
+  	
+
+ 
+	 
+ null]]
+	 	
+  <----- FAILURE
+    
+ [[false],true]
+    
+
+ 619 
+    03E-7
+    ["
+,null,
+	 false,
+ 
+null,
+
+{}]  <----- FAILURE
+    {"	
+	 :[]} 
+  <----- FAILURE
+    {"}
+ 
+:["<]}  <----- FAILURE
+    43e-5015
+    ["<,null, 
+	
+null,true,[null,null,true,true]]  	  <----- FAILURE
+    
+	-1.e196	
+    -7	
+     
+[
+  	
+8e8 	
+]	
+	
+    ["<^"]
+    0E6 
+     	
+ 
+	
+{} 
+
+    null 
+    
+	 
+
+ [ 	 true]	
+    
+
+1.
+ 
+     	
+118373
+	
+ 
+
+
+    [true,true,	
+ null,false,true,
+	
+ 
+
+
+
+
+	 
+ false,true,
+	 true,null,null,  	
+
+
+
+
+ 	
+
+
+
+false,null,false,false, 	
+ null,null,null, 	
+ 
+null,
+
+ 
+ 
+	 
+ 
+	 
+ false,false,null,null,null, 
+ 	[] ]
+     {
+	
+ 
+
+
+	}  
+    {":
+:
+	 
+ true}  <----- FAILURE
+    
+	-70
+
+ 
+    ["<<<"]
+ 
+
+    [",null,null,
+	
+ 
+
+null,  null,false,
+ 
+
+ true,	
+	false,null,null,
+true,
+ 
+	
+ 
+
+null,null,null,false,true,null,
+  
+ 	
+	
+ 
+
+true,null,
+ 
+	true,-.E034835  ,-4e+2327627]  <----- FAILURE
+    []
+ 
+
+    
+
+-.7 
+	
+
+    [null,null,true
+	 ]
+    [null,null]
+
+
+    [  {}
+]
+    [
+
+
+ 
+false]
+	 
+ 
+ 
+    58E+451
+    -014e5
+	  
+    
+
+	 [{":false}]
+  <----- FAILURE
+      35	
+    [true,true, 
+	
+
+
+  	
+  
+ 
+null]
+
+    [true,false,true,false,  null,null,false,
+	
+ 
+
+true,false,
+	 false,true, 
+ 
+null, 	
+	 
+ 
+ 
+false,
+	 	
+true,false,false,
+
+true,
+
+
+	
+ 
+
+false,
+	
+ 
+
+
+	 3e3837
+ 
+]
+     	
+7218.E-5
+    11E-16
+    -349  
+    310e-4
+    
+	 498693E+2
+      {"<":[",true,null,true,null,
+
+ null]}
+
+   <----- FAILURE
+    
+1743.
+ 
+
+    
+ 
+285.26E9
+	 
+ 
+    2E260792 
+     	
+
+
+  
+[null]
+    [",{":false}] 
+
+
+   <----- FAILURE
+    false
+	 
+ 
+    
+	   false
+    ["^TW
+	 
+ 
+ ]	    <----- FAILURE
+    88E4 	
+
+    false
+	 
+     
+	
+false
+    64169171E2868
+
+ 
+    false  
+      [	{}]
+ 
+    {"(":[null,true,
+	
+ 
+
+true],":false}  <----- FAILURE
+    
+
+
+	 
+ true
+     
+	
+["(:^: 
+]  <----- FAILURE
+    [true,-9	,false,true,true,null,[null]]
+ 
+     {"
+ :false}  <----- FAILURE
+    [ 
+	
+ 
+
+null	,[":,false,
+
+true]]
+  <----- FAILURE
+    [false,
+ 
+
+  	
+null] 	
+    [  
+	[true],true,true,   
+ 
+	[]]
+ 
+ 
+    
+	 [ 
+ 
+	
+true,
+	
+	
+ 
+
+[null,true,
+	false,   false]]
+	 
+ 
+    
+	[true, 	 
+[false]]
+	 
+ 
+	 
+    {
+
+ 
+ 	}
+    [""]
+
+ 
+ 
+
+    [ -1723664E+22] 	 
+    	
+
+
+
+
+
+null
+    -69E00 
+
+    {":<:null,":null}
+    
+	-34285.95
+	
+ 
+
+
+    [
+ 
+null,["(^((:(<,null]]	  <----- FAILURE
+    96107062e+6
+    [true,false,-461233476	] 	
+
+    
+false
+    [	true, 	
+true
+	 
+ ]
+
+
+    
+	 [true,false,[true,
+true]]
+    null 
+	 
+    5e3
+	
+ 
+
+ 
+    false
+
+ 
+     	
+[""]
+    7E6	
+    [	
+
+
+
+
+-.5
+
+]
+    
+ 	-02
+
+
+     
+{}
+	
+    { 
+	
+
+
+}
+    
+	 
+ -13053.72e00 
+	
+
+    ["^<}
+	 
+ ]
+	 	
+
+   <----- FAILURE
+    	-70.E+79426620
+    [",null]
+	
+ 
+
+	
+
+
+
+  <----- FAILURE
+    false 
+
+     	
+[
+	
+ 
+
+
+null,false, 	
+false,	
+
+  
+5e1 
+]
+      [" 	
+]  <----- FAILURE
+    [true,false,null,false, 	
+false,
+	 
+ true,
+
+
+	 
+ true,
+	 
+ 
+  null,null,
+	 
+ 
+	 true,[true]]	
+
+
+
+
+    [
+
+ 
+
+ [null]]
+    -137835 	
+     []
+    {"^:false}   <----- FAILURE
+    {""
+:[true,false]}  
+    7E3 	
+
+     
+-38.
+	
+ 
+
+
+    {
+
+} 
+	
+
+    -.4e2
+	
+    [null] 	
+ 
+
+    
+ 
+
+
+ -3	
+    5594E-23
+    true
+ 
+    -49.e-5
+    ["}}}]  <----- FAILURE
+    
+	 -7 
+
+    -9 
+    
+	
+ 
+
+
+ {	}
+    
+ 
+	[
+{":true}]  <----- FAILURE
+    -.867427384	
+    68e7	
+    {} 
+	
+
+ 
+
+	
+    
+	[[
+	 
+ null]]
+    
+
+ 
+	
+ 
+
+	
+
+
+
+{}
+	
+ 
+
+
+    33e7754
+
+ 
+    
+
+[ null,
+ false,
+	 
+ 
+
+true,false,
+	
+ 
+
+
+	 
+  
+	
+null, 
+	
+
+ 
+	
+ [null]]
+    {} 	
+
+	 
+
+    [false,null, 
+false, 
+	
+-7e1
+	 
+ ,false,
+
+ 
+
+ 	true, null]	
+
+
+
+	
+     {}
+	 
+    2E-90
+    {"":{":false}}  <----- FAILURE
+    [
+
+ null] 
+
+
+    
+
+ 8E759
+	 
+    
+ 
+{}
+    [[true,false]]
+    
+	 
+ false
+    [
+	
+ 
+
+	]
+     	1e-53
+    
+ 
+ 161e6
+
+    [":}<Z4"]
+     {} 	
+
+	 
+    -.739 
+ 
+	
+
+    -5979E+451
+    [true]
+
+  
+    
+ 
+-1E020	
+
+
+
+
+     	
+
+	
+ 
+
+[]
+	 
+ 
+    
+ [null,{":true},false,null]  <----- FAILURE
+    [[]] 
+	
+    
+	-61.4321E+477
+    0e+5
+    968477E89
+	
+    8e+3
+    {"":-.e7  ,":false}  <----- FAILURE
+      true
+    6E-02145894
+    [":(}}, 
+true]  <----- FAILURE
+     
+[
+
+ {}
+	
+ 
+
+] 
+     	[[",true]
+
+ ]  <----- FAILURE
+    
+  
+[
+false,true,
+	
+ 
+
+
+
+
+ 
+	
+-5125608e-2]
+    	
+
+
+
+
+ [
+
+	
+ 
+
+{}]
+	
+ 
+
+
+        90e5
+	
+    	
+
+
+
+[" 
+	
+
+	
+ 
+
+]  <----- FAILURE
+    [",false,["(:],null,{":true}]  <----- FAILURE
+    ["::(,[	null]]  <----- FAILURE
+    4e4 	
+    [",null,[],null,   	 	-5
+ 
+]	
+
+
+
+ 
+  <----- FAILURE
+    -.38368
+	 
+    [false,
+
+[false]]
+    1e3
+	 
+    
+ 
+{}	
+
+
+
+	
+    [null, 	true,true,false,-5
+	]
+
+ 
+      [
+
+[
+	 
+ ]]
+    true
+
+ 
+    [[null]]
+    	08478682
+
+     [
+  false,
+ 
+["^]] 
+  <----- FAILURE
+    {"":false 	
+}
+    {"":-.e2  }  <----- FAILURE
+    [",true,
+ true,false,
+	 
+ null]	
+
+
+
+  <----- FAILURE
+    [
+	""]
+    
+
+ 
+	 
+  	[false,[]] 
+    ["<^<,null,false,
+	 
+ null,5e64 
+]
+  <----- FAILURE
+    4354e+2
+    -4e9
+
+
+     	{}
+    [
+ 
+
+ null,
+
+null, 
+
+	
+ 
+
+
+ 
+null,{}]
+
+ 
+    4E6  
+
+ 
+    -0 	
+    [	
+
+
+
+ 
+
+	[
+
+null]]
+    {"" 	
+:64E5131
+	 
+	
+ 
+
+}
+    
+	 
+ {"((:null
+	 
+ ,":false}  <----- FAILURE
+    
+ 
+5.E-2
+    ["}}}  
+]  <----- FAILURE
+    
+
+ [null,22e33368
+	 ]
+    81877e7
+	 
+    -1e-0
+     
+	-.E+5  <----- FAILURE
+    [	
+
+
+
+	4E-7,true,["}<(,null,null,null,true,  
+
+ null,null,
+
+null,true]]  <----- FAILURE
+    -.e53 	  <----- FAILURE
+    true 
+	
+
+     [ 	
+ ]
+    [true,
+
+ 
+
+ null,	
+	
+ 
+
+null	
+
+
+
+]
+
+
+	
+ 
+
+
+    [
+	 
+ 
+	
+ 
+
+ -77296913e9 	] 	
+ 
+    
+ [
+	 
+
+ 	
+
+
+
+{}]  
+    [
+ ["(,false,false],-.
+ ]  <----- FAILURE
+    {}
+	 
+ 
+    {"":[null]}
+    ["	,true,true,
+ null, 	
+	
+
+
+
+  
+false,
+
+ true,false,null] 	
+  <----- FAILURE
+    [
+	
+ 
+
+null,true,true, 
+-6003E9
+
+]
+     
+024080.e1  
+    
+ true
+    -4.003
+	 
+ 
+    
+ ["]	
+
+
+
+  <----- FAILURE
+    true
+	 
+ 
+    
+	85E+641
+     	
+
+
+-0
+ 
+    [
+	 ""]
+
+
+	
+    [["(:<<,null,null,true,true],false,false,true, 	
+false,false,true, 	
+	 
+   null,	
+
+
+
+  null,
+
+  
+	
+[null]]
+	
+ 
+
+  <----- FAILURE
+    
+	 	{}
+    {"" 
+:{":false}}  <----- FAILURE
+    [-1 
+	
+,false,[false]	] 	
+    {}	 	
+
+	 
+ 
+    [":^(}}
+
+ ]  <----- FAILURE
+    -76.
+	 
+ 
+    -18 
+	
+
+    
+	 [true,false,true
+ ]
+    -02232439e0
+
+ 
+    
+	 {"
+:true}	
+
+
+
+  <----- FAILURE
+    [ 
+	
+ 
+
+
+
+ ]
+    
+	 {""
+
+ :{":false}}  <----- FAILURE
+    [[false,true,null,
+	 
+	 	
+
+
+
+false,false,
+
+
+ 
+
+
+ false,false],
+
+{":false}]
+
+  <----- FAILURE
+    
+	-3.9 
+
+    
+
+{"":[]}
+    [false,-95235
+	
+ 
+
+,{}]
+    [	
+
+
+
+]
+    
+
+true
+    
+ 
+	{
+	 
+ 
+}
+    [ 
+	
+ false]
+    
+ 
+194.
+
+ 
+    [false,true,[null]]
+ 
+ 
+
+    -82355E+4
+    
+[
+ false,
+
+null]
+    {"":[],":null}  <----- FAILURE
+    -.090276E-34
+     
+5011.0e-7
+    [["}] 	]  <----- FAILURE
+    3e+51
+    [" 	
+,true,
+	 {}	]  <----- FAILURE
+    [["(<,false,true]]
+
+  <----- FAILURE
+     	
+
+{}	
+
+
+
+
+	 
+ 
+	
+ 
+
+
+    
+  	
+875.
+ 
+    { 	} 
+ 
+    
+	  [false,
+	
+ 
+
+ 	
+    
+	1e-04282]
+
+     
+ 
+[false] 
+    
+	 {}
+      [	 
+	
+]
+      864.
+	
+    [
+ 
+{":true}]  <----- FAILURE
+    
+
+ 	
+	 [null]
+    
+
+ 
+	 [
+	null]
+	 	
+    
+	 false	
+
+
+
+
+    
+
+7912e+12
+    ["("]
+    {"(}:7e656
+	 
+ 
+	}  <----- FAILURE
+     	759756	
+    
+  { 
+ 	
+}
+	
+ 
+
+
+    -.e+437  <----- FAILURE
+      [2E3
+]
+    
+	 
+ 
+	 
+
+ [false]
+    ["(s^]  <----- FAILURE
+    	
+
+
+
+89054  
+    	
+
+
+
+[ -.
+	
+ 
+
+]
+  	
+  <----- FAILURE
+    
+	 72745e-1
+    30E-84
+    
+	 
+  	{"":null}
+ 
+    {"<
+	
+ 
+
+:
+
+null 
+	
+}  <----- FAILURE
+    {	} 	
+
+	 
+ 
+    1715e53
+
+ 
+    9E6
+	
+ 
+
+
+    
+	
+ 
+
+[false,
+	 ["(}^:],
+
+{":null}]  <----- FAILURE
+    [
+	 
+ ]
+    [true,false,true,
+
+ 
+
+ 
+	null,false,
+	 
+ true,true,true,
+null,true,false,		
+
+
+
+
+false,
+	 null,true,null,
+	 	
+	 true,
+	 null,
+
+false,false,false,  
+  true,
+ 
+null,false,
+	  
+	
+false,true,null, 
+	
+ 
+
+false,
+
+ 	 	true,
+
+ 
+
+ ["^]
+ ]
+	 
+   <----- FAILURE
+    [",false,true, 	
+true]  <----- FAILURE
+    [
+	 ":
+
+ ]  <----- FAILURE
+    
+	00.
+
+ 
+    0E-38
+    -.01e+7
+    [",-. 	
+
+	] 	
+  <----- FAILURE
+    [false,
+	true,null,-730	]
+    9E+80
+    [false,true, 
+	
+null,true,false,
+	 
+
+  	
+  true,true,null,
+	
+ 
+
+
+
+false]
+    {} 
+	
+ 	
+	 
+ 
+    
+	0337724947e-0
+    	96.E-0
+    [null,null,
+	false] 	
+     	
+ 	{"":[]
+	}
+    ["<:,false,false,
+ 
+false,false,true,true,
+ 
+	 
+ 
+
+ null,true,
+ 
+	
+	
+ 
+
+true,false, 	
+true,true,true,true,false, 	
+false, 
+	
+true,  
+	
+  	
+	 
+	
+	
+ 
+
+ 	
+ 
+	
+ 	  
+
+ false, 
+	
+
+
+
+	
+
+
+
+[false,true]]
+	
+ 
+
+
+	
+ 
+
+  <----- FAILURE
+     	[	
+
+
+
+false]
+ 
+    [	 
+true
+	 
+ ]
+    	  []
+    -0404945196E+1
+    [null,null,false,false,null,null]
+	
+ 
+
+
+    [true 	]
+	
+ 
+
+
+    ["",false,true,
+ false]
+    -085.4
+
+ 
+     	
+[
+
+ 	
+true]
+    [  false, false, 	{":null}] 
+	
+ 
+  <----- FAILURE
+    [",false,false,false,false,null,null,false,null,true, 	
+false,true,false,false,	
+
+
+
+true,true,false,true,
+
+ 
+
+ false,
+	
+
+null,null, 
+
+null,false, 
+	
+
+	 
+ 
+ true, 	
+null, 	
+	 
+ 
+null,false,   	
+null,true, null, 
+	
+
+
+
+null,null,true,null, 	
+false,false,  
+	
+ 
+
+
+ 
+
+
+-987E5
+
+]
+
+  <----- FAILURE
+    -413e44 
+	
+
+    [  ]
+    [ 
+	
+ 	
+ 
+[false]]
+    {" 
+
+:-85
+ 
+,":false}  <----- FAILURE
+    -.99709E-55
+    
+
+ [false]
+    [
+	 null,00e1	
+
+
+
+]
+	
+    [	
+
+
+
+false
+,null,null,	
+
+
+
+true,	
+
+
+
+-1
+	
+ 
+
+]
+	
+ 
+
+
+    
+
+
+ 
+-016e9111941
+
+    {" 
+
+ 
+:{":null},":null}  <----- FAILURE
+      false
+
+
+    
+ 
+
+
+037
+
+    	 
+
+	 
+ {":<":{":null}}  <----- FAILURE
+    
+	
+
+  {"":[],":false}  <----- FAILURE
+    9e+428
+    -.5
+
+    
+	 [
+	 {":true}]
+  <----- FAILURE
+    -4.1880453e6 
+    ["}
+
+ ] 	
+ 	
+  <----- FAILURE
+    ["<:^^,null]
+  <----- FAILURE
+    -2.488208
+	
+    		{" 
+	
+:null}	  <----- FAILURE
+     	 	[
+	 null]
+    -.e0
+	 
+	
+
+  <----- FAILURE
+    {" 	
+:false}    <----- FAILURE
+     
+	
+[ 
+	]
+    
+
+	 
+ 
+	 93e-5
+    2e-73
+    
+ 
+
+ {" :null}
+	   <----- FAILURE
+    
+
+  
+	
+[false,false]	
+
+
+
+
+    -88E+71
+    -18
+
+
+    
+	 
+   	
+
+
+
+{}
+    [":<3:]  <----- FAILURE
+    
+  []
+     	[null,
+	 	
+
+
+
+
+	true,false,false,null,true,	false,
+
+
+	
+ 
+
+ 
+
+
+ 
+
+  	
+true,false,
+ 
+ 
+ 	
+true,true,	
+
+
+
+null,true,
+	 
+ 
+ true,true,[]]
+	
+ 
+
+
+     
+	
+-3E+6
+	 
+    -7
+
+
+    [   true,["}^^,true]]   
+  <----- FAILURE
+    [":},false,-4593031
+	
+ 
+
+] 	
+	  <----- FAILURE
+    [false]  
+ 
+      {
+	
+ 
+
+}
+	
+      -191E4
+	 
+    []
+    {
+ 
+	}
+
+ 
+    [",null,null, 
+-56E239  ]
+	
+ 
+
+   <----- FAILURE
+    
+	
+	 
+ -55473e9  
+    
+ 
+
+ {}
+    -00946E-9
+    
+
+-.894
+	
+    814e2
+
+
+    -9036054964
+
+
+    [false,false,null,false,	
+
+
+
+null,null,false,true,null,true,
+	
+ 
+
+
+	true,true, 
+	
+false,
+
+ true,false,
+ 
+true,
+	
+ 
+
+null,false,false,true,null,false,
+ 	
+
+
+
+true, 	
+true,
+	 
+	  null,null,false,false,null,
+	
+ 
+
+ 	
+
+	
+ 
+
+
+
+	
+
+
+
+  
+	
+	 true,
+	 
+ -6
+	,null]
+     	
+-.752E05
+
+    039E+1
+    
+ [6E+2]  
+ 
+    [false,
+
+true,null,
+ 
+
+ 
+	{}	
+
+
+
+]
+    
+	
+	
+ 
+
+09
+	 
+    [{},[",false,null]]  <----- FAILURE
+      
+	
+ 
+
+{} 
+	
+
+
+
+ 
+    [
+	 
+	
+ 
+
+	]
+    -.
+
+   <----- FAILURE
+    {""
+	:7E5 
+	
+
+ }
+    {} 
+    715e-46
+    [":<<(,null,true,-3560032e-4]
+
+  <----- FAILURE
+    
+	-67 	
+    
+
+ 
+ 
+{}
+     
+
+	 {"::null}  <----- FAILURE
+     
+
+
+  {"(
+
+: 
+null
+
+}  <----- FAILURE
+    [
+
+null,
+
+ {}] 	
+    83e06	
+
+
+
+
+    
+	
+ 
+
+null
+    
+	 
+  
+
+ {}
+    [",null,
+	 
+
+true,null, 	null,false,null,true,
+	
+ 
+
+true,true,true,
+	 
+ true,
+ 	true,
+
+ 
+	
+ 
+
+true,false, 	[ false]]	
+		  <----- FAILURE
+    {"":[null,true,false]}
+    
+	 
+ -9E0
+ 
+	
+
+
+
+
+    {" 
+
+	 
+ :[true,  null,true,true] }  <----- FAILURE
+    [true,
+	
+ 
+
+null]
+    -38006	
+    [
+	 false, 	null,
+
+ null,true,
+	 null, 
+	
+
+
+ true,null,
+	 
+ null,null,null, 	
+
+	
+ 
+
+
+
+
+	 
+ false,
+ false, 
+	
+null,
+	-.	
+
+
+
+]  <----- FAILURE
+    0E8
+ 
+    2e+7
+    -963
+
+    -.4  
+    
+-120.  
+    false
+    [[null,
+
+false] ]   	
+    ["^"  ]	 
+
+    -5E-42
+    09e8
+	
+ 
+
+
+    5e+9
+    [
+	true,[",true,
+ 
+
+ 
+	null,null, 	
+	 
+ null,false,
+	 
+ null,null,true,  false, 
+	
+
+	
+ 
+
+ 	true,
+null,true]]  <----- FAILURE
+    [",{}
+]
+	 
+   <----- FAILURE
+     	
+{
+	
+ 
+
+ }
+ 
+    		
+
+ {}
+    -2400208e-23
+    false 	
+
+
+
+
+    
+ 
+
+7694092E4945  
+    479e48	
+
+
+
+
+    
+	 
+ 
+ [false,false]
+    {"8E":[true,false,	
+ 
+	 false]}
+    {  
+	
+ 	}
+    [null,false,
+
+ 
+
+ 	
+null, 
+false]
+	 	  
+    
+	
+ 
+
+{}
+    
+	
+ 
+
+ 
+{   	
+
+ }
+    
+	 	[
+	
+ 
+
+]
+    [false,
+
+ null]	
+
+
+
+  
+    [  
+[false],["<:,null,true]]
+	
+ 
+
+  <----- FAILURE
+    
+	
+ 
+
+[true,null,null,true,null,false, 	
+null,true, 	
+	 false, 
+	
+ 	
+null,true,
+	 
+	 
+ 	
+
+
+
+[]] 	
+
+    [-1e03 
+	
+]
+
+ 
+    {"":null
+
+ }
+    	-8516E5 
+
+    
+	
+ 
+
+074e+31526	
+
+
+
+
+    1e61
+
+
+    -038E-8952
+	 
+   
+    ["(^:}((	]  <----- FAILURE
+    
+ 
+	
+
+
+
+87274.e+389437
+    false
+
+    [ 	 
+	
+true,
+ false,true, 	[true]]
+ 
+    -52647
+	
+    -8859888724
+
+    {"}(<:null}  <----- FAILURE
+    [null,false,false]
+	  	
+
+    {":
+ :-7
+
+ 
+	
+ 
+
+}  <----- FAILURE
+    {"":null}
+	 
+ 
+    [ 
+""]
+    
+ 
+	
+	{"^":{":true}
+	}  <----- FAILURE
+    [ 
+	
+{":null}]
+
+  <----- FAILURE
+    
+[",-3894E7	
+
+
+
+]
+ 
+  <----- FAILURE
+     
+	
+{}
+    
+	 
+ [null,[false,false,  
+ 
+null]] 
+	
+
+     
+	
+{"
+	
+ 
+
+:true}  <----- FAILURE
+    ["^,{
+	 }]	  <----- FAILURE
+    
+ [
+
+false,
+	 null,
+	
+02E+18]
+	
+ 
+
+ 	
+     	[{},[]] 
+     
+
+	  	{"<":-4e+58	
+
+
+
+}
+    
+	 {"(}:null}  <----- FAILURE
+    21e24
+ 
+    {"^
+ :-802E19
+	 ,":true}  <----- FAILURE
+    ["<,false,
+ false,null] 
+	
+  <----- FAILURE
+     14
+
+
+     
+	
+6.24e-2
+    -.    <----- FAILURE
+    -670788
+	 
+
+ 
+     
+{ 
+}
+    [null,false,true,false,true,null,null,false,
+   true,false,true,true,
+ 
+	null,null,false,null,true,true,true,{}]
+    {"":{}}
+    	
+
+
+
+ 
+{}
+    
+
+-24
+ 
+
+    [{}]
+     
+  {":
+	 :["<^:}}]}  <----- FAILURE
+     
+{":":[]}
+    [",false,null,null,
+	 
+  
+	
+true, 
+	
+true,
+	true,	
+
+
+
+
+ 
+ 
+false,true,
+	
+ 
+
+true,
+	true,	true,false,  
+	
+ 
+
+false,true,false,true,false, 
+	
+	
+
+
+
+
+	 
+ 	
+
+
+
+ 	
+	
+
+	 null,
+ 
+	
+
+
+
+
+ 
+ false,false,
+
+true,false, 	false,true, 
+null, 
+	-.
+ 
+]
+
+   <----- FAILURE
+     [
+
+ -4E7 
+
+	]
+    [[",null]]
+	 
+   <----- FAILURE
+    -2e+67
+     
+
+
+[ 
+	
+["}]	]  <----- FAILURE
+    [false,null,	
+
+
+
+
+
+null,
+	 {} 
+	
+]
+ 
+	 
+ 
+    90E+9
+     [true,-29e+2596]	
+
+
+
+
+    
+ 
+  {"":[]}
+    -34.e-83
+    	835305e45
+	
+ 
+
+
+    
+ 
+38e-95
+     
+[	 2e-5]
+      [
+
+ null,
+	
+ 
+
+-6
+
+]
+     	
+
+
+	
+ 
+
+{
+	 
+	
+ 
+
+}
+
+ 
+    [ 
+	
+{":null}]
+    <----- FAILURE
+    
+	 
+
+[]
+    
+
+ 	
+[ 
+["^,null,
+ 
+null,
+	
+
+
+
+
+ 
+
+	false,true,false, 	 null, 
+
+
+
+		true]]  	  <----- FAILURE
+    
+[	
+	 
+ [false,true,false,true,
+ 
+false,
+
+ null,false,null,true,
+	 true,null,true,null,
+ 
+true,false,false,true,
+ 
+
+
+ false, 
+
+ 
+	 
+  	
+	
+
+
+
+null,
+
+ 
+false,
+	
+ 
+
+
+	null]]
+    {"" 
+	
+: 	false	}
+    false
+ 
+    -6507138849
+	
+    
+ 
+{"":null}
+    -.08511
+
+    {"
+ 
+
+	 
+ :-05	
+
+
+
+}  <----- FAILURE
+     
+-47e+1
+    
+-35924 	
+
+    {}
+ 
+    {} 	
+
+    
+ 
+true
+     
+	
+
+ 
+{}
+	 	
+	
+ 
+
+
+    	[
+	
+ 
+
+
+	
+ 
+
+	
+
+
+
+[null]]	
+    
+	
+ 
+
+ 341E+7
+    
+	 
+ 	7746801988.
+
+ 
+    -8836	
+    
+	8e5 
+
+    
+3.e+587
+    70e591894
+ 
+    
+	[ false,-.e+2]
+
+   <----- FAILURE
+    {"^	
+
+
+
+:false 	
+}  <----- FAILURE
+    
+
+[ 
+
+ ]
+    {
+
+  
+	
+
+	
+ 
+
+}
+    {"" 
+	
+:["] 
+	
+}  <----- FAILURE
+    
+
+ 
+	 
+ {}
+    
+	 
+ 3135.
+	 
+    [""]
+
+ 	
+    [": 	
+]  <----- FAILURE
+    -0E+16
+    [false,null,true,true, 	true, 	
+false,
+	 
+	true,null, 
+	
+null,
+
+ 
+	["(,false]
+	 ] 	
+
+	  <----- FAILURE
+    69E-3
+    true
+	 
+    [[]] 	
+    {
+ 
+}
+    
+ 
+false
+    {
+}
+     	
+[
+
+ 
+	 
+ {":true} ]  <----- FAILURE
+    [
+	
+	
+	 -.E0
+ 
+]    <----- FAILURE
+    800E12 	
+
+    ["	
+
+
+
+,
+["]] 	  <----- FAILURE
+    
+	 
+  	
+
+
+ {
+ 
+ 
+
+
+ }
+    -.5e+76
+
+ 
+    [
+
+false, [null,  null]]
+    {}  
+    [false,false,{}]
+    
+	 
+ [",true ] 	
+  <----- FAILURE
+    [
+
+ null, 	true,	null,	
+
+
+
+
+
+ true]
+    8e71 	
+    -37
+	
+    {}
+ 
+ 	
+     
+77171E-613
+    [true,null,
+
+ {
+ }]
+    	
+
+
+
+68.E4 	
+    
+	 
+ {
+
+}	
+    [30e4
+	 ]
+    [null,true,
+false,true, 	
+true,null,
+
+ false,
+
+ false,true,
+	
+ 
+
+
+ 
+ 
+	
+ 
+
+   	
+true, 
+	 
+ false]	
+    	
+
+
+
+["(<]  <----- FAILURE
+    3547e-905
+    	
+
+ 
+ 
+{  }	
+	
+ 
+
+
+    -7
+ 
+    -.11
+ 
+
+    -97E+6
+     
+385724.
+ 
+    
+	
+ 
+
+
+	[	
+
+
+
+]
+    [",null,null, 
+null,{":false}]  <----- FAILURE
+    37E402	
+    [688E004
+	 
+ ]
+
+ 
+     
+738e7955
+
+
+    -.
+	
+ 
+
+  <----- FAILURE
+     false
+    
+
+
+{
+ 
+}   	
+
+    [{":false}]
+	 
+    <----- FAILURE
+    
+
+ 
+-.
+ 
+  <----- FAILURE
+    	
+
+
+
+-4105e6 	
+    4E2  
+     
+-6e7  	
+
+
+
+
+    
+-761
+	
+    
+	720285
+ 
+
+    
+	true
+    
+	 	 
+	
+{"} 
+:  false}	
+
+
+
+  <----- FAILURE
+    
+
+ -8
+ 
+    [ ]
+    null
+
+ 
+    ["(}}"]
+     	
+{}
+    [null,false,[",null]]  <----- FAILURE
+    
+	 
+  { 
+}
+ 
+    [true]
+    
+
+[null]
+	 	
+    5e4  
+    
+ 
+	
+	
+
+
+
+[-535
+	 
+ 
+]
+    [null,null,null,true,true,null,
+
+ 	
+ 	
+
+	
+ 
+
+false,
+	
+ 
+
+ 	true,true,false, null,false,true,
+	 
+ true,{":null},[true,null,
+	 true,
+ 	
+ 
+true,
+
+ null,null,
+ false,
+	 null,true, 
+ 
+null, 
+null,
+	 
+ true]]  <----- FAILURE
+    88E-1609
+    
+
+ 830E144	
+    -291531E35	
+     	[
+ 
+null 	
+,	
+
+
+
+[true]] 
+	
+ 	
+    3E9
+	
+    
+  	
+ 
+	
+{"}}:-521496 
+}  <----- FAILURE
+     	
+
+	 {"": 	true,":false}  <----- FAILURE
+    {}
+
+    true 	
+
+     72460.
+	
+ 
+
+
+     
+-.E5  
+	
+  <----- FAILURE
+    
+ null
+    -.698	
+
+
+
+
+    null
+     	
+[
+
+ {":null}]  <----- FAILURE
+    
+ 
+	 
+ 116795.E+7
+    9E-2
+    -.E+8  <----- FAILURE
+    [null
+ ] 	
+
+	
+    
+
+ [
+ 
+ 
+]
+    [ 	
+true,false,true,
+ 
+{":false}] 
+  <----- FAILURE
+     
+	
+-5	
+
+ 
+      [false] 
+	
+
+	 
+ 
+      [
+	   {}]
+    [ 	":
+
+ ]  <----- FAILURE
+    {"":null}
+	
+    	
+
+
+
+-2615335e+3
+    959e-773
+    
+	 
+  
+[ 
+]
+    {
+ }
+     
+974279241e-28
+    [null,false,null, 	-.E-8]  
+	
+ 
+
+  <----- FAILURE
+    7E-7
+    {"
+ 
+ :false
+
+}  <----- FAILURE
+     	[]
+    
+
+ 
+	
+-.E-173  <----- FAILURE
+     
+9056700 
+    
+
+ null
+     7648 	
+
+    {
+
+ 	
+
+
+
+}
+
+    	{""
+
+:["^^(,true,
+
+ false, 	
+ 	
+
+	
+ 
+
+true]}   <----- FAILURE
+    3619E1 
+
+    [null,null,false]
+	
+
+ 
+
+ 
+     81801596.
+ 
+  
+    
+	
+ 
+
+
+
+{"(
+:-18E086 	}  <----- FAILURE
+    
+ 
+2.E89 	
+    -. 
+  <----- FAILURE
+    -. 
+	
+  <----- FAILURE
+    {"}":null}  
+    
+	 [
+ 
+[",true],null,null,{":true}]  <----- FAILURE
+    
+	
+ 
+
+-.	  <----- FAILURE
+     
+ 
+	
+{}
+    
+	
+ 
+
+37E-73
+    
+
+[null,
+
+ null,false]
+	 
+ 
+    
+	 
+
+{"1^:null}  <----- FAILURE
+    ["<
+
+	]
+
+
+
+   <----- FAILURE
+    -5410.e+74
+    
+	  [ {}]
+    { 	
+}
+    
+	 295499
+
+ 
+    {"(
+ 
+:[":,null]}  <----- FAILURE
+    [
+	
+ 
+
+	
+ 
+
+]
+    ["(((	
+
+
+
+,false,true,true,
+
+ 	
+true]  <----- FAILURE
+    [
+ 
+
+
+[false,null,null,null,true,null]]   
+    ["(<",["]]  <----- FAILURE
+    -2E+794
+    24e-228
+     
+	
+[
+null,  
+
+ false] 
+	
+
+    
+	 
+   892e+4
+      
+ []
+    
+	 
+   [ 
+	
+-.016
+	 ]
+     2156E+6
+    {}
+	
+ 
+
+ 
+    
+ 5925.e-8
+     {
+
+}
+    	
+
+
+
+{
+	 
+}	
+    [["(^,false] 
+]  <----- FAILURE
+    9e9
+ 
+
+    {"":["(]
+ 
+}  <----- FAILURE
+    ["<
+	 
+ ] 	
+
+
+ 
+
+   <----- FAILURE
+    -3e73862
+	 
+    87e+9
+    	
+
+
+
+602E2
+
+ 
+    
+	 [
+	 
+ false,true]
+	 
+    {"":2377E6 	
+,":false}  <----- FAILURE
+    {}
+
+	 
+
+     
+	
+
+
+
+{}
+    -723.1E5 
+	
+
+    7E-8
+     	-42.E+136
+    
+	[
+	
+ 
+
+["]]  <----- FAILURE
+    [false,	false,[]]
+     806363
+	
+ 
+
+
+    [
+	 
+ null,
+[",true]]   	
+  <----- FAILURE
+    6e+7
+    
+
+[ 
+]
+    [true,	
+
+
+
+null, 	
+ 	
+
+
+
+null,true,null,
+	 
+  
+	
+
+ 
+false,
+
+ 
+
+ true,	 	true,null,true,	
+ 
+ 	null,null,	
+
+
+
+
+  	
+false,
+	null,	
+	
+ 
+
+false,	
+
+
+
+null,true,
+
+true,null,
+ 
+ 
+true,false, 
+false,null,null, 
+	
+null,null,null,null, 
+
+
+
+
+	 
+ false,false]
+    
+	
+ 
+
+true
+    null	
+
+
+
+
+    [false,
+	   true]
+    [ 
+null	]
+    {"":null
+		
+
+
+
+}
+    null  
+    426E+3
+    
+	
+
+
+
+7804736.
+	 
+ 
+    
+ 
+[
+	
+	
+ 
+
+null] 
+	
+
+    
+
+ 
+{}
+	
+	
+      
+[
+	]
+    8E4
+	 
+    ["} 	,true,true,	true, 
+false,null,
+
+
+ null,
+ 
+ 
+	
+
+
+
+	
+ 
+
+false,null,
+
+
+	
+ 
+
+  
+	
+	true]		
+
+
+
+  <----- FAILURE
+    
+
+  -9
+
+    
+
+
+
+ [true,
+ false,
+ 
+
+	false,
+	null,	
+
+
+
+false,false,
+	
+ 
+
+ 	
+false,
+ 
+
+
+ false,null,	
+
+
+
+true,true, 	
+
+true,
+	
+ 
+
+true,	true]
+
+ 	
+
+
+
+
+    [
+	""
+ 
+]
+    6e-521
+     
+	
+[	[
+	 ]]	
+    ["(^:(^<^"]
+    5E135	
+    [
+ "	
+ ]  <----- FAILURE
+    1031E03  
+    true 	
+    ["^<<^^"]
+	
+    
+  	
+{}
+    
+
+ 
+{"":872e-424}
+    null	
+    79e7 	
+Recall set (size 1000):
+     	
+false
+    
+		
+[true]
+
+    [	]	
+    "" 
+	  <----- FAILURE
+    [] 
+ 
+    ""	
+   <----- FAILURE
+    
+"S"    <----- FAILURE
+        
+	{}
+    
+{
+ "7r" :"oqC"
+}    <----- FAILURE
+     
+true 
+
+     -000E+0
+    [	
+
+{}
+,{"":false,"":false,"":false}] 
+
+      
+
+	0.0e-5008
+    -1.19
+ 
+       -00	
+     
+false
+
+    
+{	}
+    
+" "  <----- FAILURE
+    "Q*u"  <----- FAILURE
+    
+{} 
+
+     "bt[_n"  <----- FAILURE
+    [	{
+}  ]	 
+    {"8":
+[]
+,"":false}
+    
+8.040
+
+    [ 	true,false,false,true,true]	
+    
+
+	null	
+     
+	[]
+ 
+    [false, null,false,true,null]
+    	".&" 
+  <----- FAILURE
+     
+
+null
+	
+
+     
+{
+
+}
+    true 
+
+    -9.0980e0	
+    [		
+
+	 
+]
+    
+""
+ 
+ 
+
+  <----- FAILURE
+    	7e-071	
+
+    "L7@1"  <----- FAILURE
+     	
+
+ 	
+true
+     2e+0
+    
+"A"
+	  <----- FAILURE
+     {	}
+
+    
+	"H{W^+J"  <----- FAILURE
+    	{
+"":false
+,"":null}
+   <----- FAILURE
+    
+
+true
+    "Il"		  <----- FAILURE
+    ""
+	  <----- FAILURE
+    	{	}
+ 
+ 	
+     300e0	
+	
+
+     ["S"]
+ 
+    
+ true
+
+    false	  
+    
+ 5.0
+
+    {
+"":
+""	
+	
+}		  <----- FAILURE
+    	{"": -800.07}  <----- FAILURE
+    -40.03e-0
+    { 
+}	
+    {"": true
+}
+    
+
+
+ "E"
+
+	
+ 
+  <----- FAILURE
+    	 
+
+{}
+     null
+
+    
+ "~"  <----- FAILURE
+    
+[	]
+    
+		
+	false
+     null 	 	
+    
+-839.6 
+ 
+    	
+ 
+null
+    -20.0E3	
+    null 
+
+      [	]
+    
+ 		
+ [ ]
+
+    
+
+false
+    		[[null]  ,true
+	]
+    "(n"  <----- FAILURE
+     
+
+[
+] 
+    
+
+
+	false
+	
+    true 
+    null
+
+
+    
+"8K9|" 
+
+
+   <----- FAILURE
+    
+ false
+
+	
+    true
+
+
+    {
+}
+
+    	
+{}
+    
+9.052E-4
+    
+ "!"	
+  <----- FAILURE
+    {
+}
+
+
+    91E0
+
+    
+true 
+    	-70.3  <----- FAILURE
+    
+ "5"	  <----- FAILURE
+    {"":false,"":false,"":true,"":null}
+
+    
+	false
+
+    
+   10E-0
+    {"":null,"":false,"":true}
+     true
+
+
+    []
+
+    
+null 
+
+
+    []
+	 
+
+    
+false
+
+    
+[		[false],false,true,true]
+    true	  
+    40501.600e-00	
+  <----- FAILURE
+    
+
+
+[	 ]
+    
+","   <----- FAILURE
+    "" 	  <----- FAILURE
+    "u"   <----- FAILURE
+    [ [true,true,false],false,null]
+    	[]	
+    
+
+	 {	  	}
+    [
+]
+		
+ 
+    
+[	]
+    -80045E-6
+    	[
+	
+ 	]
+    
+  {"":true,"":false}	
+    
+false
+	
+
+
+    
+false 
+    
+
+ 
+0E+4010 
+    { "":true,"":true} 	
+  <----- FAILURE
+    -0.5e-2
+
+ 
+     0.3	
+    	[]
+    
+[	7E0402100,{} ]  <----- FAILURE
+    
+-121.3E-93
+    ""   <----- FAILURE
+    5003E+0731
+     ""   <----- FAILURE
+    	5000E-9
+    
+	null	
+
+    {
+"":true,"":null,"":true}
+	  <----- FAILURE
+     "z"  <----- FAILURE
+    {}  
+    {  }	
+    -79.7e-5 
+    
+
+true
+
+      null	
+    [[]]
+    -1e+007
+
+    {
+	"":""	 }	  <----- FAILURE
+    
+{
+ "":null,"":false,"":false}
+  <----- FAILURE
+    
+{
+}
+    
+false	
+    
+  
+ 
+"($>.O" 	  <----- FAILURE
+    
+
+ null	
+    
+  
+-5.0e0
+		
+
+    [
+	]
+    ","	
+	
+	  <----- FAILURE
+    
+{""	:
+true,"":true,"":true}
+    
+
+-800e-0
+    
+{	}
+
+
+    
+	""  <----- FAILURE
+    [	
+	"~"]  <----- FAILURE
+    -5.039e020
+
+
+    {	 }
+    
+true
+    
+-00
+ 
+    -0030.0e+91
+
+ 
+    	
+"p"
+  <----- FAILURE
+    {	 "":null,"":true}
+  <----- FAILURE
+    
+
+true	
+
+
+    false 	
+    [
+" H",null,false,null]  <----- FAILURE
+    false 	 
+    	 -24.0e08
+
+    
+false
+     61	
+    	null
+
+
+    
+90383.00e+4
+
+	 
+    ""	  <----- FAILURE
+    
+{"":
+""}   <----- FAILURE
+    [6.0e+0140]  <----- FAILURE
+    {
+ "":
+ 		{ 	}
+}  <----- FAILURE
+    {"":null,"":null}
+
+
+    	
+0E+00 
+
+     
+	true
+    
+{
+	}
+     	
+null
+
+    
+
+[]
+    [true,false
+]
+    
+
+false 	
+  
+
+
+    	
+
+
+24.5E81  <----- FAILURE
+    
+null
+
+
+     
+{"":null ,"":null} 
+    
+false 	
+    9e087  	
+    
+	
+0.01  <----- FAILURE
+    	 ""	  <----- FAILURE
+    
+[]   
+     
+true
+    
+"z:N"   <----- FAILURE
+    
+ 	""   <----- FAILURE
+    1.1  <----- FAILURE
+     	false	
+    {
+"":false,"":false,"":null,"":true}
+  <----- FAILURE
+     
+ true 
+
+	
+    	-17e-0
+
+    	 [null	]
+      
+true
+    "~"	  <----- FAILURE
+    {
+"" :true,"":null}  <----- FAILURE
+    []
+		
+
+
+    	 
+
+null	
+    {}
+
+
+    -009
+
+    [null ,
+{}
+  
+
+]	
+    	51.7e+500 	
+ 
+
+
+    -28E300  <----- FAILURE
+    	true
+
+    null
+	
+	
+
+    
+
+ { 	}
+    [ 
+]
+
+    
+{} 
+    
+false 
+
+    
+{} 
+
+    	 		true 
+
+    
+false
+
+    
+[	
+null	]
+
+    
+
+[]
+    
+
+	[[
+
+
+false	 
+
+]]
+    false
+
+    	""  <----- FAILURE
+    -41E02  <----- FAILURE
+    	
+ null
+    	  	true
+    	true
+
+ 
+ 
+    [[ ],[],false,true,
+false
+]
+    
+0.0e4  <----- FAILURE
+     {}
+ 
+    
+890	
+
+    [		 ]
+    			""	
+  <----- FAILURE
+    {"":
+
+
+null}		 
+
+
+
+
+
+	
+    
+	  
+	""	  <----- FAILURE
+    	 false
+ 
+    null 
+    false		
+    
+null
+     	true
+    
+ true
+    	
+false	
+    9240
+   <----- FAILURE
+    
+
+
+ 
+true
+    	{}		
+    	
+ 0.77e-0
+    	[ 
+{	
+}]
+     
+[]
+    null
+
+    "X"  <----- FAILURE
+    9.00e+140  <----- FAILURE
+    	
+" "
+  <----- FAILURE
+      [
+]
+    "]6"
+	  <----- FAILURE
+    true	 
+     "-"   <----- FAILURE
+    
+	null
+    
+-140040.0E80
+
+    
+"1`p"  <----- FAILURE
+    [ ""
+
+]	
+
+    
+	
+	
+
+
+-00.004 
+    
+ 
+	
+[
+  
+ 		]
+    		 false
+
+
+    
+	
+
+50e-0
+    true	
+
+		
+	
+
+    "f 1"  <----- FAILURE
+    false
+
+    
+
+{}
+    true 	
+ 
+    
+[] 
+    "I"	
+  <----- FAILURE
+    [
+[	]
+	]
+
+     0E-40
+    
+
+	""  <----- FAILURE
+    
+ -90 
+
+    
+"jWp"   <----- FAILURE
+    	
+	
+
+ false
+    	 [ 
+]
+    -8703.4E5  <----- FAILURE
+    true			
+    0E+10
+    
+true 
+    	null 
+     
+false
+    true
+	
+    
+
+
+
+true
+     	[ [
+ ]] 	
+    	{"":null,"":null,"":null}
+	
+    
+{ }
+ 
+     [	[ ],true	,true,false,null]
+    
+ { "};*":	
+	
+ false}
+  <----- FAILURE
+    
+"0:^oc"	  <----- FAILURE
+    -498  <----- FAILURE
+     
+	[null]
+    	
+false
+    false	
+
+    [
+]
+
+    
+	"-."
+  <----- FAILURE
+    
+	true
+    -6914e-50
+    	 -0  <----- FAILURE
+    [true
+
+,[ "",true]	,
+null,false]
+    {
+ }	
+    
+ 
+null
+     
+
+	[5
+,null ,
+{},false,true]
+  <----- FAILURE
+      31.0E-45	  
+
+    {}	
+    
+[]
+ 
+    	
+null
+    
+
+null 	
+    
+[ 
+ ]
+    	
+	
+""   <----- FAILURE
+    [[ false],true,null,true]
+ 	
+    false 	
+
+    91E0  <----- FAILURE
+    null	 
+
+    true  
+    
+	 0e+0	
+	
+    -30.0e+00
+    	401
+
+    	false
+
+    	"YRu~J"  <----- FAILURE
+    909E0
+
+ 	
+
+    
+ {"Nc":
+false}
+    
+ 
+	-70.0 
+
+    [
+-0E+0	,null,null,false]
+    	 
+	 ""	  <----- FAILURE
+    "Z"  <----- FAILURE
+    			-402090.0e2748  <----- FAILURE
+    [
+ 
+]	
+    	 "DP"  <----- FAILURE
+    
+	false
+
+     
+"|"
+  <----- FAILURE
+    
+
+"a|_0tP"	
+
+   <----- FAILURE
+    	null  	
+    [null
+, false
+,null,null]
+    [null]
+    {"" :[ ]
+ }
+     50.0e-2
+
+     	-22
+
+    
+	{	}
+
+    
+
+"wOxn"
+  <----- FAILURE
+      null
+	
+     
+false
+    
+true
+
+    	{	
+}
+    	[	]
+    [ [	 ] ]
+
+    "H_"   <----- FAILURE
+    [true ]
+    [null,0,null,null,false]  <----- FAILURE
+     
+
+null
+    {} 
+    
+true
+
+
+	
+     52e4  <----- FAILURE
+    {">XDY"
+
+ 
+ 
+ :true 
+
+	}  <----- FAILURE
+    
+null
+
+    	 
+false
+    	[]
+
+    
+ 620E7160	
+    "a"  <----- FAILURE
+    null	
+    
+
+[] 
+    	"eM"
+  <----- FAILURE
+     	false	
+
+    0.4080E-8  <----- FAILURE
+    "m"  <----- FAILURE
+    
+ "`Q"  <----- FAILURE
+    {
+"":true,"":null,"":false}  <----- FAILURE
+    
+{ 
+}	
+	
+ 	
+    "ghW"  <----- FAILURE
+    
+{
+"":null ,"":true}  <----- FAILURE
+    { 	}
+    	
+[false
+,true,null,false
+,null]
+    
+	{""
+:null,"":true}	
+      [-2.00,
+ 	null]  <----- FAILURE
+    	{"":""
+,"":null}  <----- FAILURE
+    true		
+    	90.01E-08
+	
+    
+
+ "" 
+  <----- FAILURE
+     -90  <----- FAILURE
+    	false
+
+
+    	0.0E+00
+    false
+    [	
+
+]
+    
+"!n"
+  <----- FAILURE
+    true	
+	
+
+
+    10910E1  <----- FAILURE
+    "cI"   <----- FAILURE
+    
+
+	[false	]  	   
+    
+
+  
+
+
+
+""  <----- FAILURE
+    
+	-100.00e+403
+    
+["ke",false,false,true,false,false,false]		
+    { "2"	
+	
+
+ :null
+ 
+}
+
+
+  <----- FAILURE
+    {""
+:true,"":null,"":null,"":false,"":true}	 	
+	
+    
+{
+}	 	
+    [
+[],false,null]	
+	
+    
+
+  -530.00e0
+
+    
+
+[false]
+    -90.04  <----- FAILURE
+    false
+ 
+    	{
+"xiL" :true
+ }	
+	  <----- FAILURE
+    [ 		
+]
+    
+""
+ 	    <----- FAILURE
+    null
+
+    
+
+{}
+	
+    { "":null ,"":false}  <----- FAILURE
+    	null
+    	[{"":false,"":true},null,null]
+
+
+    -10.0E7  <----- FAILURE
+    {"" :
+null}
+    
+
+ 
+	"V"   <----- FAILURE
+    
+ false	
+    	
+
+
+
+
+3.03  <----- FAILURE
+    
+	  
+-40104.64e+0
+	
+ 
+    
+"??}q{"  <----- FAILURE
+    -5200.00e+0
+ 
+    "i"
+
+ 
+   <----- FAILURE
+    
+"~^-vy0"
+  <----- FAILURE
+    [
+
+]	
+    null	 
+    [	false 
+   ]	
+      {"0j":true,"":null}
+    {""	
+:null,"":false,"":false}
+    ""	
+ 
+  <----- FAILURE
+    
+""
+  <----- FAILURE
+    	
+null
+ 
+    
+ 
+null
+
+
+    false
+	 
+  
+     { "1Q" 	:false
+}  <----- FAILURE
+    258.6E003  <----- FAILURE
+      
+
+	
+	"^j4"	   <----- FAILURE
+    		
+{"":false,"":true}
+
+    
+ 
+false
+
+    0.00e07  <----- FAILURE
+     {"A"
+:",&" }  <----- FAILURE
+    {";7WD"		
+  
+	
+
+			:null }    <----- FAILURE
+    	{"X":"}", 
+""	
+
+: ")j*"}  <----- FAILURE
+    -72.08  <----- FAILURE
+    
+{}
+    2055.0  <----- FAILURE
+     {}
+
+    6e9
+
+    	false
+    
+[]
+    
+
+-70.0E+60
+
+    
+	 	true 
+    	
+
+	-0.0  <----- FAILURE
+      
+ 
+
+[	{
+}, 0	,true,true,true]	  <----- FAILURE
+    	false
+
+
+    {
+  
+}
+    
+[]
+	
+    {""
+:false,"":false,"":true}	
+     false
+    0.0E2  <----- FAILURE
+    
+[] 
+  
+
+    
+
+false
+    
+-10.2e83027900020  <----- FAILURE
+    
+0.0584e-84
+    
+{"":null,"":true} 
+    {	 	 "": {}	  
+} 	   <----- FAILURE
+    
+ 
+		 	-400E-74
+    null	
+
+    "^"  <----- FAILURE
+    {""	
+	:80.361 
+	 } 	  <----- FAILURE
+    []	
+ 
+    {"":null,"":null,"":null,"":null}
+     {""	:null,"":true} 
+    
+{}
+ 
+
+    [	true	
+,15e-7]
+
+    [	]
+ 
+     {
+	
+
+}
+    	 null	
+      true
+    
+{ }	
+    30.0E+4  <----- FAILURE
+     false
+
+    { }
+
+    []
+
+    
+null	
+    {} 
+ 
+    [null,	0,null,false,true]  <----- FAILURE
+    {}
+
+
+    
+		[
+		{}]
+    72.8  <----- FAILURE
+    true	
+
+    
+
+-40
+
+     -800
+	 
+     true
+
+
+    
+	 
+ false
+	
+    71.60  <----- FAILURE
+    	 
+	
+
+	 null
+	
+
+    
+
+	
+ 
+	  	
+""
+  <----- FAILURE
+    {
+}
+     
+true	
+    		
+		
+true 
+    
+	{
+  
+}
+    
+	""  <----- FAILURE
+    
+ "{1" 	  <----- FAILURE
+    0e-14  
+    {""
+:null,"":null,"":null}
+    
+	[
+	
+ 
+
+]	
+
+    "[U"  <----- FAILURE
+    0.450e+8	  <----- FAILURE
+     true	
+     	null
+
+    
+
+{
+}
+
+    [{
+ }
+	,{"":null,"":true,"":true}
+ ]
+    {	
+	} 
+    0     <----- FAILURE
+    [[
+	],[	
+ 	 ]]
+    {			 	"4":false}   <----- FAILURE
+    
+ [
+] 
+    false
+
+
+    	
+[{""
+: 0}] 
+	  <----- FAILURE
+      	true
+     
+{";1":	
+""
+	
+}	
+  <----- FAILURE
+      
+false
+    	{}
+
+    
+ false
+    40.0e0
+  <----- FAILURE
+    null
+ 
+    
+901E+0
+     
+""  <----- FAILURE
+    "ai"
+
+  <----- FAILURE
+    [[	
+
+ ]		]
+    
+  -0003e+7
+	
+    true
+
+ 
+    	
+ "-"  <----- FAILURE
+    
+	
+	[""	,
+
+
+{	"":true,"":null,"":true},
+{
+}]  <----- FAILURE
+    {} 
+ 	
+    
+"f"	  <----- FAILURE
+    
+"N"  <----- FAILURE
+    false 
+  
+     	 "-"    <----- FAILURE
+      
+ -0.0E+0 
+    
+{}
+
+    
+null
+
+    				 -407  <----- FAILURE
+    	
+ true  
+    
+{"":null ,"":null,"":null}
+	
+    
+	false
+	
+ 
+
+    true
+    
+ false
+ 
+    
+false
+
+
+    
+ false		
+	
+
+    -90.0  <----- FAILURE
+    false  
+     true
+
+    [	 	]
+    
+true
+
+    [
+	[ 
+]]
+    {
+}
+    
+null
+
+    
+
+null
+    
+[true,false,true] 
+ 
+    "O" 
+
+  <----- FAILURE
+    	 ""  <----- FAILURE
+    false 	 	
+    	{ "":false,"":false,"":false}
+
+  <----- FAILURE
+     []
+    
+	
+""  <----- FAILURE
+    
+{
+ }
+    
+ "dHi|"   <----- FAILURE
+    false 
+
+
+    
+ true
+    [false
+  
+	,{	 
+
+}	]
+
+
+    []
+    
+{"Q68"
+:
+
+ false}
+    	{	 
+		
+
+}
+     ""
+  <----- FAILURE
+    { }
+    
+	{
+	 
+"" :	
+null }	  <----- FAILURE
+    
+
+84768E+0
+    	
+[[	]
+
+,
+
+[	]
+,{},false]
+    
+
+	null
+    
+	null
+    
+  []
+    ""  <----- FAILURE
+    [ -50e-005
+]	
+    
+ 	
+[ 
+	{}]
+
+    [ ]
+
+
+    	
+	false
+
+    
+
+true
+
+    5.7600  <----- FAILURE
+    {
+	"":null,"":true,"":false}   <----- FAILURE
+    	 
+[true,false]
+    1E782  <----- FAILURE
+    
+			3090.0 
+    ["",true,null,null]
+
+    
+false  
+      	true
+
+    {"$":
+{"":	
+{ 
+},"":true,"":true,"":true} }  <----- FAILURE
+    [
+	]
+
+    
+ 
+"tZ"	
+
+
+  <----- FAILURE
+    "8~Nc"
+  <----- FAILURE
+     
+""
+  <----- FAILURE
+    
+true
+    {	""
+:null,"":false,"":false,"":true}  <----- FAILURE
+    
+[true ,null,true,false,null]
+    
+{""
+:true,"":false,"":null} 
+
+     -8.3805  <----- FAILURE
+    
+false
+
+	
+
+     [ ]
+    
+		-0	
+    
+""  <----- FAILURE
+    		
+ false 	
+    
+
+[]	
+    
+	 {	 }	
+    {} 	
+    
+{"":
+false}
+	
+     {
+"zzQ"	
+:
+true
+}
+
+  <----- FAILURE
+    	 false
+    
+
+{"":null
+}
+    
+
+ 
+	{ 	 "g"	:null	}   <----- FAILURE
+    [{},null]
+	 
+
+     
+ null
+    false	
+    false
+ 
+    
+	[
+""
+
+]
+
+    
+{
+"" :
+true
+
+
+
+ 	}  <----- FAILURE
+    [30.5,	false,true,false]  <----- FAILURE
+     
+false
+    	
+null
+
+    [
+	false,true	,false,false]
+    	600E+5		 
+
+    	[	0
+,true,true]  <----- FAILURE
+    
+490E106  <----- FAILURE
+    
+true 
+	
+ 
+    ""
+	  <----- FAILURE
+    		{"":false,"":null,"":false}
+  
+    
+{"":true,"":true}
+
+	
+
+    {""
+:true,"":true}
+    ""		  <----- FAILURE
+    
+ 
+"["   <----- FAILURE
+    0.00E+00
+
+  <----- FAILURE
+     [false	]
+
+    67	
+
+  <----- FAILURE
+    
+	 
+	""
+  <----- FAILURE
+    	[]	 
+    
+91E-60
+    
+
+
+
+ 
+    
+
+[
+]
+
+     
+
+ [
+null,null,true,true,false]
+    
+ 0E5090  <----- FAILURE
+    null
+ 
+
+
+
+	 
+    60E-0
+	
+
+     	
+
+
+[ 	]
+    {	"=":"4L(I4"	}  <----- FAILURE
+     [[]
+]
+    
+	{ 
+}
+
+
+    	
+[]
+ 
+    
+ null
+
+    
+
+null
+
+    -100E5  <----- FAILURE
+    9.0E-000	  <----- FAILURE
+      
+		false
+    -0e-1
+
+     
+">"  <----- FAILURE
+    
+"%"
+  <----- FAILURE
+     	
+
+{")":0, "":true,"":null}  <----- FAILURE
+     null 
+
+    {}
+
+    true
+
+    [
+true] 
+
+    "X"
+	   <----- FAILURE
+     [0e+004,
+{"8":""
+}]  <----- FAILURE
+    [ ]
+      {
+	""
+:true,"":false}   <----- FAILURE
+    [1.00e+4100 ]
+   <----- FAILURE
+      	
+
+{
+"":null}  <----- FAILURE
+    {
+
+}
+    [[{	}]]
+    []   	
+
+    [
+  ]
+    null 
+
+		
+    {"":false
+
+,"":false,"":null}
+	 
+    
+
+
+	false 
+    -74.0	
+      true	
+
+    
+
+ [[ null] ,true]
+    	{"":true,"":null}
+    {
+}
+     	0.909e-05
+
+
+    {"":
+404e+50 }
+    
+
+	[
+	  
+	]
+    {"":
+">" }  <----- FAILURE
+    
+{}
+
+
+    	{
+ 
+ ""
+: 	{	"k"		
+:		[]}}  <----- FAILURE
+    
+{"":false,"":false,"":false,"":false}
+
+     false	
+    1.5
+  <----- FAILURE
+    
+ 
+ "S"  <----- FAILURE
+    	
+true
+    
+	462300
+
+     "D"  <----- FAILURE
+    false		
+
+    ""
+  <----- FAILURE
+    	
+
+"rS\t"  <----- FAILURE
+    [	 
+  ]
+     
+{  	"":true}		  <----- FAILURE
+    
+
+""  <----- FAILURE
+    
+ 
+null
+    
+false
+    [ {"Ci":
+
+{
+"T":{
+
+}}}
+] 
+  <----- FAILURE
+     961
+ 
+     		false  
+    null 
+	 
+    
+
+
+
+{"UQF(3"
+ :-375e+0}
+     -402e-00 
+    
+false	
+
+    	
+false
+    	906E-50
+      [	
+]
+
+    {
+"":true,"":true,"":true} 	
+	  <----- FAILURE
+    	 []
+      	  [	0	,null,null]
+
+
+  <----- FAILURE
+    -27  <----- FAILURE
+    		true
+    "o"  <----- FAILURE
+    
+
+[]
+    	true 
+    		";wy|"		
+
+  <----- FAILURE
+    0  <----- FAILURE
+    	{"<"
+:false,"":null}	
+
+     
+"2[[p9"  <----- FAILURE
+    {"" 
+
+
+
+:""}
+  <----- FAILURE
+    {	
+
+"":[	]	}
+  <----- FAILURE
+    	 true
+    
+ true
+
+
+    	 { "":-0e9 }  <----- FAILURE
+    "T3"  <----- FAILURE
+    
+
+
+ 
+{""	
+:{"": ""
+	 
+	}
+
+}
+  <----- FAILURE
+    	[	""
+,
+true,false,true]	
+    [	]
+
+ 
+    [
+
+]
+
+     
+
+"e"   <----- FAILURE
+    { "":true}  <----- FAILURE
+    	
+  {
+"QS8u":
+	
+
+""
+}  <----- FAILURE
+    
+  -32.0000e-0	
+
+
+     	
+3399E0  <----- FAILURE
+    
+"T"  <----- FAILURE
+    
+"V}"
+
+
+ 
+ 
+  <----- FAILURE
+    "1"  <----- FAILURE
+    
+
+		
+""
+ 
+  <----- FAILURE
+    	-60.000  <----- FAILURE
+    	0E0  <----- FAILURE
+    
+[]	
+
+
+    "ro~"  <----- FAILURE
+    	 {
+} 
+    
+
+
+0E-017
+    
+{}
+    
+-663.6E+0
+    ["",null,true,null] 
+    [	 ]
+    	
+{
+
+}
+    true
+
+    "l"  <----- FAILURE
+    "A"
+  <----- FAILURE
+    
+
+true
+     [-3070
+
+,{	"":false,"":true}
+	]  <----- FAILURE
+    [	]
+    null
+	
+	 
+
+    8.0e+76
+  <----- FAILURE
+    "c$"
+   <----- FAILURE
+    
+{}	
+
+    [
+
+]
+    	
+null 
+
+    {	
+"":null,"":false}	  <----- FAILURE
+    -50
+
+     
+	true
+    	
+true
+
+    	 	
+ 
+ null
+
+    true 
+
+
+    	[
+"",
+	true,false
+
+]
+    -80.5  <----- FAILURE
+    
+{"":true,"":null}
+  
+	
+    null
+    	
+"Ug"   <----- FAILURE
+    true  	
+     	
+{} 
+    [""
+ ]
+ 
+    "~"	
+  <----- FAILURE
+    {		}
+    
+null 
+    931608e-083
+ 
+    0.8E+010  <----- FAILURE
+    	true
+
+
+     "h!W"
+
+  <----- FAILURE
+    null
+	
+
+    	
+0.08  <----- FAILURE
+    
+true
+
+    ["O8",
+{},true,true]
+    "q~"
+  <----- FAILURE
+    -0.60 
+    
+[
+[true
+],"" ,true]  <----- FAILURE
+     {
+	}   
+    []
+	
+     [
+-00E+343,0e-008
+]	 
+
+     {"":
+false
+,	"":null,"":true}  <----- FAILURE
+    
+""
+  <----- FAILURE
+    6e0  <----- FAILURE
+    ""
+  <----- FAILURE
+    
+""  <----- FAILURE
+    {	
+ }
+    
+ -0E-4
+    
+null
+    -80	
+    	false
+ 
+    true
+ 
+    
+[ ]
+    {
+ 	"l"	:
+""
+}  <----- FAILURE
+    
+	
+[
+
+null,false,
+false ,true,false,false,true]
+    
+{
+}  	
+    
+	
+[true] 
+    {} 	
+
+ 
+    
+ [""
+]
+    	
+null
+    
+
+""   <----- FAILURE
+    9.7E42  <----- FAILURE
+    
+	
+[
+
+{
+ "`Rr" :true} ]
+  <----- FAILURE
+    
+-70.5	
+    
+ []
+    443000   <----- FAILURE
+     
+"M"  <----- FAILURE
+    	{"Y":false}		
+    []   
+    [	
+ ]		
+    true
+
+
+    
+null 
+    "t" 	
+  <----- FAILURE
+    
+ 409.870  <----- FAILURE
+    true
+ 
+
+    true	
+
+    -8.00e+8
+    
+false 
+    {""		:{},"":null}
+
+    { 
+	}
+    null  
+    "/"   <----- FAILURE
+    [
+] 
+     
+{"":null,"":false}
+     true
+    false 
+
+     
+
+	0.00020E-3
+    
+
+""
+	  <----- FAILURE
+    			null
+
+    "" 
+
+
+  <----- FAILURE
+    	
+{"/"
+ :   0.1e-78 }  <----- FAILURE
+    [  
+ ]
+ 
+	 
+ 	
+    21E0  <----- FAILURE
+    
+
+[ ]
+
+    
+
+null
+    
+2  <----- FAILURE
+    	
+
+null
+    true 		
+
+	
+    
+null
+
+
+    	"-"  <----- FAILURE
+     
+null
+    	
+[]
+    0.0e10  <----- FAILURE
+    {"SK"
+ 
+ 
+:false} 
+
+
+
+    
+-0e+00
+    
+	{}
+
+    [
+{"":null,""
+:null}]
+     {"":true,"":null}
+    
+
+""  <----- FAILURE
+    -354.0  <----- FAILURE
+    -67E1  <----- FAILURE
+    
+		 
+	null	
+    true	
+     	{""
+:
+null
+}
+    
+ {
+}
+    
+[[null ]]
+
+    
+false
+    	
+false
+
+    
+
+{ 
+}
+
+    true
+
+    	""
+	  <----- FAILURE
+    
+{
+	""		:"W"}   <----- FAILURE
+    ""	
+  <----- FAILURE
+     {"": 	true} 		 
+    71.935e42  <----- FAILURE
+     		
+ []
+    
+ 	{ }	
+ 
+     
+"1"  <----- FAILURE
+     []		
+ 	
+     ""
+
+	
+  <----- FAILURE
+    76.50e+00
+  <----- FAILURE
+    
+{"":[ ]	
+
+}
+    
+"kKo"  <----- FAILURE
+    
+"g"  
+   <----- FAILURE
+    false	
+
+    {
+"":"3T"}  <----- FAILURE
+     
+true
+    
+true 
+
+    	
+true
+
+    
+null
+ 	
+    	true
+    		-440E-70
+    [ 	
+[ 	false,{ 
+":":false } ]
+]	  <----- FAILURE
+    "I41"  <----- FAILURE
+    {	"":true,"":true,"":null}	
+  <----- FAILURE
+    
+ {"P":
+false}
+
+
+
+    	[{
+}
+,-50e-0,true,true,false,null]
+ 
+    {
+"":null,"":true,"":true}  <----- FAILURE
+    	false
+
+    
+		-70.6	
+    
+true 	
+      20  <----- FAILURE
+    true 
+
+
+	
+    [	
+true
+	
+,{
+		}	 ,{
+
+"@":
+-30e-000
+
+}]  <----- FAILURE
+    
+	[false,false,null,true,false,null]
+
+    
+
+ false	
+
+    
+ "r"  <----- FAILURE
+    40.105e-580  <----- FAILURE
+    {
+
+
+ }	
+    
+true
+    
+	false
+     
+
+{}
+	
+     
+
+"}"  <----- FAILURE
+    true
+
+  		
+    
+
+ 	
+17e-00 
+
+    [{}	
+,false,null,false]
+     {}
+    		
+false
+
+ 
+     null
+    
+
+	null
+	
+    
+
+
+true
+    	
+[]
+
+    
+ 	 [
+]
+
+    {}
+
+    []	
+    
+0.1  <----- FAILURE
+    [true]
+    
+false 
+	
+
+    	
+		-800007.6  <----- FAILURE
+    
+
+	 17e0  <----- FAILURE
+     -00e+0	
+    
+""
+
+	
+  <----- FAILURE
+    
+	-688.0e00
+	 
+    false 
+    	92e+05000027000
+    	
+2e0		
+
+    
+ 	false
+
+    {"{X"
+
+	
+:"U" 	}		  <----- FAILURE
+    [] 
+    	null	
+    
+true 
+ 
+    {}
+    	 false 
+     []
+	
+    
+false
+
+    	"W"  <----- FAILURE
+    {""
+:100}
+  <----- FAILURE
+    -15.0E+0
+    
+				 {			} 
+    
+	null
+
+    {
+""
+:true,"":false,"":false}
+	  <----- FAILURE
+     {"F"	: 8E+209}
+    	-15.0  <----- FAILURE
+    {
+"GA(4":
+null}  <----- FAILURE
+    	false
+  
+    [null	] 
+    
+
+null
+    
+[
+]
+
+
+    	 
+	 
+
+{"":null,"":true}
+	
+    -004E-2
+ 
+    
+	{"":null,"":null,"":null}
+    65E0036  <----- FAILURE
+     ""  <----- FAILURE
+    0.40e-9  <----- FAILURE
+    {	",%R"	:	""}  <----- FAILURE
+     []	
+    
+-40.110  <----- FAILURE
+    
+true
+  
+
+    	 null
+    true 
+
+ 
+
+    	 
+	{"" :null,"":true}
+      
+17 
+    [
+[""],null,false,null]	
+    false
+
+
+    {
+}	
+    6e5  <----- FAILURE
+    0	
+
+	  <----- FAILURE
+    {"8"
+:false,"":null}
+    
+	[]
+    
+
+ {
+}
+    {
+  }
+    50.00380E-0
+		  <----- FAILURE
+    
+-900e-2 
+    179   <----- FAILURE
+    [null ]
+    false
+  
+		
+
+     	
+null	
+    
+
+ 
+
+
+
+";"  <----- FAILURE
+    [
+""]
+    
+
+-7027.0
+
+    	{}	
+  
+	 
+
+    null	
+
+ 
+    	null
+
+
+
+ 
+    
+	-06e+00
+    {"":11E+00}
+
+    	
+""  <----- FAILURE
+    	false		
+Recall: 0.685, Precision: 0.772
+Example gen time: 1.5988552570343018
+Scoring time: 13.521116971969604

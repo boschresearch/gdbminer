@@ -1,0 +1,12973 @@
+
+
+Initial grammar loaded:
+start: t0
+t952: "class"
+    | t952 t952
+    | "_"
+    | "extends"
+    | "await"
+    | t952 t61
+    | "$"
+    | "import"
+    | "from"
+    | "const"
+    | "yield"
+    | "super"
+    | "export"
+    | talphanum
+t5744: t0
+    | "\n"
+    | t5744 t5744
+    | "-"
+    | t5744 t61
+t11826: t952 t11357
+    | t11826 t11826
+    | t11826 t61
+    | t61 t11826
+    | t0 t61
+    | t5006 t11357
+t11357: "*"
+    | "=" "=" t8287
+    | t61 t11357
+    | ","
+    | talphanums
+t2038: t6299 t13073
+    | talphanums
+t6299: t2038 t6299
+    | t6299 t5744
+    | "}"
+    | t6299 t3331
+    | t6299 t0
+t3331: "\n"
+    | t952 t7383
+t11198: t11037 t9175
+    | t11198 "\n"
+    | t11826 t11198
+t11037: t11037 "\n"
+    | t11514 t3515
+    | t11514 t8822
+    | t61 t8822
+    | t8822 "\n"
+t11514: t0 t61
+    | t13073 t1492
+    | t3331 t0
+t61: tletters
+    | talphanum
+t3515: t8822
+    | t952 t9871
+t8822: t61 t3515
+    | t3515 "\n"
+t9871: "("
+    | t9871 t61
+t9175: ")"
+    | t9175 t61
+    | t61 t9175
+    | t9175 "\n"
+t7383: "\n" t7383
+    | "{" t6299
+    | t0
+    | t7383 t0
+t1492: t1492 t61
+    | t6299 t11357
+t12302: t10042 t952 "\n" "in" t5744
+    | t10874 t9871
+t10042: t3331 t10042
+    | t8999 t9871
+t8999: t8999 "\n"
+    | "for"
+t11670: t952 t9175
+    | t5006 t9175
+t10874: t10874 t61
+    | t61 t10874
+    | t11514 t10874
+    | talphanums
+t5006: t5744 t5006
+    | t5744 t952
+    | tletters
+t8287: t8287 t11826
+    | t8287 t61
+    | "="
+t0: t61 t0
+    | t11826 t0
+    | t952 t0
+    | t0 t0
+    | t0 t952
+    | t0 t11826
+    | t0 t5744
+    | t13073 t6299
+    | t11198 t7383
+    | t3331 t11514
+    | ";"
+    | t0 t3331
+    | "'"
+    | t12302 t11670 t0
+    | t61 t11514
+    | talphanums
+t13073: t13073 t2038
+    | t11357 t13073
+    | t11198 "{"
+    | "{"
+talphanum: "a"
+    | "b"
+    | "c"
+    | "d"
+    | "e"
+    | "f"
+    | "g"
+    | "h"
+    | "i"
+    | "j"
+    | "k"
+    | "l"
+    | "m"
+    | "n"
+    | "o"
+    | "p"
+    | "q"
+    | "r"
+    | "s"
+    | "t"
+    | "u"
+    | "v"
+    | "w"
+    | "x"
+    | "y"
+    | "z"
+    | "A"
+    | "B"
+    | "C"
+    | "D"
+    | "E"
+    | "F"
+    | "G"
+    | "H"
+    | "I"
+    | "J"
+    | "K"
+    | "L"
+    | "M"
+    | "N"
+    | "O"
+    | "P"
+    | "Q"
+    | "R"
+    | "S"
+    | "T"
+    | "U"
+    | "V"
+    | "W"
+    | "X"
+    | "Y"
+    | "Z"
+    | "0"
+    | "1"
+    | "2"
+    | "3"
+    | "4"
+    | "5"
+    | "6"
+    | "7"
+    | "8"
+    | "9"
+talphanums: talphanum
+    | talphanum talphanums
+tletters: tletter
+    | tletter tletters
+tletter: "a"
+    | "b"
+    | "c"
+    | "d"
+    | "e"
+    | "f"
+    | "g"
+    | "h"
+    | "i"
+    | "j"
+    | "k"
+    | "l"
+    | "m"
+    | "n"
+    | "o"
+    | "p"
+    | "q"
+    | "r"
+    | "s"
+    | "t"
+    | "u"
+    | "v"
+    | "w"
+    | "x"
+    | "y"
+    | "z"
+    | "A"
+    | "B"
+    | "C"
+    | "D"
+    | "E"
+    | "F"
+    | "G"
+    | "H"
+    | "I"
+    | "J"
+    | "K"
+    | "L"
+    | "M"
+    | "N"
+    | "O"
+    | "P"
+    | "Q"
+    | "R"
+    | "S"
+    | "T"
+    | "U"
+    | "V"
+    | "W"
+    | "X"
+    | "Y"
+    | "Z"
+Precision set (size 1000):
+    
+
+{}{}
+
+    YMn;R1rwUZhEbN(
+-awaitzE)'class'class
+    r{}*uZusuper_
+;  <----- FAILURE
+    -
+Z*
+
+class*I;qU-
+const*UHI;e$,extends,{},kOQefrom(){q};
+    {},a_(
+
+)
+{}  <----- FAILURE
+    xDpkpmi(-export)'$_$
+{}'
+    from;'';yield;Ay'A{}*;YXfEb0x(super)'import
+    
+;7LclR(L2-$)ToK===''class
+    J
+for(await
+in'export)Of
+'  <----- FAILURE
+    class
+;
+for(super
+in
+export_)vizTgYwZ
+    Q8constX
+    p;eTbIERR
+    Zxh4{}
+;
+    X_*class*;oWEclass,super(
+
+)
+
+
+
+
+
+
+
+;tf,Yh0-import,const,  <----- FAILURE
+    e==={6}
+q,  <----- FAILURE
+    await,HGbvV'Z5u'
+
+    {}
+_extends
+{}'
+    
+;import;M
+    Hawaitf,96*{}
+    'wpv
+const*import,VbCBconst,'
+';
+    _yield*JKmawait(
+
+
+)''for(import
+in
+-class)'-
+
+
+    'exportDTycRa
+    {}*lexport(
+)
+y
+{}  <----- FAILURE
+    import;
+for(import
+in
+--RBqiPm)extends,'Kawait(
+
+)
+{}superw
+    ;y1Oawait(
+
+)
+
+{}super
+;
+    z;Au-  <----- FAILURE
+    Zexport(
+
+)P
+{tMt7kFJ}
+    ;VQv
+await*lexport*OLGyield()
+'
+
+export*
+    {}*wKpF(c
+classconst4);import
+f'  <----- FAILURE
+    '-
+    ;ofrom,;VI;VEVXE;p;S;pv'Hzdsuper(
+)
+
+;$'  <----- FAILURE
+    import
+
+;extends(
+){}*  <----- FAILURE
+    consteuLCbv
+
+
+
+{};{Lu7vC}
+,  <----- FAILURE
+    yield{}
+
+;
+'XaY1y
+    super'ml6f8GU
+    for(from
+in
+O)Sexport'_;-
+    exportza{}*m(-_)$,'-  <----- FAILURE
+    Wconst(
+
+)CZ
+{}8;
+    _,nn-SM
+    class;drd-Q===import,  <----- FAILURE
+    super
+
+
+'EZWUlt_*h'yAm4lzwyield,'o;'ELyield(
+
+
+)
+
+
+;mWt
+    a;G
+    4
+    ;POibbaxhIgz'hTLA,N'7eCA*q$*N,boTIrsr;0'Limport*extends,KU*t2Glsuper,;1tDnB,kSk6Dextends(
+)
+{}d{}{}import
+    V
+;
+J'h
+
+    QH
+;
+    Eimport;kh7U
+    hY
+for(const
+in;extendsv)'  <----- FAILURE
+    0{},GnhVR($)Y
+';Bconst,e
+{}*  <----- FAILURE
+    Xw{},0(export);rnTyield(
+
+){}-f  <----- FAILURE
+    d{nr}{}_Vj4===  <----- FAILURE
+    yield';fPdZ,'wimport*beW_(
+)
+
+
+{}
+
+'qB$(
+
+){}'
+    vCsVPextends(
+
+)
+
+
+'
+    
+{}{}*
+await===consteF  <----- FAILURE
+    import
+'for(await
+in
+jT);T{},drNmo
+    F{}{},a1HY  <----- FAILURE
+    1';awaitjwG8I
+    ZpdJ's$R'
+    5*{}-for(import
+in
+const)'
+  <----- FAILURE
+    {ja}
+,{}
+'-
+  <----- FAILURE
+    ;';
+
+    
+;EYKptXexport(
+
+)
+
+
+
+{}{};,  <----- FAILURE
+    Z
+W
+;_
+    $';'const;6
+    ;_{}
+
+    await{k}export*wU'svE-import*yexport*r
+LJ,-FtNF*
+_*'aimport,_*-sbE*BLpEratimport(
+
+)
+
+
+
+
+
+
+{}'SP
+    ;
+
+ZzFdHPb,;OTBB;Qxxg,yclass(
+)
+;;MCRFHO  <----- FAILURE
+    msuper'-yield*U
+    w'yield{}
+
+    jhOc_(
+
+
+)
+'
+
+frombYIh
+'extendsM,F
+    hvKpRKexport,h;
+
+{}
+;_
+    6(Yxk)
+{}
+for(yield
+in--
+
+-
+await)'class'
+const
+    ;';-B*WtM'extends
+    K===*{},q  <----- FAILURE
+    {}*sawait(
+
+)
+{}{}
+J-  <----- FAILURE
+    
+for(import
+in--await)
+extends*DL*yield*'oCNFJiJsdREUMndnextends(
+
+)
+
+
+{}-JXN===
+
+    {}
+-
+  <----- FAILURE
+    'class
+    xGPdimport(
+
+
+oU){}
+    
+QW(export)';yieldY
+    
+;fuiconst(
+
+
+)
+
+{}{}'
+    supernqKX5x8Xt,{}
+-  <----- FAILURE
+    super;'FS'JX-const*jyield(
+)
+
+
+
+;;-
+'F
+    ;';
+    eZ
+    OfromE'
+
+    _yield{}super
+    extendsJ;X
+
+j*Dsuper,;iu
+'$(
+
+
+)
+
+{};;  <----- FAILURE
+    ;gI;YqRBw
+'extends{}
+    S'6
+
+    U;Zsimport,  <----- FAILURE
+    AfWFvJmXMLSWev{}*88d3TTPS2(_)
+'0-lyield  <----- FAILURE
+    
+
+from,'-aJwx
+    -super*importE,{}*WFBn(Sder);
+    
+*'textends()
+
+{}-*  <----- FAILURE
+    'EBSjFkzhmK;exportW
+{},
+$3'
+    -await*uR'V$,'MNYDrgnHawait(
+
+
+
+
+
+)
+
+
+;'extends{}
+    ;
+'
+bT_;''
+    _;export{}
+    v{}{},;;extendsuuoiySCrH;KX'bFYf
+yield*lsuper*lV*h  <----- FAILURE
+    '
+
+8
+
+jyieldz===
+    U,{}
+import
+'
+    
+_,for(const
+in
+FdoUv){}'  <----- FAILURE
+    yieldo(
+const)'i
+    WztEG
+    $HRgextends
+    from{}for(export
+in-
+extendsz)
+mWoimport(
+){2}
+    'D'fnP,extendsLN*yield;Tx;
+
+'
+    6(Rb
+
+_C);
+    vfrom,bTeyiI'y_*zimport(
+
+)
+
+
+
+{}
+
+-$*zGqWkG'hePq
+-import*$,yield,hHkRrextends(
+
+)
+{}'$'await,  <----- FAILURE
+    const;
+    j2(kR$)
+
+
+m*K;-;  <----- FAILURE
+    tJexport;_
+    V
+    const*'fromaf
+import*YY_,V;-
+    
+
+import,;
+sWZ;-
+--h,qgS;E  <----- FAILURE
+    
+
+for(yield
+in-FKcI)'
+_,P
+{}
+    '--
+--classY
+    xkhPlyield(
+
+
+
+)
+
+{}
+
+
+    Yoextends(
+
+
+)q;;
+
+'
+    ;T;superv'super
+    await;'{}qHL-_,super,vZATrimport,QRvsuper*bZ-super,'FC
+    from'
+    l;constTnKmj'bmQ'Zsuper,'QPHKfnd'extends
+{}
+    'y{VLnh51}
+e9H
+    'yield
+    vmWVtoYVvm(await);'extends,k;RuYyBVi
+--await,m
+    *{}{LAPt}  <----- FAILURE
+    9d
+    
+'rnc(_);class
+;
+super===$
+    yield{};SPv;kYVfrom(
+
+)
+
+{3C},  <----- FAILURE
+    extendsP*'M$(
+)
+{}
+hX;SawT'xoimport(
+
+
+)
+
+{}
+    y3JqCFWexportx,{}
+    {},psuper(
+
+
+){}
+*{}import
+
+
+{}--0  <----- FAILURE
+    *{M}  <----- FAILURE
+    TB,;T'Afrom,'export  <----- FAILURE
+    jGToiY4(t
+p);superfrom'
+    S_(
+
+
+);;1
+    import*class(
+
+)
+
+
+{}
+;i
+
+    ;;super;${}B
+';
+    super*
+;wU_()
+Qh;
+  <----- FAILURE
+    MjmQGUeVrvdXKS
+for(extends
+in
+super)
+'p
+    FsH
+    
+export
+'MAexport{}-
+    aURBy,
+const*class*;
+
+-$  <----- FAILURE
+    DSD*Jjuqus(xAfromw)lK
+'
+    ;-
+super'classEHb*L;
+    9g
+    ;import
+    for(cextendshFE
+in
+'yield)
+
+
+for(extends
+in
+q$exporty)'k
+'
+;zFPEyMRaVYs(-
+_)eT4  <----- FAILURE
+    i
+    w==={}{}*  <----- FAILURE
+    i
+;m8l(
+
+$)d
+70
+    
+
+
+;eS
+    ea
+    {}{}{}{}
+awaite
+    xts1P;extends{}KIfOAconstgu
+    $export
+{}'export
+{}PL
+ZUHPG,'-  <----- FAILURE
+    -_KS;'
+    --_,Kc
+--import,aPfrom(){t2bQsTT}
+;
+
+    class$import4'n';0
+    
+
+
+
+
+for(super
+in
+;E)
+
+;-''
+
+;0  <----- FAILURE
+    w
+    {}'-constcW{},VtdgsnWSu(-
+
+export)'
+    class*'9RhL,y{},PZjLGpeuiwVDzFfrom(
+
+)
+
+
+{}0Wejs
+    Esuper(
+)
+
+
+
+
+
+{};;;
+    'qp1a(Tyield)
+x'qGP,C9F;ijgexport,import,UD'8;VszJ
+'Gfrom(
+)
+'
+
+    {}{}-Bh;cD'GAcEPOawait(
+){}
+    Oimport,kSJFmZ
+;c
+    
+
+
+for(awaitH
+in;
+
+-extends)Gz'
+_;;  <----- FAILURE
+    ;
+-
+;  <----- FAILURE
+    I;1;
+OyOsl
+    from'
+super,exporti
+{}''
+
+-
+    '4lclass(
+
+)Eh{}',{}
+
+    
+{}'JIM
+    J'qawait(
+
+
+)
+{}*nFc
+    1'i
+    
+
+
+$,_,await,q*
+'_(
+)
+
+
+{};const'
+    Se'wGOEy
+
+    
+for($
+in
+export)
+X
+'iconst,'
+    EmesexportDf
+    yield*zoZconst(
+)
+
+
+
+
+{}
+
+    -qK*'
+yield,classg,{}H
+    Ab===qyVqb;ge{}*b  <----- FAILURE
+    super8'from
+    
+B*WQyield(
+
+)
+
+{}*j  <----- FAILURE
+    asQ
+    $*x42
+    Qimport(
+
+)
+
+
+
+o,-p*dy,import*yield*CJyield*kt-extends,
+'$()
+
+
+'
+    _jQL*{}extends{}
+
+    
+qsxSxB$(
+){},o  <----- FAILURE
+    ;';from===
+    kTQhGU
+    6;
+eU7X'
+    '
+'
+super{}--x*fkgS
+    MpE('-yield)
+
+-import,''
+  <----- FAILURE
+    n'
+
+_*
+    
+for(super
+in
+
+-
+import);'
+'W0
+    AZQ
+ARqy{}*  <----- FAILURE
+    const*
+;extends()
+
+
+
+
+
+
+;';extends*const;  <----- FAILURE
+    {};4;3ffQJmp{},PzlwRX4ExZRJn'fLdmRQtglNwl52D(-S)rimport*const,yY,'_*
+import*rBxzVNNXSBtFlyN;cQUv{}*Ar1O$(
+){}'  <----- FAILURE
+    X(LLvm)F5import,4;
+
+    B
+'
+;{},
+;'VizKHYGS(-$)'-$
+    Ggyield(
+)
+
+
+
+;;;'
+    
+
+'
+    mzPwZi(Nl)
+a'8'
+    NooS(from)*{}-import
+
+{}
+    e
+{},bextendsyieldk  <----- FAILURE
+    import
+{}''
+
+
+from*class(
+
+){};;j
+    h
+    $'
+    
+for(super
+in-jd)x,{}'
+
+    0z
+    m0
+    P;
+    ;
+'nc
+    ;jQXX
+'from,W
+    
+
+yM'await
+    yield-super,',{g}-===
+    n;W
+;'FBTpfxFaDGFCt(const)await{}
+
+    ;from
+    d'uimport;U;
+
+    ;G0export(Ik){}
+{},  <----- FAILURE
+    gwd==={}{}
+class_';;;
+    X'7'
+
+await;;
+    oJfrom(
+)
+{}
+
+
+    from
+'t_(p)
+
+{};
+    p
+    'yield*BYo'class{}t
+    U2dTz
+    import0super(
+){};
+    {}*Z'W{},Epd(super)'constn'  <----- FAILURE
+    _Kawait(
+
+
+
+
+)
+
+
+
+
+
+{};;
+    ;-
+-
+uH
+    
+
+
+
+;class
+    xx4
+    1*{}{}'*
+    4G'
+    for
+(B$
+in
+await)
+{Is3},s  <----- FAILURE
+    H'Yimport()Wa
+{}';
+    KK$(
+
+)
+{2z}-  <----- FAILURE
+    S'exportextends''yNyield,mclass*$*
+    H$*'eo
+await*sclass(
+)
+
+{}
+    ;await';
+
+    u'RtTGTawait'y
+    t4Cjvz(from)
+
+
+
+
+for($
+in
+g);
+-F,gwyj*;nWayield,hnfawait(
+)
+
+{}  <----- FAILURE
+    $,'Vnmj,{}
+'
+    mM
+    Dextends{},mimport(
+
+)
+{};$  <----- FAILURE
+    class;classyield
+    Py;N*{}
+    
+U,uextends(
+
+)
+
+{i}{}'
+
+    y'vnT;1
+'await(
+)
+
+
+';O;VDW
+
+    S$(
+
+
+)'N
+    extends*mGJconst(
+)
+''
+    {}9iuuawait{}-  <----- FAILURE
+    ha'JI
+    for
+(jexport
+in
+importdC)
+m{}{}*  <----- FAILURE
+    
+for(await
+in
+-rbqt)'-jnawait*UYLZimport,Lssuper,wsO'z_{}'
+    class{}{}A-  <----- FAILURE
+    
+-tfjn,4{}*extends(
+)
+
+{}
+  <----- FAILURE
+    E
+W
+''Z
+    
+{},i;;
+Y'yield*bZ;k  <----- FAILURE
+    WW'from-KBDSUtwwY-
+
+    ;KIextends(
+
+)
+
+
+{}class't'
+    W
+    Fwwh{}QDEr
+    from
+{}'_';uVg
+'I
+    yield'-
+    H;8'va
+
+;;
+    $(
+
+)
+
+{}class
+{}-super'
+    G
+-J
+    
+for(import
+in-x)j
+;JODfrom
+    {}
+
+T--
+    z{},xj  <----- FAILURE
+    for(await
+in-export)const;H'xfrom{};
+    E{}{}{},S  <----- FAILURE
+    super97Lclass{}
+    uC,{},KNexport(
+
+)
+
+{T}
+
+for(const
+in
+-extends)'
+    Gv
+    DoID*a{},t_  <----- FAILURE
+    qH
+    Mfrom''-yield';;
+    vl;''wHyconst
+{}
+    jyield
+;;;r
+    eUC;
+super'
+    
+
+for(_const
+in
+afrom)
+'
+import*
+
+    $
+7HFmhIaw
+    
+for(superexportconst
+in'super
+O-yieldX)
+;  <----- FAILURE
+    extendsBGrHB
+    'nqBcVMGU
+
+
+UZJkinL*super,LO;svApH$(
+
+)
+
+
+
+Osuper*'
+    'Paawait*X'Kmbexport()
+
+
+
+{}
+
+    fromK{}*gyield(
+
+)
+'
+_*import''  <----- FAILURE
+    sQvTYD{},Wp2  <----- FAILURE
+    9Mz,  <----- FAILURE
+    z-export*export*aJYsuper*Jfconst*v${}gvcclass*
+_,ROk'jL;V;b_*hB_(
+)
+
+
+{}
+    for(await
+in-_e)WE'L;A
+    classsuper03;NFNA'XuQvdTG*H
+    ';kc*{}z;HZyconst===$*
+    ';
+    
+_{}''{}*wHE  <----- FAILURE
+    await
+{}'
+for(await
+in-
+
+-fromo)
+
+
+
+for(await
+in--_)'class
+    ;
+
+    x1
+    'super
+;'const'
+
+    A{},W9Xitxyt(-nGO);from_{}'-
+{},  <----- FAILURE
+    SrjTfrom(
+
+
+){}{Fw}{}
+
+
+    'P'N
+'M
+-
+    ZSBawait;'FCxAF
+    -extends,ztgimport()
+
+{}{};5'josuper(){}$
+    r
+TAp(await)'super
+    'YL
+'pawait(Ki)const*;HcU'  <----- FAILURE
+    lyFKmx
+    Zextends';{}*keNMG(_);import
+    
+'nfcimport(
+
+){}{}{}
+{}
+
+
+    e
+    Z{},await(
+){}  <----- FAILURE
+    V6Bexportsuper(
+
+){}h
+    from
+
+;''e
+;qimport
+    xdx(L
+-$M)YE{}*FbRNSMchhlrQzCql  <----- FAILURE
+    import*;BeZ
+$*amjextends,P'_  <----- FAILURE
+    
+await{}{},fw  <----- FAILURE
+    _const*from*ElCpI_(
+){}{}
+
+    8$
+{}{}dmssuper(
+
+)
+'
+    yfrom(
+
+
+NBpBHAC){}*{}
+  <----- FAILURE
+    c
+for(extends
+in
+yield);Xclass,'l8
+    Vn
+    supertbconst
+    '
+    {};-
+  <----- FAILURE
+    ';$VqbxoNBaEokg
+
+    2,{P};g  <----- FAILURE
+    8yield*'nUclass(
+)
+
+
+'await';
+    _classC6mkLR
+    'w_
+    lexportimport-UEPy,Ul-
+super*-export*A'e39Rmedclass(
+)
+
+
+{}
+    k$;
+exportr
+    for(export
+in-h)
+
+'X;
+    await*uXox{},Sfrom5  <----- FAILURE
+    KOL4LTzX
+    {}
+{}{}-
+  <----- FAILURE
+    pconst
+{}'await*K;from
+    '
+6;K
+;UzOFcRTimport*leWA
+I,
+    for
+(Mpexport
+in
+$2j)classy,5;
+
+    X
+    from'
+;const
+';
+    NqUHFklMpmclass(
+
+
+
+
+)
+
+{};;';'_{x}
+;
+    J
+    $
+;_*''
+p
+    superb;'
+;
+
+
+'VO0yield,Vhdxg'2Gsfy$(
+
+
+
+)
+{}'
+    I{}*GYntd
+'
+;'jgxqD2JNrLtJjb(export)cL_*import*extends,{}*DhItKMTgTQOE4from()
+;T;'  <----- FAILURE
+    CQJM(-from)'J;Pclass
+    from;tKfrom(
+)
+{},D
+zj  <----- FAILURE
+    for(Dsuperimport
+in-Y)
+Tfor(_
+in
+_)_'
+  <----- FAILURE
+    yield;
+for(import
+in-from)'k
+;B
+    hextends(
+gF)
+nE{}*  <----- FAILURE
+    s
+    {8Cl}
+
+    const''
+export;
+'
+
+    c'
+{}*;sZ,E;_u
+    BRz$,;DHqGL
+'Gxb5jwxfrom(
+)'v;EpZKn''  <----- FAILURE
+    B
+IKktLktextends*'IpbYqsuper*WP*'kn'K'Inrt;nGawait,from*;Zk;Vcq'U4{}*clawait(
+)
+
+
+
+
+
+
+{}  <----- FAILURE
+    _
+;
+
+
+for(yX
+inTI'Wt)2
+
+for(const
+in;-super)wGGV'
+scAMM'Mdz(U)'  <----- FAILURE
+    
+'0xiISMcFJ5(AH
+-
+
+JOw)
+
+IIDO
+;
+
+    extends*2i{}*Qh_(
+
+)
+{}
+-  <----- FAILURE
+    Nextends(
+)
+
+
+
+
+''const-  <----- FAILURE
+    MKawait{}
+;F
+    
+fromh,xKawait(
+
+);'
+    'L8bm(
+ZSbu)71OEg{}'
+    'W{}'
+    kD(dKL)
+
+ZO_(
+
+
+
+
+)
+{}$
+    b
+    ,*{}{}92$(
+
+){}  <----- FAILURE
+    9B'Q--from*uO_()
+
+{}
+===
+    S;-  <----- FAILURE
+    jjYe5
+    a
+    
+z{}Y'o
+    sjnYyield{}{},Ne  <----- FAILURE
+    Djconst,PA{}
+export*  <----- FAILURE
+    WV$(
+)iDJO;epexport(
+)
+
+
+{};
+    for($
+in
+from)_;-R'super
+
+    constlextends
+    4BwdW
+class'
+    super*VhkT'A;t
+
+
+_,3Idcawait()
+s'Q;L
+    ,{}{wnE};
+  <----- FAILURE
+    B2
+    'r
+$*7'uconstimport
+    f;FcHpB0zjfrqBsBF(c)Hextends
+;;
+
+    U{o4J}{}
+await
+''''
+    {nm0}'
+    Z_(
+
+
+
+){},4  <----- FAILURE
+    
+for(import
+in--
+from)YoFv
+
+    export(
+
+
+)
+
+'3'3VdDT*s{},Nawait()
+{}{}  <----- FAILURE
+    oZi
+
+;C
+    -awaitM*'5{}
+
+    j'importclassB
+    
+
+;CZfrombsuper(
+)
+';;;
+    M87{}a
+    G'I
+    for
+(export
+in-NHZ)
+
+for(await
+in-
+yieldJ);;-  <----- FAILURE
+    
+'V;
+
+
+    ab
+    l
+    'const*kp
+    $
+;{}
+h
+    F'U;ZFKaw_(
+)
+
+
+{}'';'const$A
+    {},yield(
+)
+
+{}
+
+  <----- FAILURE
+    dKf
+    
+U*{T}===  <----- FAILURE
+    
+$;await,RGUi
+    Gyield
+
+;;
+;4e;fml
+    extends(
+
+)G
+;';'{},3yuNyield(
+)
+
+{}FMzM;k  <----- FAILURE
+    a$f;Yzb(-const)'b
+    
+VOPNtawaitf*{}
+
+{}*  <----- FAILURE
+    j
+    ;'w;T
+;uGWNPmaexport(
+
+)
+
+{}
+    for(ls$
+in;const)H  <----- FAILURE
+    tn{}*uWLnrbtdv8TlNv$(
+
+
+){}
+===  <----- FAILURE
+    for(await
+in-d)
+Y
+
+
+for(export
+in
+export)k;;await'
+    s{}-R
+
+exportbb
+    'avpGgMexport()JXU{}
+    _O{}{}*W;Q'Iw'const  <----- FAILURE
+    s;
+    Uwrbsuper()x
+super*''
+    7super(
+)
+
+{}
+
+    'LBI(gqdv)2
+    Vrsuper(
+
+
+
+
+
+X)
+{gfCH}
+    export'for(extends
+in
+A
+
+sDSsPgt)
+
+
+{}*
+    
+
+for(await
+in;RogM)fFIVG{},_{}  <----- FAILURE
+    classL'i
+
+super*{}from{}
+    e
+
+;i
+    '-5{}*dfWPdexport(
+)QX-const,'9{}*Yyield()
+
+{}  <----- FAILURE
+    N3
+    'AI;G_'awaityhQqF,;JaG7  <----- FAILURE
+    {}*_(
+
+
+
+)m{}-
+-wr===-class*  <----- FAILURE
+    {}{}{}{SMj1}--YYfy(export)';
+
+    ;super;const
+{};d
+;
+    gp;;
+-$
+    ;lnfx;-NEmHN
+    ;;Bph;Wimport*'G'hmxLyield()
+
+
+
+
+{}
+
+
+    j===s,{}'class(
+
+)
+{}'await{};
+    TW$,YyF'Lsuper===
+    byR
+-import*Co
+    fP
+    {}{AF}-
+Eextends
+    aU
+    D;M
+    'Fsuper,jYvn,dW_,jLclass*-export*extends*Jyield(
+){}
+P
+    'Ra;RWjhGclass(
+
+)AH'
+;bvsuper()
+{}await
+'
+;
+    _
+
+{};'HvxqRCRbS$(
+
+
+
+
+){6};===
+    import;'-Q-
+    Kxa
+;Sfrom
+
+'ri
+
+    
+'_(s)
+{}'import'
+    UUvconst,q'
+-kluzclass
+    for($
+in-
+
+;
+super)BgNtY;wgUoAvwKKLPAeoO(yield)'
+  <----- FAILURE
+    await*fd,export,'xUE;d
+;redyield()
+
+
+{}
+extends
+
+    yfDO*;I-N*{},MivfVdzawait(
+){}
+from2BY
+R*  <----- FAILURE
+    ,x'Nexport()
+{}  <----- FAILURE
+    YCt4
+for(await
+in-from);9Z*l
+    6
+    9*,*{}  <----- FAILURE
+    msfCVTacTTB(HV6awaitT)ESuK*{},  <----- FAILURE
+    1from'
+class*
+    super;;;';
+{}*AQd
+    await{}-nRGutm'yield*;;-
+    mdXexport'
+;
+    $nD{};super
+{}{},ksuper()
+;'  <----- FAILURE
+    classAotbEexport,'Cawait,WqjBfrom(
+)
+{};
+Hfp
+    'from
+    _
+{}class,;h
+  <----- FAILURE
+    l
+{}'
+    'yield';constKud
+
+    M--await,Axfrom(
+)
+{},dbKkpG  <----- FAILURE
+    LYzrL,v2PDeHAn'
+L;
+    AxJ(from);
+
+;super
+super,
+RE
+    $fromENUx*kh
+    {F6G9qg}{}'pP;
+    81
+    l{}*sNgconst{}*{};const'  <----- FAILURE
+    j;vdexport,aLclass(
+
+)
+{}-'';MEM
+    
+-yieldexport*L{}*'
+
+  <----- FAILURE
+    extends'super,;t,9yield(
+
+)
+{},Rl
+    
+{},TvkYawait*';liGawaitxzbL  <----- FAILURE
+    superlMJ*
+
+;c;;PgoXP  <----- FAILURE
+    ;F*super*''m8'bNclass*'class'super'
+    class(
+
+
+){}{N}const'
+
+{},oDfWoHMYt
+    IuJ
+    {},cLconst(){}classawait
+{}''
+W,;IiKfrom(
+
+
+)
+
+{};  <----- FAILURE
+    V$(
+)i
+GuwgBv
+    bG
+-
+-export*K
+    LiIYclass()
+
+TF,oNUX'F;Rimport,Simport*T-const*YG-
+class*pupxyield(){};
+    PN;yucFMsuper;;urTlAI
+    Nz;jimport(){}
+    k'xRgconst(
+)
+{}
+;;
+dv-
+    
+{},7hBimport{}_K
+  <----- FAILURE
+    
+
+export,'
+    class,{C6l5a}super
+
+'';  <----- FAILURE
+    rclass(
+)IM{}{}const'
+    lCMg
+    F
+    5b'
+L*from;T'
+    PU'SNoZ
+    extends_'
+    o
+    y'iclass()
+
+
+
+
+;;'h
+
+--
+await*kkrNJB
+    Vhextends
+    P'u
+    for
+(R$
+in--J-s_)'_
+;nXwzz,HHQ
+    86super,$'--
+    
+
+U{}*omody0lE  <----- FAILURE
+    importTU*;l
+'GG$()
+
+{}'Dxz;  <----- FAILURE
+    xQuJ'5igi,;zbqawait*
+{}*
+    hliOwwjdX{}for(yield
+in--class);;class
+    r;;yoF-M*yield,;_'nb  <----- FAILURE
+    for
+(from
+in
+
+yieldyield1)L
+
+;;E'C
+;7KmYHzzJUkbI(waclassFfRFqCD)rOn{},Nyield();';
+
+    BN(
+
+const)
+YSw(await);{}
+
+    
+for(import
+in
+-nIK)p*{},  <----- FAILURE
+    EazvB
+'await'super
+OBw
+-h
+    eawait
+
+;''
+    jr
+'class(
+)
+{}
+    classconst*u{},  <----- FAILURE
+    
+yield,hd;mVGt
+;Ff5VKwFw(_)
+;P;mPR;uJz'
+    export,w's_,y{},cexport()
+
+
+
+;Q3yjg'i
+    ZW
+    O
+    {b86gYH7q}
+    Zi
+M-from*;xm'import{}  <----- FAILURE
+    CawaitX{},mUosuperclass  <----- FAILURE
+    _===JRM;s'QLxJmd8a0d(Uw_a)e;0-x
+    
+;
+'j(Y-jclasssuper)'K
+---
+--extends*Iextends(
+)
+
+
+{};
+    super
+'
+'nT(class)nK{};
+    {}aHMNYrm;uTdextends*ZYxNyield()
+{}
+    
+for(await
+in;fromU)T;-
+_===KVl  <----- FAILURE
+    VH'super;_,v{};;''1k,;GNE'1OIoggco;w;ff_,iextends*
+
+
+import*SzAyield*-a,oA;M;RjBWSNvUA_(
+
+
+)
+
+
+
+
+
+
+
+
+{}'
+    krKH(d)
+'FvHexport;-extendsxR
+    
+
+for(extends$
+in;export)pvxXseM4(await)';yield  <----- FAILURE
+    
+kkljLL$(
+
+
+)
+{}*d8oDw  <----- FAILURE
+    importaDfrom(
+
+){}'super{}
+'
+    o3wE
+    ===*{}-{}{}  <----- FAILURE
+    dVK,'
+    x'
+bA;FL;nMuyHexport'export{}'extends*H
+    DVbp{}{}
+X
+    constimport
+'{},Genrozquimport
+    NDsuper(
+
+){};--$qGIJ,
+'8;
+HVBJp
+    ;mOexport(Cd)3{X8jSS5ESN}
+    for(from
+in-
+$);o'g4SJMhDE-await,const,
+super,3;oNexport,8export;
+it*x
+    yield{}'';9'3{}
+-z
+    _exportextendsQ
+class;ApU
+    {}'
+
+ntu
+
+    0
+{},wQCyieldnDe9dfromWY  <----- FAILURE
+    
+;TeO(-await)ZruZ;CVljawait,UVFpxj;K
+    
+---class3import;import
+    Oexport*v
+yield,await*{}*const(
+)
+{V}-;  <----- FAILURE
+    a{}
+,  <----- FAILURE
+    limport(
+)
+{}
+    k
+    5';t;-class*
+    J'
+v;A
+    G
+;;fA;o
+    ;_;
+
+    export'XX'
+;{},Ifk'P2S2PvbFeBP(
+class)B{},KNDCXTmc  <----- FAILURE
+    1await'
+    A
+    for
+(U$
+in-;
+Zyield94)Dz;V  <----- FAILURE
+    ;h
+'import{}
+    superimport*Zjclass(
+
+)
+;;
+    await{}
+
+
+'ai
+    ;Mconst*super'
+
+    
+C
+'a
+    awaitimportsdRW,;
+  <----- FAILURE
+    const===y;i
+
+
+
+    for(classNL
+in
+-from)
+'$
+    {H}
+
+{}
+
+    import*_,;x_(){}{VM}  <----- FAILURE
+    from'
+;qS'
+1
+    m
+    {}'{}{w}
+    DuWyZXTJawait(
+)
+Aexport*;ni5jGmym(
+from)'  <----- FAILURE
+    
+wZcT,uuhZoXwyield(
+)
+
+;
+
+_P9J-  <----- FAILURE
+    extends===;E
+;dMexport(
+
+
+
+)
+{}
+
+  <----- FAILURE
+    exportkWutyBefrom(
+
+
+)''-  <----- FAILURE
+    v;SpHxPoZp,Hayield*gfromawait;'afrom,mpzqioHconstextends
+    ;import;;
+
+    0
+    Gfrom'u$
+    ;import;;
+r_
+    {}*R'PKP(Ud$I)M  <----- FAILURE
+    a(Yyl)
+
+
+;HyWxvconst(
+){}{}
+    b{}*nconst;const;;s3  <----- FAILURE
+    {}*aBimport(
+
+
+
+)
+{}
+;  <----- FAILURE
+    {},iclass(
+
+
+)
+
+
+{},{}  <----- FAILURE
+    '$
+
+{}';5-extends7PJXYp
+    w'9bJ
+    
+qRPxh
+'
+s
+    P;gZGq
+znvCp,yield,g,{},  <----- FAILURE
+    SQyieldc$q
+;'-
+    pfor(import
+in
+-from)'class,9GzlQZ;yield;;
+  <----- FAILURE
+    $importfiL;constGJ
+    
+{}*
+yield{}-  <----- FAILURE
+    p,,{Mb}  <----- FAILURE
+    u
+    ;Pq'K'
+
+    n
+Lifrom,  <----- FAILURE
+    Po{}aextends{};';
+    super
+;
+;4VWI
+    I'c
+    {}''
+    Y;
+$
+p-$P09
+    from'--GlUJ-extends,
+    7{}{},AlBwNjGaxconst,  <----- FAILURE
+    wf9bl*yield,Lclass*;lAS$()
+
+{}
+  <----- FAILURE
+    -super,J;Cr,
+L,wXr*'RHextends*nb4;4Va'MQRqT0'yiOwVfrom,$*yield*ryuWH;hpC;uRL-
+await,YLS{}{}
+
+K
+    super{}
+{}*m  <----- FAILURE
+    q
+'
+6
+    Tu6S
+    exportfrom
+for(export
+in
+super);export;;8
+    {}
+
+const,'import
+    
+'FGoRexport(
+){}{}
+g
+    Pg'JB,-
+await,yield,vG1Hconst(
+)
+;;';
+
+    const,lwq3class(
+){}-'-
+    SqD,,{}-{p}TU{},EU
+  <----- FAILURE
+    _8,{}
+    CV
+    p_
+;
+extends'
+    s{RqQl},Ceclass  <----- FAILURE
+    n*BYd43
+    'DMimport(
+
+
+)Jy'-classimport
+    nD{}*  <----- FAILURE
+    Q03oT(Swsuper)awaitfor(super
+in-class)
+'R  <----- FAILURE
+    export*
+'from(
+)
+{}
+$,laWzJclass(
+)
+
+{7a}
+    
+-
+a,{}exportfrom$*n
+    Var$,W{}*Hsy6FCQ(T){}{}
+  <----- FAILURE
+    await'for(yield
+in-Pimport)
+175m(H){}--
+DpjWLulY*
+    extends,DsNcpPuSsuper(
+
+
+)
+
+{}
+{pm2i7jz}
+    
+*
+_,V-super,Hn4import(
+
+
+){},BA  <----- FAILURE
+    ''
+    importT*;;
+
+from{}from,;uTgIv6jFbAVPqljsextends,--await,ByN;AGimport*yOx5n*--G*jt-$*G'BTqU;  <----- FAILURE
+    '--
+    cmN(ZawaitmgI)
+
+yield
+'{}
+    ;conste,  <----- FAILURE
+    Gk3
+    mclass,export*Nk'Tsuper*extends*xOq7export*xySzXefNfrom*;kMRtp,izCZayield,{},MMimport(
+
+
+
+
+)
+
+
+
+{}{}-
+    from{}'3-exportmr76const,
+    
+$,*0bOpconst(
+
+){}
+-
+  <----- FAILURE
+    'await
+';
+    hyield,tpX{}
+e';importawaitOhZ;
+    Xfrom,for(export
+in
+import)'import{};JwI;ai-
+const*uNqmpyXlJtSqrfrom,'s_*_*NpIk
+pv*x
+import*D  <----- FAILURE
+    constk'-i
+;N
+    extendsS
+{};
+'$,await
+    for(import
+in-QZF){}
+${}{}
+    DUawait(
+)
+
+{}{}{}
+    {};export{}'-extendsk,i
+    t{}*ZioqoRyield'importxclass
+
+
+{}  <----- FAILURE
+    
+;{},JiqxTdC(f
+Kd)bZimport''{}*DYDezKtPpa  <----- FAILURE
+    9Fn{}*  <----- FAILURE
+    3s't;exportclass
+
+{};';;sLqA
+    L
+    {}*HnUCwwyield()
+
+{}';zfJgWSFGWefrom*w'bgHwmjCK*export*9
+;1_()
+
+
+
+
+
+
+{}super*  <----- FAILURE
+    HbsVclass(
+)'importo
+;from
+    ;--mPyiV,
+
+  <----- FAILURE
+    gELXexport(
+
+)
+
+
+{}*ri  <----- FAILURE
+    Xu3QuS-  <----- FAILURE
+    qe;iUsc9
+
+$,from,jfrom,'Oconst*gXSqmXsuper,g;
+    const
+''''for(await
+in
+e;yieldU)
+Sc'wsuper{}-import,f'T  <----- FAILURE
+    {}{};c
+    {}*Hemimport(
+
+)
+
+
+
+d'tRgrm
+P*6;  <----- FAILURE
+    T{}'{}*await(
+){}Q{},
+    _
+9
+
+import*bW*Fuconst*tMWfrom(
+
+)
+{},  <----- FAILURE
+    P*{A}'  <----- FAILURE
+    $L'n-
+
+    
+'CbXsSERawait(
+
+
+
+)uv{}{}yield
+{}
+;
+    
+export{};class{}
+    Rclass,TsD
+    class';;
+await,
+    super
+
+;n
+
+
+
+
+
+;';{}{}
+    pByO;export*from*
+super===yDrZ;UC_,r
+    3class
+
+{}';Sp
+    'WOZv(exportS)WJ'
+    '
+mI
+
+    {},Lbyield(
+)
+
+{}
+  <----- FAILURE
+    r*{}import
+{};
+    33
+    
+{}{}
+c
+    EZvCUci{}*tBeSJ  <----- FAILURE
+    
+
+for($
+in
+-const)
+
+for(extends
+in
+await)Mconst(
+
+)
+{}const{}
+    6yield(
+m)Z{}'''-from,'
+    Nd'
+    import{}
+{}
+*  <----- FAILURE
+    
+'Ysuper(
+
+)
+
+
+{}from*export,export*'-
+fkdgtZ
+    ''extendsclass
+
+    28E
+
+await_;'
+yieldDJL
+
+{}
+    ;iOLifrom,-wun*jzoq
+yield*33UTk{},MmqPaNChGimport(
+)
+{}
+yield  <----- FAILURE
+    k6e-  <----- FAILURE
+    NIro(0import)cY
+class*yI
+    for(export
+in-d
+pWbFvku){},dzNyield(
+){}'
+  <----- FAILURE
+    constawait===;aXGIc'class
+{}  <----- FAILURE
+    extends
+';R;uKo*from,export*UDCtSY;dbY_(
+
+)
+
+
+{}
+
+    
+Sxyield(
+
+
+
+
+)
+{}*  <----- FAILURE
+    {wD}_C
+
+    
+*{}{}*Zfz  <----- FAILURE
+    **,{}
+;;bie7super,'  <----- FAILURE
+    
+
+'$-super,
+    f_*{}Tz
+    iexport;
+;-  <----- FAILURE
+    KL,{g}
+  <----- FAILURE
+    bOIconst*;Aawait,'MGq3$()
+{};
+qY3  <----- FAILURE
+    5$*yield*
+;export(){o}
+S  <----- FAILURE
+    {},import(
+)9{}
+$  <----- FAILURE
+    ;0;nfrom*;6yield(
+
+
+){}  <----- FAILURE
+    constO$'
+
+
+    x(iRsuper)wimportkB
+    FgE{}*GwOQ{}*
+'LXL
+;qSWVG{},f
+;ONpmS(classc)Y'  <----- FAILURE
+    n;-
+export
+    Hucasuper(
+)
+
+{}{}for(import
+in
+await);'K
+    z'OuFqGHcQSaLRFBG(simports)nonO
+for(class
+in-const)e
+
+    'EqZ_()zf'9
+    _;uRG'Wm''{}'
+--T
+    
+extends{}QZimport(
+){};
+    super
+{}*{}{},pZHJM  <----- FAILURE
+    extends*;  <----- FAILURE
+    eq(EFUimport)
+xOyield'import
+    jawait'BbuBbDOIwg(class);-
+    class
+
+{}'for(export
+in--import);n
+
+    {u}-  <----- FAILURE
+    syield*oBAmvE;bOoV;aimport(
+
+)
+
+
+
+{}{}
+d
+    JC8
+    {}{}{},{}
+-  <----- FAILURE
+    from
+{}const
+
+{};M;extends
+    yieldGFU*_,{}*XWar$()
+{};'
+    $;
+extends'z
+    await(
+
+
+)
+{PHR3}{}{}_
+;;
+    a*{PPI},wMs  <----- FAILURE
+    i;${}{}
+    9import*'import{}
+    EextendsnwUCD(Uv)D*'
+for($
+in
+yield)-class,'
+    super'classm{}
+
+    h*{}
+export,ElnB
+    
+extends
+
+
+{};C$;
+    const$===const(
+
+XL){};from{}
+    '-c*yGL
+    UHWW;
+    ;'
+yield
+
+    
+
+K
+'ZtoZByD(class)''5
+    ;;
+    Fy(
+class)
+;dS*nawaitr
+    mS,{}{},  <----- FAILURE
+    r{}*i  <----- FAILURE
+    superawait(
+
+
+)
+
+
+
+{}'
+    
+;GJ(bimport)
+pextends
+    'yield*DdR
+Z,
+super,-G,Mawait,k9HwzraFPqwexport(
+
+
+
+)
+
+{}
+G
+    FwjhC'D
+    
+-
+constq*yield*;l{},m$(
+
+)
+--const,DP{}  <----- FAILURE
+    
+'r
+    ;F;B
+;_(
+
+)
+{};super'extendsgfjI*;cJd;kVF
+    
+{},
+s
+const*{}*uOVbksyield()
+
+{}extends*GC;MK'  <----- FAILURE
+    CSWE2(o-eextends)e
+
+-extends*'y;
+    MW(v
+-
+from)
+P
+;
+-superr*  <----- FAILURE
+    Dn
+    const;QhU-$*y_,vk
+
+yieldj,yield
+    B**{}  <----- FAILURE
+    super,';--ROzC,6
+{}*
+    aD'_b_$
+    B{g4zURa};
+
+    b;
+    yield,-a,-
+-yield*yield*;x8super,oYAo-Z,0
+
+{}  <----- FAILURE
+    Rp
+;
+
+
+    *{}
+;oextends()
+{};  <----- FAILURE
+    4Doi,;JTexport(){}export{};g  <----- FAILURE
+    'class
+
+{}'
+    
+J;y
+    G
+yield,;dsuper(
+
+){Z};cdZh  <----- FAILURE
+    cZLtdXc47_(
+
+)
+
+
+
+{}'
+    t
+'
+    
+await,vj
+yield,-import*'pimport()
+;'$*;$  <----- FAILURE
+    MR*{nr};*  <----- FAILURE
+    {}*import(
+
+)FSqyF{}{}
+;$(
+
+)
+'  <----- FAILURE
+    mw
+await'
+    k_'9;YZo
+    yield*
+import*'n$(){}
+
+    8(export){},Uy(extendsziO)-import,-extends,axsuper,
+_,'4PqTconst(
+)
+{}
+  <----- FAILURE
+    yieldK{}t{},superz  <----- FAILURE
+    4MzVyield*M-pbsFX*7export*6pexport(
+)
+{}m;-  <----- FAILURE
+    
+nawait(
+){}'===
+    jyield
+
+
+
+
+';;
+    extends';for(class
+in-un)
+{}{}
+-z
+    ;;D
+
+export,
+super*As
+    {},wdqconst()
+
+
+
+
+;extendsQh
+'  <----- FAILURE
+    l_*ZVawait*''import
+    'export,super
+''aV
+;R_,
+class,mkOBE;
+
+    ;NBleextends,A
+;
+    P
+    const'
+    
+-QZWsV*;t
+  <----- FAILURE
+    Ptf
+{},  <----- FAILURE
+    ';'dwmconst'yuJQw*jftUjawait(){}
+    hnI
+    jr
+    constfrom
+{}*SeBS  <----- FAILURE
+    vt4g
+    NEfmUtV{}';
+*{}
+    from,JAexport,l'OTayield()
+
+
+
+{5CA}-A
+    t
+    sWzEiohF{}*-  <----- FAILURE
+    dCcNnWjclass()
+
+
+
+{Vzz}
+    ;m;'a;iV
+
+    l9'gxIfcAhHMf(zfromh)ew'-  <----- FAILURE
+    d
+Y,;
+-  <----- FAILURE
+    {xuoP}
+-
+super1
+    yield
+
+
+
+{}';;_{}extends
+
+;
+    for(super
+in-kAPT);
+-gdimport,C;Q
+    7
+    -extends*-cGv*RZdfHcIP_(
+)
+
+{}-{I}'extends
+{};;  <----- FAILURE
+    {}{}{}super*import'
+    
+'wuexport()
+{}
+;
+    import*KPNxhs{}-from
+    ;
+
+
+    await===
+-export,ABajsuper(
+)
+
+
+
+kR,-
+export*HboCeaclass()
+{}
+    ;
+    'import
+    {},_(
+)
+Q;  <----- FAILURE
+    J(pOalpoPz)
+_{}''{},p  <----- FAILURE
+    from
+{L2}*KHV  <----- FAILURE
+    G;-awaith
+    {}{}{}
+
+    agsuper(
+X)Y;cwA
+;yAXNdp(const)v'
+    G
+_*;
+  <----- FAILURE
+    ;await{}
+
+    Fextends(
+){}{H}-  <----- FAILURE
+    jT
+    
+-await*;9fnDNrE
+
+G*
+;qextends(
+)om
+;
+;K  <----- FAILURE
+    q;i;gnnclass(
+
+)'q;5
+    jJ
+    ;FhGMKdextends(){}
+
+
+
+    8fyieldXGO
+
+{};;;'';';-
+    ycM*{}{}
+,  <----- FAILURE
+    extends,{}
+    
+await{};X{},  <----- FAILURE
+    
+
+6
+    amtx{}{},xdT  <----- FAILURE
+    pclassfrom
+    await,;  <----- FAILURE
+    kKawait(
+){}{},pyJ  <----- FAILURE
+    s*{},super(
+){4}-h
+;;;;'
+    for
+(4from
+in'dsuper,Yy)extends'from{}O
+'  <----- FAILURE
+    
+
+;Q'await
+    u;;-fawait'
+D,i===
+    ;Gconst(
+){}{}
+;q
+
+    ;yield{}JKI,  <----- FAILURE
+    ,R{}
+RqEY(s);{}$;  <----- FAILURE
+    importY
+;extends;
+
+    extends'G_*9
+import'class
+    for(Esuper
+in'__)PL-  <----- FAILURE
+    {}'bimportclass
+    JmJ
+    n
+    await',{}*dmJeextends
+'super(
+
+)
+
+{}
+    
+
+
+{}*  <----- FAILURE
+    f{}-,  <----- FAILURE
+    siTPXJgZ*;fromextends  <----- FAILURE
+    '-'
+{}{}-;fY'q$(
+)
+
+{}''  <----- FAILURE
+    EY*CTclass*
+A,{}*XM$()
+
+
+
+
+
+;
+    ${}for(_
+in-''
+
+
+
+awaiteV)YP{}*AkD  <----- FAILURE
+    kI,{}{},O  <----- FAILURE
+    rnf{}*from'e  <----- FAILURE
+    eh-export,mlNY(Vq)''hjzrRpgHZk*RJjIGsuper,  <----- FAILURE
+    KeMlrHgLrmDconst(n)zg{};;
+    ;class04
+
+    uN;DKpsuper(){};classr;
+    XUvgMsuper()
+;
+    0from(
+)
+
+{4cL}'
+    _'
+    u'D
+    IfgextendsFD$
+;
+'
+    extendsclassVvE
+
+{}'export;';'';;
+    ZM
+''
+
+    Z*{}$
+    dpx(ByieldV);
+classconst-  <----- FAILURE
+    ;joyZnclass*$*f-import,
+'dimport(
+
+
+)
+
+{};_
+    extendsawait*await*from*MUextends(
+
+
+
+)
+'
+    Y
+    $
+;CCz8Hconst(){},e  <----- FAILURE
+    'cJHS,Xi';yield*--from,  <----- FAILURE
+    ayieldexport;
+const
+    
+;Qc$(
+)
+
+'RI
+    import{}_K;-Gztc
+    super
+{}import'*{wi}
+    _
+
+;for(await
+in-XAa)Z{}{o}
+0
+    oexport{}5n;z';8g
+    7mnAeh,{}
+    v,{}'{}
+class{};for(super
+in-O)'$
+    3';N;iQq;mysYE-
+b*{}{}===
+    
+;5-
+QjC
+    class{};Z;xUTf{},
+'yV;07KfwO(-$)'
+;super()'f  <----- FAILURE
+    ''MT
+sW*  <----- FAILURE
+    $import${}export;u
+    super
+;yield(
+
+
+)'
+export
+    'XGUexport*{},OqqRXclass(
+)
+
+
+
+
+
+
+for(super
+in
+const);
+
+    MS-NdQNg
+    class;$
+
+for($
+in-$)'frawait*yield,LvF'lgmbNt;Himport*'
+{},kz
+    A6(gyield)4UMbl
+
+    'c
+'V$
+    t'
+    g
+    *{k6}
+
+
+export,fgq  <----- FAILURE
+    {}-g
+'OrBXEREh(-yEv)'
+
+    
+for(import
+in-lMmawait)
+'-export*
+await*k_
+    qS===1{b}
+'i
+v,'e
+    k3
+    6LEd;jkz7kj(
+await)q
+
+    Zv{},AextendsI  <----- FAILURE
+    Dawait
+
+{}'';bnLj*'OI_*K
+    {}
+*{}
+;yield  <----- FAILURE
+    ;Qnp(HdeTcQ)yieldfor(await
+in-export)'-
+  <----- FAILURE
+    const;
+
+yield*  <----- FAILURE
+    Ys
+const,q;rOhYYCJe,bconst*;rFyjNeYMzA*export(
+
+)
+
+
+{};  <----- FAILURE
+    t$
+{}mb
+    I'l_''
+
+    
+V;CMRPMMKNclass,lawait*h;g
+extends*OW;YZ
+    for
+(Econst
+in-
+LHa)
+
+g(1--super)hiMadxHzMu;5
+    lFexport,SSJkhyield*KXCbZ*pYZkFOclass*from,6$*-_,ZU5class()
+{}
+-const*Lx
+    Sl{},JXEL(Jhf)'
+
+yield  <----- FAILURE
+    class'
+
+for(import8
+in't_(
+
+){}'extends)9
+2xk
+    lJawait
+
+{}'';
+v,Y,yield,;gsuper*-
+await,-
+-_*
+'await()
+
+
+{}
+  <----- FAILURE
+    nuSs4const(
+
+
+
+
+
+){AX}',{}
+    mibTawait*mOh;O9-const*Zextends,QkPvW_*Q
+    T;TxfLF*Y-
+-import*O
+;ybXCimport(
+)
+
+{};X
+    '
+
+    oY==={}
+    $$CFgawait
+    r'
+    ;
+Z
+    ei
+    BV;-  <----- FAILURE
+    ===,{}yield''  <----- FAILURE
+    
+;n$(
+
+)
+
+{}b';
+    'KgGvc(yield)'wl$,1a_
+
+;'
+    Pi
+    super,
+const*;;Uextends-super,-
+extends*D8'bsuper,py*w;nlc  <----- FAILURE
+    $
+
+'
+M
+    R;3export;7const*mRG
+'8'jVQ
+'4R1SlZu(-extends);-
+    RZcOLb8super*  <----- FAILURE
+    '
+const,;aB'y'wclass,from
+    L;
+    L
+;Nsuper(
+)
+{}
+
+    class,tiyield(
+
+)
+
+{l}-for(const
+in-yield)'yield  <----- FAILURE
+    import;rZzsuper(){}*DEBimport
+{}for(import
+in--import)'  <----- FAILURE
+    j{}
+
+    extendsNMconst(
+)Z{};
+    
+;-Gfrom
+    import;
+import*extends*yield
+    CaU
+await*;PCIx_()
+'import'$x-yield*Mq;Et4  <----- FAILURE
+    for
+(Oconst
+in--
+-
+exportU)SHrs*{};
+
+    _X
+    Anhawait()
+
+{}''super
+    Xextends'-1ay7l(g)NRawait();;m
+    2(YiIkLk)ZZNN'
+
+    ;yield
+    tq
+'xfrom(
+)
+{}*yNI
+    'for($
+in---extends)'_;;;lWC
+    ;constawait
+    uI$*V'W-from,;wtLzfrom()
+';
+    k;TmdWWySextends(
+
+){}
+    ${}
+
+for($
+in-classE)Q;
+    Ns---await*
+for(import
+in
+uy
+extends);  <----- FAILURE
+    G;
+u
+    {}{};_
+
+    F
+-WNd,'
+    await{}
+
+
+    6{}-n'9MifvR
+    Ba,WaRj;;Z
+    toY
+;1;tZ_*sR-e,R$*l'Zzyield,-Ou,'DOSextends*class,bfrom(
+);-f
+    for
+(ofrom
+in
+
+const)Ko'5Wyield(
+)
+
+
+
+
+{};$7
+    
+pRt
+;Mclass(
+
+
+)
+
+'O
+    import
+{}extends
+
+{}'''
+    nLCZkRimport,'PYd-_,DcO-yield,k;r'a'O6hsuper*'fDgawait()
+{};8
+    p'bwOJ
+;uoGW(LkextendsyL)dJ
+{},Msuper(
+)
+{}
+
+    *,;OtAfg
+import*nB'y
+;qfclass()
+
+
+{}  <----- FAILURE
+    u2jB;I
+    'Mxexport(
+
+)
+
+{A}
+    d'
+
+export===
+    import(
+
+)Z
+
+
+
+
+
+for($
+in
+-class)HAawait(
+
+
+)
+;
+    F;
+    {}
+    super'
+
+
+
+for(from
+in-Sw);Sqg$,-yield*extends*
+t,export,BqxmtXqconst(
+)
+
+
+
+{Tl}
+    constO{iP}export
+;
+    yieldconst'
+
+
+    
+W$(
+
+)
+{}*  <----- FAILURE
+    Zsexport(
+)t
+{}
+88y
+    fawait''
+    {}*IVZD$(
+)
+{W}
+'
+yield,
+import*
+'N  <----- FAILURE
+    mn;Bfsvsy{}*D8
+;7Ni(
+await)'fromimport  <----- FAILURE
+    
+
+fromQXMDXrcnWXs{}*from  <----- FAILURE
+    {Ps};,{}{};  <----- FAILURE
+    
+const
+{};'super
+    kzZT
+wDm
+cSsuper
+;
+    Dq
+'{}*bL
+'
+'{},RKFmOIfDo(class)q{}i
+    {}{}await
+{}
+    Q;class
+Recall set (size 1000):
+    
+function
+$
+(
+)
+{
+}
+;
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;  
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+; 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+; 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+ 
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;       <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+ 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;
+;
+
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+ 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}   
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;
+;
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;       <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+
+
+ 
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+; 
+ 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+ 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+
+  
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+ 
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}  
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;      <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;    <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;
+;
+; 
+ 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+
+   <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+ 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+; 
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+ 
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+; 
+
+ 
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;      <----- FAILURE
+    
+function
+$
+(
+)
+{
+}  
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+
+   <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+ 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+; 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+ 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+ 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+this
+
+
+{
+;
+
+
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}  
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+
+ 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+; 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;  
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+ 
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;
+;   
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}      <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;      <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;        <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+    <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;       <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+ 
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;   
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}      <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+ 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+     
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+ 
+
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;     <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+} 
+ 
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+
+
+ 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+ 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+for
+(
+super
+in
+this
+)
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+    <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+; 
+    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;
+;
+  
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}  
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+; 
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;  
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+;
+;
+;
+
+
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}  
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    
+
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;      <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;  
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+; 
+ 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}       <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}  
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;      <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;    <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}       <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+
+
+   <----- FAILURE
+    
+return
+yield
+
+;
+;
+;
+
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+; 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+; 
+ 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}  
+ 
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}        <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;     <----- FAILURE
+    
+;
+;
+;
+;
+
+
+
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+ 
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+if
+(
+this
+)
+function
+_
+(
+)
+{
+}
+else
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+
+
+ 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+; 
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}       <----- FAILURE
+    
+;
+;
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+      <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   
+  <----- FAILURE
+    
+for
+
+(
+super
+in
+super
+
+)
+function
+$
+(
+)
+{
+}
+while
+(
+this
+)
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+} 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;    <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;  
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+; 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+; 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+ 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}     <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+;
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+; 
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+    <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+; 
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+ 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+} 
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+ 
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+
+
+ 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+; 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}  
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+ 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+function
+$
+(
+)
+{
+}     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+ 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}  
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+   <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+
+ 
+
+    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}      <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+; 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+function
+$
+(
+)
+{
+}  
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+; 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+; 
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;
+
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+  
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+ 
+ 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+} 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+  
+   
+import 
+ ''   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+; 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;         <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+   <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}      <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+;
+;
+function
+$
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}       <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;
+
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+
+ 
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+; 
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;     <----- FAILURE
+    
+function
+$
+(
+)
+{
+} 
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+import    *
+as  as
+from
+"\
+"
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;  
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;       <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+;
+;
+;  
+
+
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+break Nt8___96135702547RrxBQeJdaAPjbVKwcCLnMouDUkmTlqZOiXEhSHpsfIgFYyzGWNvJ    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+
+
+
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+;
+     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+
+     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;  
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+
+ 
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+;
+;
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  
+
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+      export {   
+null as
+ Z_
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;  
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+ 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}      <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+      <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+;
+
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}      <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+; 
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;  
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+;
+
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+} 
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+; 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;  
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;     <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+;
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}   <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+;      <----- FAILURE
+    
+function
+$
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+;
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}
+function
+$
+(
+)
+{
+}
+     <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+;
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+
+  <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;   <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+;
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+function
+_
+(
+)
+{
+}    <----- FAILURE
+    
+function
+$
+(
+)
+{
+}
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}
+;
+;
+;
+;    <----- FAILURE
+    
+function
+_
+(
+)
+{
+} 
+  <----- FAILURE
+    
+function
+_
+(
+)
+{
+}    <----- FAILURE
+Recall: 0.001, Precision: 0.719
+Example gen time: 0.3790309429168701
+Scoring time: 1176.63574051857
